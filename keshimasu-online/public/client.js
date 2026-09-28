@@ -18,8 +18,8 @@ const $ = (id) =>
 /*
  * サーバー内部の盤面は8行×5列です。
  *
- * ブラウザに表示されるのは、
- * 元盤面の行3〜7の5行だけです。
+ * ブラウザには下側の5行だけが送られます。
+ * 表示1行目は、内部盤面の行3です。
  */
 const VISIBLE_START_ROW = 3;
 const VISIBLE_ROWS = 5;
@@ -33,14 +33,14 @@ const WILDS = new Set([
 ]);
 
 /*
- * 対戦結果を表示してから
- * ロビーへ戻るまでの時間です。
+ * 対戦結果の表示時間です。
+ * 5秒後に最初の画面へ戻ります。
  */
 const RESULT_DISPLAY_MS = 5000;
 
 
 /* ==================================================
-   状態
+   ゲーム状態
 ================================================== */
 
 let roomId = null;
@@ -59,7 +59,7 @@ let status = "idle";
 
 
 /* ==================================================
-   画面表示
+   画面切り替え
 ================================================== */
 
 function show(screen) {
@@ -95,21 +95,23 @@ function emitAck(
   eventName,
   payload = {}
 ) {
-  return new Promise((resolve) => {
-    socket.emit(
-      eventName,
-      payload,
-      (response) => {
-        resolve(
-          response || {
-            ok: false,
-            error:
-              "サーバーから応答がありません",
-          }
-        );
-      }
-    );
-  });
+  return new Promise(
+    (resolve) => {
+      socket.emit(
+        eventName,
+        payload,
+        (response) => {
+          resolve(
+            response || {
+              ok: false,
+              error:
+                "サーバーから応答がありません",
+            }
+          );
+        }
+      );
+    }
+  );
 }
 
 
@@ -157,7 +159,10 @@ function clearSession() {
 
 function stopGameTimer() {
   if (timerHandle !== null) {
-    clearInterval(timerHandle);
+    clearInterval(
+      timerHandle
+    );
+
     timerHandle = null;
   }
 }
@@ -165,50 +170,69 @@ function stopGameTimer() {
 
 function stopCountdown() {
   if (countdownHandle !== null) {
-    clearInterval(countdownHandle);
+    clearInterval(
+      countdownHandle
+    );
+
     countdownHandle = null;
   }
 }
 
 
-function stopReturnToLobbyTimer() {
-  if (returnToLobbyHandle !== null) {
-    clearTimeout(returnToLobbyHandle);
-    returnToLobbyHandle = null;
+function stopReturnTimer() {
+  if (
+    returnToLobbyHandle !==
+    null
+  ) {
+    clearTimeout(
+      returnToLobbyHandle
+    );
+
+    returnToLobbyHandle =
+      null;
   }
 }
 
 
 /* ==================================================
-   ロビー状態の初期化
+   ロビー画面初期化
 ================================================== */
 
 function resetLobbyUi() {
-  $("timer").textContent = "0.000";
+  $("timer").textContent =
+    "0.000";
 
-  $("opponentRemaining").textContent =
-    "40";
-
-  $("opponentProgress").style.width =
-    "0%";
+  $("opponentRemaining")
+    .textContent = "40";
 
   $("opponentProgress")
-    .parentElement
-    ?.setAttribute(
+    .style.width = "0%";
+
+  const progressTrack =
+    $("opponentProgress")
+      .parentElement;
+
+  if (progressTrack) {
+    progressTrack.setAttribute(
       "aria-valuenow",
       "0"
     );
+  }
 
-  $("countdown").textContent = "";
+  $("countdown")
+    .textContent = "";
 
-  $("selectedText").textContent =
-    "未選択";
+  $("selectedText")
+    .textContent = "未選択";
 
   $("fText").value = "";
-
   $("fText").maxLength = 5;
 
-  $("fInputHelp").textContent = "";
+  $("fText").placeholder =
+    "Fに入る文字を入力";
+
+  $("fInputHelp")
+    .textContent = "";
 
   $("fInputArea")
     .classList
@@ -226,8 +250,11 @@ function resetLobbyUi() {
     .classList
     .add("hidden");
 
-  $("matchButton").disabled = false;
-  $("submitMove").disabled = true;
+  $("matchButton").disabled =
+    false;
+
+  $("submitMove").disabled =
+    true;
 
   setGameMessage("");
 }
@@ -243,7 +270,7 @@ async function returnToLobby({
 } = {}) {
   stopGameTimer();
   stopCountdown();
-  stopReturnToLobbyTimer();
+  stopReturnTimer();
 
   if (
     notifyServer &&
@@ -280,7 +307,91 @@ async function returnToLobby({
 
 
 /* ==================================================
-   表示盤面の文字取得
+   選択座標の読み順
+================================================== */
+
+/*
+ * 選択した操作順に関係なく、
+ * 横は左から右、
+ * 縦は上から下に並べ替えます。
+ *
+ * 例:
+ *
+ * 右から左に選択
+ * [7, 4], [7, 3], [7, 2]
+ *
+ * 読み順
+ * [7, 2], [7, 3], [7, 4]
+ *
+ * 下から上に選択
+ * [7, 2], [6, 2], [5, 2]
+ *
+ * 読み順
+ * [5, 2], [6, 2], [7, 2]
+ */
+function getReadingOrderPath(path) {
+  if (!Array.isArray(path)) {
+    return [];
+  }
+
+  const sortedPath =
+    path.map(
+      ([row, col]) => [
+        row,
+        col,
+      ]
+    );
+
+  if (sortedPath.length < 2) {
+    return sortedPath;
+  }
+
+  const firstRow =
+    sortedPath[0][0];
+
+  const firstCol =
+    sortedPath[0][1];
+
+  const sameRow =
+    sortedPath.every(
+      ([row]) =>
+        row === firstRow
+    );
+
+  const sameColumn =
+    sortedPath.every(
+      ([, col]) =>
+        col === firstCol
+    );
+
+  /*
+   * 横方向は列番号の小さい順です。
+   * 左から右へ読みます。
+   */
+  if (sameRow) {
+    sortedPath.sort(
+      (left, right) =>
+        left[1] - right[1]
+    );
+  }
+
+  /*
+   * 縦方向は行番号の小さい順です。
+   * 上から下へ読みます。
+   */
+  if (sameColumn) {
+    sortedPath.sort(
+      (left, right) =>
+        left[0] - right[0]
+    );
+  }
+
+  return sortedPath;
+}
+
+
+/* ==================================================
+   表示盤面から文字を取得
 ================================================== */
 
 function getVisibleCell(
@@ -311,11 +422,20 @@ function getVisibleCell(
 }
 
 
+/* ==================================================
+   選択文字
+================================================== */
+
 function getSelectedCharacters() {
-  return selected.map(
-    ([absoluteRow, col]) =>
+  const readingPath =
+    getReadingOrderPath(
+      selected
+    );
+
+  return readingPath.map(
+    ([row, col]) =>
       getVisibleCell(
-        absoluteRow,
+        row,
         col
       ) || ""
   );
@@ -339,7 +459,7 @@ function getSelectedFCount() {
 
 
 /* ==================================================
-   回答欄更新
+   選択状態と入力欄
 ================================================== */
 
 function updateAnswerControls() {
@@ -349,6 +469,10 @@ function updateAnswerControls() {
   const fCount =
     getSelectedFCount();
 
+  /*
+   * 右から左や下から上に選択しても、
+   * 正しい読み順で表示します。
+   */
   $("selectedText").textContent =
     selectedText || "未選択";
 
@@ -357,8 +481,9 @@ function updateAnswerControls() {
       .classList
       .remove("hidden");
 
-    $("fInputHelp").textContent =
-      `（${fCount}文字）`;
+    $("fInputHelp")
+      .textContent =
+        `（${fCount}文字）`;
 
     $("fText").maxLength =
       fCount;
@@ -370,8 +495,8 @@ function updateAnswerControls() {
       .classList
       .add("hidden");
 
-    $("fInputHelp").textContent =
-      "";
+    $("fInputHelp")
+      .textContent = "";
 
     $("fText").value = "";
     $("fText").maxLength = 5;
@@ -403,9 +528,15 @@ function renderBoard() {
   }
 
   board.forEach(
-    (row, visibleRow) => {
+    (
+      row,
+      visibleRow
+    ) => {
       row.forEach(
-        (value, col) => {
+        (
+          value,
+          col
+        ) => {
           const absoluteRow =
             visibleRow +
             VISIBLE_START_ROW;
@@ -415,7 +546,9 @@ function renderBoard() {
               "button"
             );
 
-          button.type = "button";
+          button.type =
+            "button";
+
           button.setAttribute(
             "role",
             "gridcell"
@@ -449,19 +582,20 @@ function renderBoard() {
             value;
 
           button.dataset.row =
-            String(absoluteRow);
+            String(
+              absoluteRow
+            );
 
           button.dataset.col =
             String(col);
 
+          /*
+           * カウントダウン中および
+           * 対戦終了後は操作できません。
+           */
           button.disabled =
             value === EMPTY ||
             status !== "playing";
-
-          button.setAttribute(
-            "aria-label",
-            `行${visibleRow + 1} 列${col + 1} ${value}`
-          );
 
           button.setAttribute(
             "aria-selected",
@@ -470,16 +604,23 @@ function renderBoard() {
               : "false"
           );
 
-          button.onclick = () => {
-            selectCell(
-              absoluteRow,
-              col
-            );
-          };
-
-          boardElement.appendChild(
-            button
+          button.setAttribute(
+            "aria-label",
+            `行${visibleRow + 1} 列${col + 1} ${value}`
           );
+
+          button.onclick =
+            () => {
+              selectCell(
+                absoluteRow,
+                col
+              );
+            };
+
+          boardElement
+            .appendChild(
+              button
+            );
         }
       );
     }
@@ -499,7 +640,10 @@ function selectCell(row, col) {
   }
 
   const cell =
-    getVisibleCell(row, col);
+    getVisibleCell(
+      row,
+      col
+    );
 
   if (
     !cell ||
@@ -509,8 +653,8 @@ function selectCell(row, col) {
   }
 
   /*
-   * すでに選択済みのマスを押した場合、
-   * その位置まで選択を戻します。
+   * 選択済みのマスを再度押した場合、
+   * そのマスまで選択を戻します。
    */
   const existingIndex =
     selected.findIndex(
@@ -523,11 +667,13 @@ function selectCell(row, col) {
     );
 
   if (existingIndex >= 0) {
-    selected = selected.slice(
-      0,
-      existingIndex + 1
-    );
+    selected =
+      selected.slice(
+        0,
+        existingIndex + 1
+      );
 
+    setGameMessage("");
     renderBoard();
     return;
   }
@@ -556,7 +702,7 @@ function selectCell(row, col) {
   ];
 
   /*
-   * 2文字目で方向を決定します。
+   * 2文字目で選択方向を決定します。
    */
   if (selected.length === 1) {
     const rowDifference =
@@ -567,15 +713,23 @@ function selectCell(row, col) {
 
     const adjacent =
       (
-        Math.abs(rowDifference) === 1 &&
+        Math.abs(
+          rowDifference
+        ) === 1 &&
         colDifference === 0
       ) ||
       (
-        Math.abs(colDifference) === 1 &&
+        Math.abs(
+          colDifference
+        ) === 1 &&
         rowDifference === 0
       );
 
     if (!adjacent) {
+      /*
+       * 離れたマスを押した場合は、
+       * 新しい選択を開始します。
+       */
       selected = [[row, col]];
 
       setGameMessage(
@@ -586,7 +740,10 @@ function selectCell(row, col) {
       return;
     }
 
-    selected.push([row, col]);
+    selected.push([
+      row,
+      col,
+    ]);
 
     setGameMessage("");
     renderBoard();
@@ -594,8 +751,8 @@ function selectCell(row, col) {
   }
 
   /*
-   * 3文字目以降は、2文字目までと
-   * 同じ方向にだけ伸ばせます。
+   * 3文字目以降は、
+   * 2文字目までと同じ方向に伸ばします。
    */
   const rowDirection =
     selected[1][0] -
@@ -621,13 +778,20 @@ function selectCell(row, col) {
     !continuesSameDirection ||
     selected.length >= 5
   ) {
+    /*
+     * 同じ方向に連続していない場合は、
+     * 押したマスから新しい選択を開始します。
+     */
     selected = [[row, col]];
 
     setGameMessage(
       "新しい選択を開始しました"
     );
   } else {
-    selected.push([row, col]);
+    selected.push([
+      row,
+      col,
+    ]);
 
     setGameMessage("");
   }
@@ -644,26 +808,37 @@ function runCountdown() {
   stopCountdown();
 
   function updateCountdown() {
-    if (!startAt) {
-      $("countdown").textContent = "";
+    if (!Number.isFinite(startAt)) {
+      $("countdown")
+        .textContent = "";
+
       return;
     }
 
-    const remainingMilliseconds =
+    const remainingMs =
       startAt - Date.now();
 
     const remainingSeconds =
       Math.ceil(
-        remainingMilliseconds /
-        1000
+        remainingMs / 1000
       );
 
-    $("countdown").textContent =
-      remainingSeconds > 0
-        ? String(remainingSeconds)
-        : "開始!";
+    if (remainingSeconds >= 1) {
+      $("countdown")
+        .textContent =
+          String(
+            Math.min(
+              3,
+              remainingSeconds
+            )
+          );
+    } else {
+      $("countdown")
+        .textContent =
+          "開始!";
+    }
 
-    if (remainingMilliseconds <= 0) {
+    if (remainingMs <= 0) {
       stopCountdown();
     }
   }
@@ -686,9 +861,10 @@ function startTimer() {
   stopGameTimer();
 
   function updateTimer() {
-    if (!startAt) {
-      $("timer").textContent =
-        "0.000";
+    if (!Number.isFinite(startAt)) {
+      $("timer")
+        .textContent =
+          "0.000";
 
       return;
     }
@@ -696,7 +872,8 @@ function startTimer() {
     const elapsed =
       Math.max(
         0,
-        Date.now() - startAt
+        Date.now() -
+        startAt
       );
 
     $("timer").textContent =
@@ -716,12 +893,12 @@ function startTimer() {
 
 
 /* ==================================================
-   対戦する
+   対戦ボタン
 ================================================== */
 
 $("matchButton").onclick =
   async () => {
-    stopReturnToLobbyTimer();
+    stopReturnTimer();
 
     $("matchButton").disabled =
       true;
@@ -738,14 +915,17 @@ $("matchButton").onclick =
       .classList
       .remove("hidden");
 
+    const playerName =
+      $("name").value
+        .trim() ||
+      "プレイヤー";
+
     const result =
       await emitAck(
         "matchmaking:join",
         {
           name:
-            $("name").value
-              .trim() ||
-            "プレイヤー",
+            playerName,
         }
       );
 
@@ -761,7 +941,11 @@ $("matchButton").onclick =
         .classList
         .add("hidden");
 
-      setMessage(result.error);
+      setMessage(
+        result.error ||
+        "マッチングに参加できませんでした"
+      );
+
       return;
     }
 
@@ -804,7 +988,7 @@ $("cancelMatch").onclick =
 
 
 /* ==================================================
-   マッチング待機イベント
+   マッチング待機
 ================================================== */
 
 socket.on(
@@ -819,12 +1003,16 @@ socket.on(
     $("matchingIndicator")
       .classList
       .remove("hidden");
+
+    $("cancelMatch")
+      .classList
+      .remove("hidden");
   }
 );
 
 
 /* ==================================================
-   マッチング中止イベント
+   マッチング中止通知
 ================================================== */
 
 socket.on(
@@ -842,6 +1030,10 @@ socket.on(
     $("cancelMatch")
       .classList
       .add("hidden");
+
+    setMessage(
+      "マッチングを中止しました"
+    );
   }
 );
 
@@ -853,22 +1045,26 @@ socket.on(
 socket.on(
   "matchmaking:matched",
   (data) => {
-    stopReturnToLobbyTimer();
+    stopReturnTimer();
 
-    roomId = data.roomId;
+    roomId =
+      data.roomId;
 
     playerToken =
       data.playerToken;
 
     saveSession();
 
-    $("yourName").textContent =
-      $("name").value.trim() ||
-      "あなた";
+    $("yourName")
+      .textContent =
+        $("name").value
+          .trim() ||
+        "あなた";
 
-    $("opponentName").textContent =
-      data.opponentName ||
-      "対戦相手";
+    $("opponentName")
+      .textContent =
+        data.opponentName ||
+        "対戦相手";
 
     $("opponentRemaining")
       .textContent = "40";
@@ -885,14 +1081,14 @@ socket.on(
       .add("hidden");
 
     setMessage(
-      "マッチングしました"
+      "マッチングしました。問題を準備しています…"
     );
   }
 );
 
 
 /* ==================================================
-   カウントダウン開始
+   3秒カウントダウン
 ================================================== */
 
 socket.on(
@@ -900,19 +1096,26 @@ socket.on(
   (data) => {
     stopGameTimer();
     stopCountdown();
-    stopReturnToLobbyTimer();
+    stopReturnTimer();
 
-    roomId = data.roomId;
+    roomId =
+      data.roomId;
 
     board =
       data.puzzle.board.map(
-        (row) => row.slice()
+        (row) =>
+          row.slice()
       );
 
     selected = [];
 
-    startAt = data.startAt;
-    status = "countdown";
+    startAt =
+      Number(
+        data.startAt
+      );
+
+    status =
+      "countdown";
 
     $("timer").textContent =
       "0.000";
@@ -929,6 +1132,7 @@ socket.on(
 
     $("fText").value = "";
 
+    setMessage("");
     setGameMessage("");
 
     show("game");
@@ -945,24 +1149,56 @@ socket.on(
 socket.on(
   "match:started",
   (data) => {
-    startAt = data.startAt;
-    status = "playing";
+    startAt =
+      Number(
+        data.startAt
+      );
 
+    status =
+      "playing";
+
+    /*
+     * playingへ変更した後に再描画し、
+     * 盤面ボタンを有効化します。
+     */
     renderBoard();
     startTimer();
 
-    $("countdown").textContent =
-      "開始!";
+    $("countdown")
+      .textContent =
+        "開始!";
 
     setTimeout(
       () => {
-        if (status === "playing") {
+        if (
+          status ===
+          "playing"
+        ) {
           $("countdown")
-            .textContent = "";
+            .textContent =
+              "";
         }
       },
       600
     );
+  }
+);
+
+
+/* ==================================================
+   対戦開始エラー
+================================================== */
+
+socket.on(
+  "match:error",
+  (data) => {
+    returnToLobby({
+      notifyServer: true,
+
+      message:
+        data?.error ||
+        "対戦を開始できませんでした。",
+    });
   }
 );
 
@@ -974,40 +1210,52 @@ socket.on(
 socket.on(
   "opponent:progress",
   (progress) => {
-    const remaining =
-      Number(progress.remaining);
+    const receivedRemaining =
+      Number(
+        progress.remaining
+      );
 
-    const safeRemaining =
-      Number.isFinite(remaining)
+    const remaining =
+      Number.isFinite(
+        receivedRemaining
+      )
         ? Math.max(
             0,
-            Math.min(40, remaining)
+            Math.min(
+              40,
+              receivedRemaining
+            )
           )
         : 40;
 
     const completed =
-      40 - safeRemaining;
+      40 - remaining;
 
-    const progressPercent =
+    const percent =
       (
         completed /
         40
-      ) * 100;
+      ) *
+      100;
 
     $("opponentRemaining")
       .textContent =
-        String(safeRemaining);
+        String(remaining);
 
     $("opponentProgress")
       .style.width =
-        `${progressPercent}%`;
+        `${percent}%`;
 
-    $("opponentProgress")
-      .parentElement
-      ?.setAttribute(
+    const progressTrack =
+      $("opponentProgress")
+        .parentElement;
+
+    if (progressTrack) {
+      progressTrack.setAttribute(
         "aria-valuenow",
         String(completed)
       );
+    }
   }
 );
 
@@ -1019,11 +1267,12 @@ socket.on(
 socket.on(
   "match:finished",
   (result) => {
-    status = "finished";
+    status =
+      "finished";
 
     stopGameTimer();
     stopCountdown();
-    stopReturnToLobbyTimer();
+    stopReturnTimer();
 
     renderBoard();
 
@@ -1031,29 +1280,32 @@ socket.on(
       result.winnerToken ===
       playerToken;
 
-    $("resultTitle").textContent =
-      won
-        ? "勝利!"
-        : "相手が先にクリアしました";
+    $("resultTitle")
+      .textContent =
+        won
+          ? "勝利!"
+          : "相手が先にクリアしました";
 
-    $("resultTitle").className =
-      won
-        ? "winner"
-        : "loser";
+    $("resultTitle")
+      .className =
+        won
+          ? "winner"
+          : "loser";
 
     $("result")
       .classList
       .remove("hidden");
 
     /*
-     * 結果画面を5秒表示した後、
-     * 自動的に最初の画面へ戻します。
+     * 結果を5秒表示した後、
+     * 最初の画面へ戻ります。
      */
     returnToLobbyHandle =
       setTimeout(
         () => {
           returnToLobby({
             notifyServer: true,
+
             message:
               won
                 ? "勝利しました。もう一度「対戦する」を押してください。"
@@ -1088,7 +1340,10 @@ $("clearSelection").onclick =
 
 $("submitMove").onclick =
   async () => {
-    if (status !== "playing") {
+    if (
+      status !==
+      "playing"
+    ) {
       setGameMessage(
         "まだ開始していません"
       );
@@ -1107,18 +1362,25 @@ $("submitMove").onclick =
       return;
     }
 
+    /*
+     * サーバーへ送る前に、
+     * 横は左から右、
+     * 縦は上から下へ並べます。
+     */
+    const readingPath =
+      getReadingOrderPath(
+        selected
+      );
+
     const fCount =
       getSelectedFCount();
 
     let fText = "";
 
-    /*
-     * Fが含まれる場合だけ、
-     * Fへ入れる文字を取得します。
-     */
     if (fCount > 0) {
       fText =
-        $("fText").value.trim();
+        $("fText").value
+          .trim();
 
       if (
         [...fText].length !==
@@ -1145,7 +1407,9 @@ $("submitMove").onclick =
       await emitAck(
         "move:submit",
         {
-          path: selected,
+          path:
+            readingPath,
+
           fText,
         }
       );
@@ -1167,7 +1431,8 @@ $("submitMove").onclick =
 
     board =
       result.board.map(
-        (row) => row.slice()
+        (row) =>
+          row.slice()
       );
 
     selected = [];
@@ -1189,10 +1454,14 @@ $("submitMove").onclick =
 $("fText").addEventListener(
   "keydown",
   (event) => {
-    if (event.key === "Enter") {
+    if (
+      event.key ===
+      "Enter"
+    ) {
       event.preventDefault();
 
-      $("submitMove").click();
+      $("submitMove")
+        .click();
     }
   }
 );
@@ -1204,11 +1473,7 @@ $("fText").addEventListener(
 
 $("rematch").onclick =
   async () => {
-    /*
-     * 再戦を選択した場合は、
-     * 自動ロビー復帰を止めます。
-     */
-    stopReturnToLobbyTimer();
+    stopReturnTimer();
 
     const result =
       await emitAck(
@@ -1219,24 +1484,8 @@ $("rematch").onclick =
     if (!result.ok) {
       setGameMessage(
         result.error ||
-        "再戦の受付に失敗しました"
+        "再戦できません"
       );
-
-      /*
-       * 再戦受付に失敗した場合は
-       * ロビーへ戻します。
-       */
-      returnToLobbyHandle =
-        setTimeout(
-          () => {
-            returnToLobby({
-              notifyServer: true,
-              message:
-                "再戦できなかったため、最初の画面へ戻りました。",
-            });
-          },
-          2000
-        );
 
       return;
     }
@@ -1245,8 +1494,9 @@ $("rematch").onclick =
       .classList
       .add("hidden");
 
-    $("countdown").textContent =
-      "相手の再戦操作を待っています…";
+    $("countdown")
+      .textContent =
+        "相手の再戦操作を待っています…";
 
     setGameMessage(
       "相手も再戦を選択すると、新しい問題を開始します。"
@@ -1262,6 +1512,7 @@ $("newMatch").onclick =
   async () => {
     await returnToLobby({
       notifyServer: true,
+
       message:
         "「対戦する」を押すと、新しい相手を探します。",
     });
@@ -1269,7 +1520,7 @@ $("newMatch").onclick =
 
 
 /* ==================================================
-   サーバーへの接続
+   再接続
 ================================================== */
 
 socket.on(
@@ -1304,7 +1555,9 @@ socket.on(
       return;
     }
 
-    roomId = saved.roomId;
+    roomId =
+      saved.roomId;
+
     playerToken =
       saved.playerToken;
 
@@ -1312,13 +1565,20 @@ socket.on(
       result.state?.status ||
       "idle";
 
-    startAt =
+    const receivedStartAt =
       result.startAt ||
-      result.state?.startAt ||
-      null;
+      result.state?.startAt;
+
+    startAt =
+      receivedStartAt
+        ? Number(
+            receivedStartAt
+          )
+        : null;
 
     const players =
-      result.state?.players || [];
+      result.state?.players ||
+      [];
 
     const currentPlayer =
       players.find(
@@ -1332,47 +1592,62 @@ socket.on(
           !player.isYou
       );
 
-    if (currentPlayer?.name) {
-      $("yourName").textContent =
-        currentPlayer.name;
+    if (
+      currentPlayer?.name
+    ) {
+      $("yourName")
+        .textContent =
+          currentPlayer.name;
     }
 
     if (opponent?.name) {
-      $("opponentName").textContent =
-        opponent.name;
+      $("opponentName")
+        .textContent =
+          opponent.name;
     }
 
     if (
       Number.isFinite(
-        Number(opponent?.remaining)
+        Number(
+          opponent?.remaining
+        )
       )
     ) {
-      const opponentRemaining =
-        Number(
-          opponent.remaining
+      const remaining =
+        Math.max(
+          0,
+          Math.min(
+            40,
+            Number(
+              opponent.remaining
+            )
+          )
         );
 
       $("opponentRemaining")
         .textContent =
-          String(opponentRemaining);
+          String(remaining);
 
       $("opponentProgress")
         .style.width =
           `${
             (
-              (40 -
-                opponentRemaining) /
+              (40 - remaining) /
               40
-            ) * 100
+            ) *
+            100
           }%`;
     }
 
     if (
-      Array.isArray(result.board)
+      Array.isArray(
+        result.board
+      )
     ) {
       board =
         result.board.map(
-          (row) => row.slice()
+          (row) =>
+            row.slice()
         );
 
       selected = [];
@@ -1380,27 +1655,29 @@ socket.on(
       show("game");
       renderBoard();
 
-      if (status === "playing") {
-        startTimer();
-
+      if (
+        status ===
+        "playing"
+      ) {
         $("countdown")
           .textContent = "";
+
+        startTimer();
       } else if (
-        status === "countdown"
+        status ===
+        "countdown"
       ) {
         runCountdown();
       } else if (
-        status === "finished"
+        status ===
+        "finished"
       ) {
-        /*
-         * 終了済み対戦へ復帰した場合は、
-         * 長く残さずロビーへ戻します。
-         */
         returnToLobbyHandle =
           setTimeout(
             () => {
               returnToLobby({
                 notifyServer: true,
+
                 message:
                   "対戦は終了しています。もう一度「対戦する」を押してください。",
               });
@@ -1414,24 +1691,27 @@ socket.on(
 
 
 /* ==================================================
-   Socket.IO切断
+   切断
 ================================================== */
 
 socket.on(
   "disconnect",
   () => {
     if (
-      status === "matching"
+      status ===
+      "matching"
     ) {
       setMessage(
-        "サーバーとの接続が切れました。再接続しています…"
+        "サーバーへ再接続しています…"
       );
     } else if (
-      status === "playing" ||
-      status === "countdown"
+      status ===
+        "playing" ||
+      status ===
+        "countdown"
     ) {
       setGameMessage(
-        "サーバーとの接続が切れました。再接続しています…"
+        "サーバーへ再接続しています…"
       );
     }
   }

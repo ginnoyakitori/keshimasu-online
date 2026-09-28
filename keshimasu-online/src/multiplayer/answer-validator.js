@@ -2,16 +2,49 @@
 
 const ROWS = 8;
 const COLS = 5;
-const PLAYABLE_START_ROW = 3;
+const VISIBLE_ROWS = 5;
+const PLAYABLE_START_ROW = ROWS - VISIBLE_ROWS;
 
 const EMPTY = "・";
-const WILDS = new Set(["F", "Ｆ"]);
+const WILDCARDS = new Set(["F", "Ｆ"]);
 
+
+/* ==================================================
+   基本処理
+================================================== */
 
 function toCharacters(value) {
   return [...String(value ?? "")];
 }
 
+
+function normalizeWildcard(value) {
+  const text = String(value ?? "");
+
+  if (text === "F" || text === "Ｆ") {
+    return "F";
+  }
+
+  return text;
+}
+
+
+function validateBoard(board) {
+  return (
+    Array.isArray(board) &&
+    board.length === ROWS &&
+    board.every(
+      (row) =>
+        Array.isArray(row) &&
+        row.length === COLS
+    )
+  );
+}
+
+
+/* ==================================================
+   選択座標
+================================================== */
 
 function normalizePath(path) {
   if (!Array.isArray(path)) {
@@ -21,14 +54,20 @@ function normalizePath(path) {
   const normalized = [];
 
   for (const position of path) {
-    if (!Array.isArray(position) || position.length !== 2) {
+    if (
+      !Array.isArray(position) ||
+      position.length !== 2
+    ) {
       return null;
     }
 
     const row = Number(position[0]);
     const col = Number(position[1]);
 
-    if (!Number.isInteger(row) || !Number.isInteger(col)) {
+    if (
+      !Number.isInteger(row) ||
+      !Number.isInteger(col)
+    ) {
       return null;
     }
 
@@ -40,7 +79,11 @@ function normalizePath(path) {
 
 
 function validatePath(path) {
-  if (!path || path.length < 2 || path.length > 5) {
+  if (
+    !Array.isArray(path) ||
+    path.length < 2 ||
+    path.length > 5
+  ) {
     return "2〜5マスを選択してください";
   }
 
@@ -53,10 +96,18 @@ function validatePath(path) {
     ) {
       return "盤面外のマスが含まれています";
     }
+
+    if (row < PLAYABLE_START_ROW) {
+      return "表示されている下5行から選択してください";
+    }
   }
 
-  if (path[0][0] < PLAYABLE_START_ROW) {
-    return "表示されている下5段から選択してください";
+  const uniquePositions = new Set(
+    path.map(([row, col]) => `${row},${col}`)
+  );
+
+  if (uniquePositions.size !== path.length) {
+    return "同じマスを2回選択することはできません";
   }
 
   const rowDirection =
@@ -77,7 +128,11 @@ function validatePath(path) {
     return "縦または横に一直線で選択してください";
   }
 
-  for (let index = 1; index < path.length; index += 1) {
+  for (
+    let index = 1;
+    index < path.length;
+    index += 1
+  ) {
     const previous = path[index - 1];
     const current = path[index];
 
@@ -93,33 +148,61 @@ function validatePath(path) {
 }
 
 
-function countWildcards(board, path) {
-  let count = 0;
-
-  for (const [row, col] of path) {
-    if (WILDS.has(board[row][col])) {
-      count += 1;
-    }
+/*
+ * 横は左から右、縦は上から下へ並べます。
+ */
+function sortPathInReadingOrder(path) {
+  if (!Array.isArray(path)) {
+    return [];
   }
 
-  return count;
+  const sortedPath = path.map(
+    ([row, col]) => [row, col]
+  );
+
+  if (sortedPath.length < 2) {
+    return sortedPath;
+  }
+
+  const sameRow = sortedPath.every(
+    ([row]) => row === sortedPath[0][0]
+  );
+
+  const sameColumn = sortedPath.every(
+    ([, col]) => col === sortedPath[0][1]
+  );
+
+  if (sameRow) {
+    sortedPath.sort(
+      (left, right) => left[1] - right[1]
+    );
+  } else if (sameColumn) {
+    sortedPath.sort(
+      (left, right) => left[0] - right[0]
+    );
+  }
+
+  return sortedPath;
 }
 
+
+/* ==================================================
+   完成する国名を構築
+================================================== */
 
 function buildCompletedWord({
   board,
   path,
   fText,
 }) {
-  const replacementCharacters =
-    toCharacters(fText);
-
   const selectedCharacters = [];
 
   for (const [row, col] of path) {
-    const cell = board[row][col];
+    const cell = normalizeWildcard(
+      board[row]?.[col]
+    );
 
-    if (cell === EMPTY) {
+    if (!cell || cell === EMPTY) {
       return {
         ok: false,
         error: "空マスは選択できません",
@@ -129,9 +212,16 @@ function buildCompletedWord({
     selectedCharacters.push(cell);
   }
 
-  const wildcardCount = selectedCharacters.filter(
-    (character) => WILDS.has(character)
-  ).length;
+  const wildcardCount =
+    selectedCharacters.filter(
+      (character) =>
+        WILDCARDS.has(character)
+    ).length;
+
+  const replacementCharacters =
+    toCharacters(
+      String(fText ?? "").trim()
+    );
 
   if (
     wildcardCount === 0 &&
@@ -139,7 +229,8 @@ function buildCompletedWord({
   ) {
     return {
       ok: false,
-      error: "Fがないため補完文字は不要です",
+      error:
+        "Fが含まれていないため、補完文字の入力は不要です",
     };
   }
 
@@ -159,7 +250,7 @@ function buildCompletedWord({
   let replacementIndex = 0;
 
   for (const character of selectedCharacters) {
-    if (WILDS.has(character)) {
+    if (WILDCARDS.has(character)) {
       completedCharacters.push(
         replacementCharacters[replacementIndex]
       );
@@ -173,20 +264,31 @@ function buildCompletedWord({
   return {
     ok: true,
     word: completedCharacters.join(""),
-    selectedText: selectedCharacters.join(""),
+    pattern: selectedCharacters.join(""),
     wildcardCount,
   };
 }
 
 
+/* ==================================================
+   重力
+================================================== */
+
 function applyGravity(board) {
   for (let col = 0; col < COLS; col += 1) {
     const remainingCharacters = [];
 
-    for (let row = ROWS - 1; row >= 0; row -= 1) {
+    for (
+      let row = ROWS - 1;
+      row >= 0;
+      row -= 1
+    ) {
       const character = board[row][col];
 
-      if (character !== EMPTY) {
+      if (
+        character !== "" &&
+        character !== EMPTY
+      ) {
         remainingCharacters.push(character);
       }
     }
@@ -210,7 +312,7 @@ function remainingCells(board) {
 
   for (const row of board) {
     for (const cell of row) {
-      if (cell !== EMPTY) {
+      if (cell !== "" && cell !== EMPTY) {
         count += 1;
       }
     }
@@ -220,21 +322,40 @@ function remainingCells(board) {
 }
 
 
+/* ==================================================
+   正誤判定
+================================================== */
+
 function validateAndApply({
   board,
   path,
-  fText,
+  fText = "",
   usedWords,
   isCountry,
 }) {
-  if (!Array.isArray(board) || board.length !== ROWS) {
+  if (!validateBoard(board)) {
     return {
       ok: false,
       error: "サーバー側の盤面情報が不正です",
     };
   }
 
+  if (!(usedWords instanceof Set)) {
+    return {
+      ok: false,
+      error: "使用済み単語情報が不正です",
+    };
+  }
+
+  if (typeof isCountry !== "function") {
+    return {
+      ok: false,
+      error: "国名判定処理が設定されていません",
+    };
+  }
+
   const normalizedPath = normalizePath(path);
+
   const pathError = validatePath(normalizedPath);
 
   if (pathError) {
@@ -244,9 +365,15 @@ function validateAndApply({
     };
   }
 
+  /*
+   * 選択操作の方向に関係なく読み順を統一します。
+   */
+  const readingPath =
+    sortPathInReadingOrder(normalizedPath);
+
   const wordResult = buildCompletedWord({
     board,
-    path: normalizedPath,
+    path: readingPath,
     fText,
   });
 
@@ -256,12 +383,25 @@ function validateAndApply({
 
   const completedWord = wordResult.word;
 
+  if (
+    toCharacters(completedWord).length !==
+    readingPath.length
+  ) {
+    return {
+      ok: false,
+      error:
+        "完成した国名の文字数を確認できませんでした",
+      completedWord,
+    };
+  }
+
   if (!isCountry(completedWord)) {
     return {
       ok: false,
       error:
         `「${completedWord}」は国名リストにありません`,
       completedWord,
+      pattern: wordResult.pattern,
     };
   }
 
@@ -274,7 +414,7 @@ function validateAndApply({
     };
   }
 
-  for (const [row, col] of normalizedPath) {
+  for (const [row, col] of readingPath) {
     board[row][col] = EMPTY;
   }
 
@@ -286,10 +426,11 @@ function validateAndApply({
   return {
     ok: true,
     word: completedWord,
+    pattern: wordResult.pattern,
+    wildcardCount: wordResult.wildcardCount,
     board,
     remaining,
     cleared: remaining === 0,
-    wildcardCount: wordResult.wildcardCount,
   };
 }
 
@@ -297,5 +438,6 @@ function validateAndApply({
 module.exports = {
   validateAndApply,
   remainingCells,
-  countWildcards,
+  applyGravity,
+  sortPathInReadingOrder,
 };
