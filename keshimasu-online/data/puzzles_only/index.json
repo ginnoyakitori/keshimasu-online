@@ -1,0 +1,2978 @@
+{
+  "format": "keshimasu-puzzles-only-index-v1",
+  "exportedAt": "2026-06-12T06:29:32.051Z",
+  "inputRoot": "data/training/selfplay",
+  "outputRoot": "data/puzzles_only",
+  "league": "all",
+  "count": 328,
+  "skipped": 0,
+  "byF": {
+    "f0": {
+      "count": 102
+    },
+    "f1": {
+      "count": 57
+    },
+    "f2": {
+      "count": 104
+    },
+    "f3": {
+      "count": 65
+    }
+  },
+  "puzzles": [
+    {
+      "id": "epoch-000000-2026-06-11T02-38-14-758Z",
+      "league": "f0",
+      "targetWildcards": 0,
+      "board": "data/puzzles_only/f0/epoch-000000-2026-06-11T02-38-14-758Z.puzzle.json",
+      "moveCount": 10,
+      "score": 381,
+      "sourceReplay": "data/training/selfplay/f0/epoch-000000-2026-06-11T02-38-14-758Z.json"
+    },
+    {
+      "id": "epoch-000000-2026-06-11T08-41-31-290Z",
+      "league": "f0",
+      "targetWildcards": 0,
+      "board": "data/puzzles_only/f0/epoch-000000-2026-06-11T08-41-31-290Z.puzzle.json",
+      "moveCount": 10,
+      "score": 212,
+      "sourceReplay": "data/training/selfplay/f0/epoch-000000-2026-06-11T08-41-31-290Z.json"
+    },
+    {
+      "id": "epoch-000000-2026-06-11T09-48-00-423Z",
+      "league": "f0",
+      "targetWildcards": 0,
+      "board": "data/puzzles_only/f0/epoch-000000-2026-06-11T09-48-00-423Z.puzzle.json",
+      "moveCount": 10,
+      "score": 302,
+      "sourceReplay": "data/training/selfplay/f0/epoch-000000-2026-06-11T09-48-00-423Z.json"
+    },
+    {
+      "id": "epoch-000000-2026-06-12T03-15-38-909Z",
+      "league": "f0",
+      "targetWildcards": 0,
+      "board": "data/puzzles_only/f0/epoch-000000-2026-06-12T03-15-38-909Z.puzzle.json",
+      "moveCount": 9,
+      "score": 170,
+      "sourceReplay": "data/training/selfplay/f0/epoch-000000-2026-06-12T03-15-38-909Z.json"
+    },
+    {
+      "id": "epoch-000001-2026-06-11T02-38-24-913Z",
+      "league": "f0",
+      "targetWildcards": 0,
+      "board": "data/puzzles_only/f0/epoch-000001-2026-06-11T02-38-24-913Z.puzzle.json",
+      "moveCount": 9,
+      "score": 4058,
+      "sourceReplay": "data/training/selfplay/f0/epoch-000001-2026-06-11T02-38-24-913Z.json"
+    },
+    {
+      "id": "epoch-000001-2026-06-11T06-19-16-440Z",
+      "league": "f0",
+      "targetWildcards": 0,
+      "board": "data/puzzles_only/f0/epoch-000001-2026-06-11T06-19-16-440Z.puzzle.json",
+      "moveCount": 10,
+      "score": 1717,
+      "sourceReplay": "data/training/selfplay/f0/epoch-000001-2026-06-11T06-19-16-440Z.json"
+    },
+    {
+      "id": "epoch-000001-2026-06-11T08-42-00-488Z",
+      "league": "f0",
+      "targetWildcards": 0,
+      "board": "data/puzzles_only/f0/epoch-000001-2026-06-11T08-42-00-488Z.puzzle.json",
+      "moveCount": 9,
+      "score": 180,
+      "sourceReplay": "data/training/selfplay/f0/epoch-000001-2026-06-11T08-42-00-488Z.json"
+    },
+    {
+      "id": "epoch-000001-2026-06-11T09-48-12-061Z",
+      "league": "f0",
+      "targetWildcards": 0,
+      "board": "data/puzzles_only/f0/epoch-000001-2026-06-11T09-48-12-061Z.puzzle.json",
+      "moveCount": 10,
+      "score": 267,
+      "sourceReplay": "data/training/selfplay/f0/epoch-000001-2026-06-11T09-48-12-061Z.json"
+    },
+    {
+      "id": "epoch-000002-2026-06-11T06-19-29-919Z",
+      "league": "f0",
+      "targetWildcards": 0,
+      "board": "data/puzzles_only/f0/epoch-000002-2026-06-11T06-19-29-919Z.puzzle.json",
+      "moveCount": 10,
+      "score": 292,
+      "sourceReplay": "data/training/selfplay/f0/epoch-000002-2026-06-11T06-19-29-919Z.json"
+    },
+    {
+      "id": "epoch-000002-2026-06-11T08-42-11-797Z",
+      "league": "f0",
+      "targetWildcards": 0,
+      "board": "data/puzzles_only/f0/epoch-000002-2026-06-11T08-42-11-797Z.puzzle.json",
+      "moveCount": 9,
+      "score": 305,
+      "sourceReplay": "data/training/selfplay/f0/epoch-000002-2026-06-11T08-42-11-797Z.json"
+    },
+    {
+      "id": "epoch-000002-2026-06-12T03-16-06-694Z",
+      "league": "f0",
+      "targetWildcards": 0,
+      "board": "data/puzzles_only/f0/epoch-000002-2026-06-12T03-16-06-694Z.puzzle.json",
+      "moveCount": 9,
+      "score": 295,
+      "sourceReplay": "data/training/selfplay/f0/epoch-000002-2026-06-12T03-16-06-694Z.json"
+    },
+    {
+      "id": "epoch-000003-2026-06-11T08-42-23-786Z",
+      "league": "f0",
+      "targetWildcards": 0,
+      "board": "data/puzzles_only/f0/epoch-000003-2026-06-11T08-42-23-786Z.puzzle.json",
+      "moveCount": 8,
+      "score": 158,
+      "sourceReplay": "data/training/selfplay/f0/epoch-000003-2026-06-11T08-42-23-786Z.json"
+    },
+    {
+      "id": "epoch-000004-2026-06-11T02-39-32-283Z",
+      "league": "f0",
+      "targetWildcards": 0,
+      "board": "data/puzzles_only/f0/epoch-000004-2026-06-11T02-39-32-283Z.puzzle.json",
+      "moveCount": 9,
+      "score": 260,
+      "sourceReplay": "data/training/selfplay/f0/epoch-000004-2026-06-11T02-39-32-283Z.json"
+    },
+    {
+      "id": "epoch-000004-2026-06-11T08-42-35-435Z",
+      "league": "f0",
+      "targetWildcards": 0,
+      "board": "data/puzzles_only/f0/epoch-000004-2026-06-11T08-42-35-435Z.puzzle.json",
+      "moveCount": 9,
+      "score": 8058,
+      "sourceReplay": "data/training/selfplay/f0/epoch-000004-2026-06-11T08-42-35-435Z.json"
+    },
+    {
+      "id": "epoch-000004-2026-06-11T09-48-49-752Z",
+      "league": "f0",
+      "targetWildcards": 0,
+      "board": "data/puzzles_only/f0/epoch-000004-2026-06-11T09-48-49-752Z.puzzle.json",
+      "moveCount": 9,
+      "score": 270,
+      "sourceReplay": "data/training/selfplay/f0/epoch-000004-2026-06-11T09-48-49-752Z.json"
+    },
+    {
+      "id": "epoch-000005-2026-06-11T02-39-42-512Z",
+      "league": "f0",
+      "targetWildcards": 0,
+      "board": "data/puzzles_only/f0/epoch-000005-2026-06-11T02-39-42-512Z.puzzle.json",
+      "moveCount": 9,
+      "score": 260,
+      "sourceReplay": "data/training/selfplay/f0/epoch-000005-2026-06-11T02-39-42-512Z.json"
+    },
+    {
+      "id": "epoch-000005-2026-06-11T06-21-01-039Z",
+      "league": "f0",
+      "targetWildcards": 0,
+      "board": "data/puzzles_only/f0/epoch-000005-2026-06-11T06-21-01-039Z.puzzle.json",
+      "moveCount": 9,
+      "score": 260,
+      "sourceReplay": "data/training/selfplay/f0/epoch-000005-2026-06-11T06-21-01-039Z.json"
+    },
+    {
+      "id": "epoch-000005-2026-06-11T08-42-46-155Z",
+      "league": "f0",
+      "targetWildcards": 0,
+      "board": "data/puzzles_only/f0/epoch-000005-2026-06-11T08-42-46-155Z.puzzle.json",
+      "moveCount": 9,
+      "score": 215,
+      "sourceReplay": "data/training/selfplay/f0/epoch-000005-2026-06-11T08-42-46-155Z.json"
+    },
+    {
+      "id": "epoch-000005-2026-06-11T09-49-02-053Z",
+      "league": "f0",
+      "targetWildcards": 0,
+      "board": "data/puzzles_only/f0/epoch-000005-2026-06-11T09-49-02-053Z.puzzle.json",
+      "moveCount": 8,
+      "score": 273,
+      "sourceReplay": "data/training/selfplay/f0/epoch-000005-2026-06-11T09-49-02-053Z.json"
+    },
+    {
+      "id": "epoch-000006-2026-06-11T02-39-57-449Z",
+      "league": "f0",
+      "targetWildcards": 0,
+      "board": "data/puzzles_only/f0/epoch-000006-2026-06-11T02-39-57-449Z.puzzle.json",
+      "moveCount": 9,
+      "score": 260,
+      "sourceReplay": "data/training/selfplay/f0/epoch-000006-2026-06-11T02-39-57-449Z.json"
+    },
+    {
+      "id": "epoch-000006-2026-06-11T06-21-17-115Z",
+      "league": "f0",
+      "targetWildcards": 0,
+      "board": "data/puzzles_only/f0/epoch-000006-2026-06-11T06-21-17-115Z.puzzle.json",
+      "moveCount": 9,
+      "score": 180,
+      "sourceReplay": "data/training/selfplay/f0/epoch-000006-2026-06-11T06-21-17-115Z.json"
+    },
+    {
+      "id": "epoch-000006-2026-06-11T08-42-56-285Z",
+      "league": "f0",
+      "targetWildcards": 0,
+      "board": "data/puzzles_only/f0/epoch-000006-2026-06-11T08-42-56-285Z.puzzle.json",
+      "moveCount": 10,
+      "score": 302,
+      "sourceReplay": "data/training/selfplay/f0/epoch-000006-2026-06-11T08-42-56-285Z.json"
+    },
+    {
+      "id": "epoch-000006-2026-06-11T09-49-12-304Z",
+      "league": "f0",
+      "targetWildcards": 0,
+      "board": "data/puzzles_only/f0/epoch-000006-2026-06-11T09-49-12-304Z.puzzle.json",
+      "moveCount": 9,
+      "score": 190,
+      "sourceReplay": "data/training/selfplay/f0/epoch-000006-2026-06-11T09-49-12-304Z.json"
+    },
+    {
+      "id": "epoch-000007-2026-06-11T02-40-19-123Z",
+      "league": "f0",
+      "targetWildcards": 0,
+      "board": "data/puzzles_only/f0/epoch-000007-2026-06-11T02-40-19-123Z.puzzle.json",
+      "moveCount": 9,
+      "score": 180,
+      "sourceReplay": "data/training/selfplay/f0/epoch-000007-2026-06-11T02-40-19-123Z.json"
+    },
+    {
+      "id": "epoch-000007-2026-06-11T06-21-39-425Z",
+      "league": "f0",
+      "targetWildcards": 0,
+      "board": "data/puzzles_only/f0/epoch-000007-2026-06-11T06-21-39-425Z.puzzle.json",
+      "moveCount": 9,
+      "score": 305,
+      "sourceReplay": "data/training/selfplay/f0/epoch-000007-2026-06-11T06-21-39-425Z.json"
+    },
+    {
+      "id": "epoch-000007-2026-06-11T09-49-23-532Z",
+      "league": "f0",
+      "targetWildcards": 0,
+      "board": "data/puzzles_only/f0/epoch-000007-2026-06-11T09-49-23-532Z.puzzle.json",
+      "moveCount": 10,
+      "score": 292,
+      "sourceReplay": "data/training/selfplay/f0/epoch-000007-2026-06-11T09-49-23-532Z.json"
+    },
+    {
+      "id": "epoch-000008-2026-06-11T02-40-30-429Z",
+      "league": "f0",
+      "targetWildcards": 0,
+      "board": "data/puzzles_only/f0/epoch-000008-2026-06-11T02-40-30-429Z.puzzle.json",
+      "moveCount": 9,
+      "score": 260,
+      "sourceReplay": "data/training/selfplay/f0/epoch-000008-2026-06-11T02-40-30-429Z.json"
+    },
+    {
+      "id": "epoch-000008-2026-06-11T08-43-31-427Z",
+      "league": "f0",
+      "targetWildcards": 0,
+      "board": "data/puzzles_only/f0/epoch-000008-2026-06-11T08-43-31-427Z.puzzle.json",
+      "moveCount": 9,
+      "score": 170,
+      "sourceReplay": "data/training/selfplay/f0/epoch-000008-2026-06-11T08-43-31-427Z.json"
+    },
+    {
+      "id": "epoch-000008-2026-06-11T09-49-50-113Z",
+      "league": "f0",
+      "targetWildcards": 0,
+      "board": "data/puzzles_only/f0/epoch-000008-2026-06-11T09-49-50-113Z.puzzle.json",
+      "moveCount": 10,
+      "score": 337,
+      "sourceReplay": "data/training/selfplay/f0/epoch-000008-2026-06-11T09-49-50-113Z.json"
+    },
+    {
+      "id": "epoch-000009-2026-06-11T02-40-42-525Z",
+      "league": "f0",
+      "targetWildcards": 0,
+      "board": "data/puzzles_only/f0/epoch-000009-2026-06-11T02-40-42-525Z.puzzle.json",
+      "moveCount": 10,
+      "score": 605,
+      "sourceReplay": "data/training/selfplay/f0/epoch-000009-2026-06-11T02-40-42-525Z.json"
+    },
+    {
+      "id": "epoch-000009-2026-06-11T06-22-21-516Z",
+      "league": "f0",
+      "targetWildcards": 0,
+      "board": "data/puzzles_only/f0/epoch-000009-2026-06-11T06-22-21-516Z.puzzle.json",
+      "moveCount": 9,
+      "score": 180,
+      "sourceReplay": "data/training/selfplay/f0/epoch-000009-2026-06-11T06-22-21-516Z.json"
+    },
+    {
+      "id": "epoch-000010-2026-06-11T02-40-54-058Z",
+      "league": "f0",
+      "targetWildcards": 0,
+      "board": "data/puzzles_only/f0/epoch-000010-2026-06-11T02-40-54-058Z.puzzle.json",
+      "moveCount": 9,
+      "score": 180,
+      "sourceReplay": "data/training/selfplay/f0/epoch-000010-2026-06-11T02-40-54-058Z.json"
+    },
+    {
+      "id": "epoch-000010-2026-06-11T08-44-00-375Z",
+      "league": "f0",
+      "targetWildcards": 0,
+      "board": "data/puzzles_only/f0/epoch-000010-2026-06-11T08-44-00-375Z.puzzle.json",
+      "moveCount": 9,
+      "score": 180,
+      "sourceReplay": "data/training/selfplay/f0/epoch-000010-2026-06-11T08-44-00-375Z.json"
+    },
+    {
+      "id": "epoch-000010-2026-06-11T09-50-18-294Z",
+      "league": "f0",
+      "targetWildcards": 0,
+      "board": "data/puzzles_only/f0/epoch-000010-2026-06-11T09-50-18-294Z.puzzle.json",
+      "moveCount": 9,
+      "score": 170,
+      "sourceReplay": "data/training/selfplay/f0/epoch-000010-2026-06-11T09-50-18-294Z.json"
+    },
+    {
+      "id": "epoch-000011-2026-06-11T02-41-49-058Z",
+      "league": "f0",
+      "targetWildcards": 0,
+      "board": "data/puzzles_only/f0/epoch-000011-2026-06-11T02-41-49-058Z.puzzle.json",
+      "moveCount": 8,
+      "score": 78,
+      "sourceReplay": "data/training/selfplay/f0/epoch-000011-2026-06-11T02-41-49-058Z.json"
+    },
+    {
+      "id": "epoch-000011-2026-06-11T06-22-50-703Z",
+      "league": "f0",
+      "targetWildcards": 0,
+      "board": "data/puzzles_only/f0/epoch-000011-2026-06-11T06-22-50-703Z.puzzle.json",
+      "moveCount": 9,
+      "score": 270,
+      "sourceReplay": "data/training/selfplay/f0/epoch-000011-2026-06-11T06-22-50-703Z.json"
+    },
+    {
+      "id": "epoch-000012-2026-06-11T02-42-45-907Z",
+      "league": "f0",
+      "targetWildcards": 0,
+      "board": "data/puzzles_only/f0/epoch-000012-2026-06-11T02-42-45-907Z.puzzle.json",
+      "moveCount": 10,
+      "score": 257,
+      "sourceReplay": "data/training/selfplay/f0/epoch-000012-2026-06-11T02-42-45-907Z.json"
+    },
+    {
+      "id": "epoch-000012-2026-06-11T06-23-08-828Z",
+      "league": "f0",
+      "targetWildcards": 0,
+      "board": "data/puzzles_only/f0/epoch-000012-2026-06-11T06-23-08-828Z.puzzle.json",
+      "moveCount": 9,
+      "score": 270,
+      "sourceReplay": "data/training/selfplay/f0/epoch-000012-2026-06-11T06-23-08-828Z.json"
+    },
+    {
+      "id": "epoch-000012-2026-06-11T08-44-22-066Z",
+      "league": "f0",
+      "targetWildcards": 0,
+      "board": "data/puzzles_only/f0/epoch-000012-2026-06-11T08-44-22-066Z.puzzle.json",
+      "moveCount": 9,
+      "score": 305,
+      "sourceReplay": "data/training/selfplay/f0/epoch-000012-2026-06-11T08-44-22-066Z.json"
+    },
+    {
+      "id": "epoch-000012-2026-06-11T09-50-42-328Z",
+      "league": "f0",
+      "targetWildcards": 0,
+      "board": "data/puzzles_only/f0/epoch-000012-2026-06-11T09-50-42-328Z.puzzle.json",
+      "moveCount": 9,
+      "score": 145,
+      "sourceReplay": "data/training/selfplay/f0/epoch-000012-2026-06-11T09-50-42-328Z.json"
+    },
+    {
+      "id": "epoch-000013-2026-06-11T02-42-57-794Z",
+      "league": "f0",
+      "targetWildcards": 0,
+      "board": "data/puzzles_only/f0/epoch-000013-2026-06-11T02-42-57-794Z.puzzle.json",
+      "moveCount": 9,
+      "score": 245,
+      "sourceReplay": "data/training/selfplay/f0/epoch-000013-2026-06-11T02-42-57-794Z.json"
+    },
+    {
+      "id": "epoch-000013-2026-06-11T06-23-21-256Z",
+      "league": "f0",
+      "targetWildcards": 0,
+      "board": "data/puzzles_only/f0/epoch-000013-2026-06-11T06-23-21-256Z.puzzle.json",
+      "moveCount": 9,
+      "score": 295,
+      "sourceReplay": "data/training/selfplay/f0/epoch-000013-2026-06-11T06-23-21-256Z.json"
+    },
+    {
+      "id": "epoch-000013-2026-06-11T09-50-54-478Z",
+      "league": "f0",
+      "targetWildcards": 0,
+      "board": "data/puzzles_only/f0/epoch-000013-2026-06-11T09-50-54-478Z.puzzle.json",
+      "moveCount": 10,
+      "score": 756,
+      "sourceReplay": "data/training/selfplay/f0/epoch-000013-2026-06-11T09-50-54-478Z.json"
+    },
+    {
+      "id": "epoch-000014-2026-06-11T02-43-19-118Z",
+      "league": "f0",
+      "targetWildcards": 0,
+      "board": "data/puzzles_only/f0/epoch-000014-2026-06-11T02-43-19-118Z.puzzle.json",
+      "moveCount": 9,
+      "score": 225,
+      "sourceReplay": "data/training/selfplay/f0/epoch-000014-2026-06-11T02-43-19-118Z.json"
+    },
+    {
+      "id": "epoch-000014-2026-06-11T06-23-32-426Z",
+      "league": "f0",
+      "targetWildcards": 0,
+      "board": "data/puzzles_only/f0/epoch-000014-2026-06-11T06-23-32-426Z.puzzle.json",
+      "moveCount": 9,
+      "score": 401,
+      "sourceReplay": "data/training/selfplay/f0/epoch-000014-2026-06-11T06-23-32-426Z.json"
+    },
+    {
+      "id": "epoch-000014-2026-06-11T08-44-46-308Z",
+      "league": "f0",
+      "targetWildcards": 0,
+      "board": "data/puzzles_only/f0/epoch-000014-2026-06-11T08-44-46-308Z.puzzle.json",
+      "moveCount": 10,
+      "score": 316,
+      "sourceReplay": "data/training/selfplay/f0/epoch-000014-2026-06-11T08-44-46-308Z.json"
+    },
+    {
+      "id": "epoch-000014-2026-06-11T09-51-04-803Z",
+      "league": "f0",
+      "targetWildcards": 0,
+      "board": "data/puzzles_only/f0/epoch-000014-2026-06-11T09-51-04-803Z.puzzle.json",
+      "moveCount": 9,
+      "score": 235,
+      "sourceReplay": "data/training/selfplay/f0/epoch-000014-2026-06-11T09-51-04-803Z.json"
+    },
+    {
+      "id": "epoch-000015-2026-06-11T02-44-06-688Z",
+      "league": "f0",
+      "targetWildcards": 0,
+      "board": "data/puzzles_only/f0/epoch-000015-2026-06-11T02-44-06-688Z.puzzle.json",
+      "moveCount": 10,
+      "score": 317,
+      "sourceReplay": "data/training/selfplay/f0/epoch-000015-2026-06-11T02-44-06-688Z.json"
+    },
+    {
+      "id": "epoch-000015-2026-06-11T06-24-04-145Z",
+      "league": "f0",
+      "targetWildcards": 0,
+      "board": "data/puzzles_only/f0/epoch-000015-2026-06-11T06-24-04-145Z.puzzle.json",
+      "moveCount": 9,
+      "score": 304,
+      "sourceReplay": "data/training/selfplay/f0/epoch-000015-2026-06-11T06-24-04-145Z.json"
+    },
+    {
+      "id": "epoch-000015-2026-06-11T08-44-56-573Z",
+      "league": "f0",
+      "targetWildcards": 0,
+      "board": "data/puzzles_only/f0/epoch-000015-2026-06-11T08-44-56-573Z.puzzle.json",
+      "moveCount": 9,
+      "score": 322,
+      "sourceReplay": "data/training/selfplay/f0/epoch-000015-2026-06-11T08-44-56-573Z.json"
+    },
+    {
+      "id": "epoch-000015-2026-06-11T09-51-15-589Z",
+      "league": "f0",
+      "targetWildcards": 0,
+      "board": "data/puzzles_only/f0/epoch-000015-2026-06-11T09-51-15-589Z.puzzle.json",
+      "moveCount": 9,
+      "score": 315,
+      "sourceReplay": "data/training/selfplay/f0/epoch-000015-2026-06-11T09-51-15-589Z.json"
+    },
+    {
+      "id": "epoch-000016-2026-06-11T02-44-18-524Z",
+      "league": "f0",
+      "targetWildcards": 0,
+      "board": "data/puzzles_only/f0/epoch-000016-2026-06-11T02-44-18-524Z.puzzle.json",
+      "moveCount": 8,
+      "score": 158,
+      "sourceReplay": "data/training/selfplay/f0/epoch-000016-2026-06-11T02-44-18-524Z.json"
+    },
+    {
+      "id": "epoch-000016-2026-06-11T06-24-15-924Z",
+      "league": "f0",
+      "targetWildcards": 0,
+      "board": "data/puzzles_only/f0/epoch-000016-2026-06-11T06-24-15-924Z.puzzle.json",
+      "moveCount": 10,
+      "score": 7031,
+      "sourceReplay": "data/training/selfplay/f0/epoch-000016-2026-06-11T06-24-15-924Z.json"
+    },
+    {
+      "id": "epoch-000016-2026-06-11T08-45-06-960Z",
+      "league": "f0",
+      "targetWildcards": 0,
+      "board": "data/puzzles_only/f0/epoch-000016-2026-06-11T08-45-06-960Z.puzzle.json",
+      "moveCount": 9,
+      "score": 145,
+      "sourceReplay": "data/training/selfplay/f0/epoch-000016-2026-06-11T08-45-06-960Z.json"
+    },
+    {
+      "id": "epoch-000016-2026-06-11T09-51-25-958Z",
+      "league": "f0",
+      "targetWildcards": 0,
+      "board": "data/puzzles_only/f0/epoch-000016-2026-06-11T09-51-25-958Z.puzzle.json",
+      "moveCount": 10,
+      "score": 457,
+      "sourceReplay": "data/training/selfplay/f0/epoch-000016-2026-06-11T09-51-25-958Z.json"
+    },
+    {
+      "id": "epoch-000017-2026-06-11T02-44-34-140Z",
+      "league": "f0",
+      "targetWildcards": 0,
+      "board": "data/puzzles_only/f0/epoch-000017-2026-06-11T02-44-34-140Z.puzzle.json",
+      "moveCount": 9,
+      "score": 295,
+      "sourceReplay": "data/training/selfplay/f0/epoch-000017-2026-06-11T02-44-34-140Z.json"
+    },
+    {
+      "id": "epoch-000017-2026-06-11T09-51-52-314Z",
+      "league": "f0",
+      "targetWildcards": 0,
+      "board": "data/puzzles_only/f0/epoch-000017-2026-06-11T09-51-52-314Z.puzzle.json",
+      "moveCount": 9,
+      "score": 294,
+      "sourceReplay": "data/training/selfplay/f0/epoch-000017-2026-06-11T09-51-52-314Z.json"
+    },
+    {
+      "id": "epoch-000018-2026-06-11T06-24-42-814Z",
+      "league": "f0",
+      "targetWildcards": 0,
+      "board": "data/puzzles_only/f0/epoch-000018-2026-06-11T06-24-42-814Z.puzzle.json",
+      "moveCount": 10,
+      "score": 1673,
+      "sourceReplay": "data/training/selfplay/f0/epoch-000018-2026-06-11T06-24-42-814Z.json"
+    },
+    {
+      "id": "epoch-000019-2026-06-11T08-46-20-846Z",
+      "league": "f0",
+      "targetWildcards": 0,
+      "board": "data/puzzles_only/f0/epoch-000019-2026-06-11T08-46-20-846Z.puzzle.json",
+      "moveCount": 9,
+      "score": 695,
+      "sourceReplay": "data/training/selfplay/f0/epoch-000019-2026-06-11T08-46-20-846Z.json"
+    },
+    {
+      "id": "epoch-000019-2026-06-11T09-52-20-270Z",
+      "league": "f0",
+      "targetWildcards": 0,
+      "board": "data/puzzles_only/f0/epoch-000019-2026-06-11T09-52-20-270Z.puzzle.json",
+      "moveCount": 9,
+      "score": 242,
+      "sourceReplay": "data/training/selfplay/f0/epoch-000019-2026-06-11T09-52-20-270Z.json"
+    },
+    {
+      "id": "epoch-000020-2026-06-11T08-46-35-179Z",
+      "league": "f0",
+      "targetWildcards": 0,
+      "board": "data/puzzles_only/f0/epoch-000020-2026-06-11T08-46-35-179Z.puzzle.json",
+      "moveCount": 10,
+      "score": 327,
+      "sourceReplay": "data/training/selfplay/f0/epoch-000020-2026-06-11T08-46-35-179Z.json"
+    },
+    {
+      "id": "epoch-000020-2026-06-11T09-52-31-497Z",
+      "league": "f0",
+      "targetWildcards": 0,
+      "board": "data/puzzles_only/f0/epoch-000020-2026-06-11T09-52-31-497Z.puzzle.json",
+      "moveCount": 9,
+      "score": 180,
+      "sourceReplay": "data/training/selfplay/f0/epoch-000020-2026-06-11T09-52-31-497Z.json"
+    },
+    {
+      "id": "epoch-000021-2026-06-11T09-52-42-188Z",
+      "league": "f0",
+      "targetWildcards": 0,
+      "board": "data/puzzles_only/f0/epoch-000021-2026-06-11T09-52-42-188Z.puzzle.json",
+      "moveCount": 8,
+      "score": 158,
+      "sourceReplay": "data/training/selfplay/f0/epoch-000021-2026-06-11T09-52-42-188Z.json"
+    },
+    {
+      "id": "epoch-000022-2026-06-11T08-46-57-867Z",
+      "league": "f0",
+      "targetWildcards": 0,
+      "board": "data/puzzles_only/f0/epoch-000022-2026-06-11T08-46-57-867Z.puzzle.json",
+      "moveCount": 9,
+      "score": 371,
+      "sourceReplay": "data/training/selfplay/f0/epoch-000022-2026-06-11T08-46-57-867Z.json"
+    },
+    {
+      "id": "epoch-000022-2026-06-11T09-52-52-692Z",
+      "league": "f0",
+      "targetWildcards": 0,
+      "board": "data/puzzles_only/f0/epoch-000022-2026-06-11T09-52-52-692Z.puzzle.json",
+      "moveCount": 9,
+      "score": 2163,
+      "sourceReplay": "data/training/selfplay/f0/epoch-000022-2026-06-11T09-52-52-692Z.json"
+    },
+    {
+      "id": "epoch-000023-2026-06-11T08-47-25-371Z",
+      "league": "f0",
+      "targetWildcards": 0,
+      "board": "data/puzzles_only/f0/epoch-000023-2026-06-11T08-47-25-371Z.puzzle.json",
+      "moveCount": 10,
+      "score": 302,
+      "sourceReplay": "data/training/selfplay/f0/epoch-000023-2026-06-11T08-47-25-371Z.json"
+    },
+    {
+      "id": "epoch-000024-2026-06-11T09-53-38-223Z",
+      "league": "f0",
+      "targetWildcards": 0,
+      "board": "data/puzzles_only/f0/epoch-000024-2026-06-11T09-53-38-223Z.puzzle.json",
+      "moveCount": 8,
+      "score": 283,
+      "sourceReplay": "data/training/selfplay/f0/epoch-000024-2026-06-11T09-53-38-223Z.json"
+    },
+    {
+      "id": "epoch-000025-2026-06-11T08-47-46-284Z",
+      "league": "f0",
+      "targetWildcards": 0,
+      "board": "data/puzzles_only/f0/epoch-000025-2026-06-11T08-47-46-284Z.puzzle.json",
+      "moveCount": 10,
+      "score": 441,
+      "sourceReplay": "data/training/selfplay/f0/epoch-000025-2026-06-11T08-47-46-284Z.json"
+    },
+    {
+      "id": "epoch-000026-2026-06-11T08-47-56-324Z",
+      "league": "f0",
+      "targetWildcards": 0,
+      "board": "data/puzzles_only/f0/epoch-000026-2026-06-11T08-47-56-324Z.puzzle.json",
+      "moveCount": 9,
+      "score": 215,
+      "sourceReplay": "data/training/selfplay/f0/epoch-000026-2026-06-11T08-47-56-324Z.json"
+    },
+    {
+      "id": "epoch-000026-2026-06-11T09-54-06-848Z",
+      "league": "f0",
+      "targetWildcards": 0,
+      "board": "data/puzzles_only/f0/epoch-000026-2026-06-11T09-54-06-848Z.puzzle.json",
+      "moveCount": 9,
+      "score": 295,
+      "sourceReplay": "data/training/selfplay/f0/epoch-000026-2026-06-11T09-54-06-848Z.json"
+    },
+    {
+      "id": "epoch-000027-2026-06-11T08-48-07-049Z",
+      "league": "f0",
+      "targetWildcards": 0,
+      "board": "data/puzzles_only/f0/epoch-000027-2026-06-11T08-48-07-049Z.puzzle.json",
+      "moveCount": 9,
+      "score": 235,
+      "sourceReplay": "data/training/selfplay/f0/epoch-000027-2026-06-11T08-48-07-049Z.json"
+    },
+    {
+      "id": "epoch-000027-2026-06-11T09-54-17-230Z",
+      "league": "f0",
+      "targetWildcards": 0,
+      "board": "data/puzzles_only/f0/epoch-000027-2026-06-11T09-54-17-230Z.puzzle.json",
+      "moveCount": 9,
+      "score": 180,
+      "sourceReplay": "data/training/selfplay/f0/epoch-000027-2026-06-11T09-54-17-230Z.json"
+    },
+    {
+      "id": "epoch-000028-2026-06-11T08-48-19-838Z",
+      "league": "f0",
+      "targetWildcards": 0,
+      "board": "data/puzzles_only/f0/epoch-000028-2026-06-11T08-48-19-838Z.puzzle.json",
+      "moveCount": 9,
+      "score": 225,
+      "sourceReplay": "data/training/selfplay/f0/epoch-000028-2026-06-11T08-48-19-838Z.json"
+    },
+    {
+      "id": "epoch-000028-2026-06-11T09-54-39-899Z",
+      "league": "f0",
+      "targetWildcards": 0,
+      "board": "data/puzzles_only/f0/epoch-000028-2026-06-11T09-54-39-899Z.puzzle.json",
+      "moveCount": 10,
+      "score": 292,
+      "sourceReplay": "data/training/selfplay/f0/epoch-000028-2026-06-11T09-54-39-899Z.json"
+    },
+    {
+      "id": "epoch-000029-2026-06-11T08-48-42-623Z",
+      "league": "f0",
+      "targetWildcards": 0,
+      "board": "data/puzzles_only/f0/epoch-000029-2026-06-11T08-48-42-623Z.puzzle.json",
+      "moveCount": 9,
+      "score": 225,
+      "sourceReplay": "data/training/selfplay/f0/epoch-000029-2026-06-11T08-48-42-623Z.json"
+    },
+    {
+      "id": "epoch-000030-2026-06-11T09-55-02-630Z",
+      "league": "f0",
+      "targetWildcards": 0,
+      "board": "data/puzzles_only/f0/epoch-000030-2026-06-11T09-55-02-630Z.puzzle.json",
+      "moveCount": 10,
+      "score": 257,
+      "sourceReplay": "data/training/selfplay/f0/epoch-000030-2026-06-11T09-55-02-630Z.json"
+    },
+    {
+      "id": "epoch-000031-2026-06-11T09-55-13-788Z",
+      "league": "f0",
+      "targetWildcards": 0,
+      "board": "data/puzzles_only/f0/epoch-000031-2026-06-11T09-55-13-788Z.puzzle.json",
+      "moveCount": 10,
+      "score": 267,
+      "sourceReplay": "data/training/selfplay/f0/epoch-000031-2026-06-11T09-55-13-788Z.json"
+    },
+    {
+      "id": "epoch-000032-2026-06-11T09-55-24-655Z",
+      "league": "f0",
+      "targetWildcards": 0,
+      "board": "data/puzzles_only/f0/epoch-000032-2026-06-11T09-55-24-655Z.puzzle.json",
+      "moveCount": 9,
+      "score": 260,
+      "sourceReplay": "data/training/selfplay/f0/epoch-000032-2026-06-11T09-55-24-655Z.json"
+    },
+    {
+      "id": "epoch-000033-2026-06-11T08-49-26-720Z",
+      "league": "f0",
+      "targetWildcards": 0,
+      "board": "data/puzzles_only/f0/epoch-000033-2026-06-11T08-49-26-720Z.puzzle.json",
+      "moveCount": 10,
+      "score": 1628,
+      "sourceReplay": "data/training/selfplay/f0/epoch-000033-2026-06-11T08-49-26-720Z.json"
+    },
+    {
+      "id": "epoch-000033-2026-06-11T09-55-37-875Z",
+      "league": "f0",
+      "targetWildcards": 0,
+      "board": "data/puzzles_only/f0/epoch-000033-2026-06-11T09-55-37-875Z.puzzle.json",
+      "moveCount": 9,
+      "score": 356,
+      "sourceReplay": "data/training/selfplay/f0/epoch-000033-2026-06-11T09-55-37-875Z.json"
+    },
+    {
+      "id": "epoch-000034-2026-06-11T08-49-41-859Z",
+      "league": "f0",
+      "targetWildcards": 0,
+      "board": "data/puzzles_only/f0/epoch-000034-2026-06-11T08-49-41-859Z.puzzle.json",
+      "moveCount": 9,
+      "score": 260,
+      "sourceReplay": "data/training/selfplay/f0/epoch-000034-2026-06-11T08-49-41-859Z.json"
+    },
+    {
+      "id": "epoch-000035-2026-06-11T08-49-53-133Z",
+      "league": "f0",
+      "targetWildcards": 0,
+      "board": "data/puzzles_only/f0/epoch-000035-2026-06-11T08-49-53-133Z.puzzle.json",
+      "moveCount": 10,
+      "score": 608,
+      "sourceReplay": "data/training/selfplay/f0/epoch-000035-2026-06-11T08-49-53-133Z.json"
+    },
+    {
+      "id": "epoch-000035-2026-06-11T09-56-01-950Z",
+      "league": "f0",
+      "targetWildcards": 0,
+      "board": "data/puzzles_only/f0/epoch-000035-2026-06-11T09-56-01-950Z.puzzle.json",
+      "moveCount": 9,
+      "score": 305,
+      "sourceReplay": "data/training/selfplay/f0/epoch-000035-2026-06-11T09-56-01-950Z.json"
+    },
+    {
+      "id": "epoch-000036-2026-06-11T08-50-19-483Z",
+      "league": "f0",
+      "targetWildcards": 0,
+      "board": "data/puzzles_only/f0/epoch-000036-2026-06-11T08-50-19-483Z.puzzle.json",
+      "moveCount": 9,
+      "score": 235,
+      "sourceReplay": "data/training/selfplay/f0/epoch-000036-2026-06-11T08-50-19-483Z.json"
+    },
+    {
+      "id": "epoch-000036-2026-06-11T09-56-12-292Z",
+      "league": "f0",
+      "targetWildcards": 0,
+      "board": "data/puzzles_only/f0/epoch-000036-2026-06-11T09-56-12-292Z.puzzle.json",
+      "moveCount": 9,
+      "score": 205,
+      "sourceReplay": "data/training/selfplay/f0/epoch-000036-2026-06-11T09-56-12-292Z.json"
+    },
+    {
+      "id": "epoch-000037-2026-06-11T08-50-47-414Z",
+      "league": "f0",
+      "targetWildcards": 0,
+      "board": "data/puzzles_only/f0/epoch-000037-2026-06-11T08-50-47-414Z.puzzle.json",
+      "moveCount": 9,
+      "score": 295,
+      "sourceReplay": "data/training/selfplay/f0/epoch-000037-2026-06-11T08-50-47-414Z.json"
+    },
+    {
+      "id": "epoch-000037-2026-06-11T09-56-23-580Z",
+      "league": "f0",
+      "targetWildcards": 0,
+      "board": "data/puzzles_only/f0/epoch-000037-2026-06-11T09-56-23-580Z.puzzle.json",
+      "moveCount": 9,
+      "score": 155,
+      "sourceReplay": "data/training/selfplay/f0/epoch-000037-2026-06-11T09-56-23-580Z.json"
+    },
+    {
+      "id": "epoch-000038-2026-06-11T08-51-13-326Z",
+      "league": "f0",
+      "targetWildcards": 0,
+      "board": "data/puzzles_only/f0/epoch-000038-2026-06-11T08-51-13-326Z.puzzle.json",
+      "moveCount": 10,
+      "score": 187,
+      "sourceReplay": "data/training/selfplay/f0/epoch-000038-2026-06-11T08-51-13-326Z.json"
+    },
+    {
+      "id": "epoch-000039-2026-06-11T08-51-25-089Z",
+      "league": "f0",
+      "targetWildcards": 0,
+      "board": "data/puzzles_only/f0/epoch-000039-2026-06-11T08-51-25-089Z.puzzle.json",
+      "moveCount": 10,
+      "score": 282,
+      "sourceReplay": "data/training/selfplay/f0/epoch-000039-2026-06-11T08-51-25-089Z.json"
+    },
+    {
+      "id": "epoch-000039-2026-06-11T09-57-26-486Z",
+      "league": "f0",
+      "targetWildcards": 0,
+      "board": "data/puzzles_only/f0/epoch-000039-2026-06-11T09-57-26-486Z.puzzle.json",
+      "moveCount": 8,
+      "score": 68,
+      "sourceReplay": "data/training/selfplay/f0/epoch-000039-2026-06-11T09-57-26-486Z.json"
+    },
+    {
+      "id": "epoch-000040-2026-06-11T08-51-47-094Z",
+      "league": "f0",
+      "targetWildcards": 0,
+      "board": "data/puzzles_only/f0/epoch-000040-2026-06-11T08-51-47-094Z.puzzle.json",
+      "moveCount": 9,
+      "score": 225,
+      "sourceReplay": "data/training/selfplay/f0/epoch-000040-2026-06-11T08-51-47-094Z.json"
+    },
+    {
+      "id": "epoch-000041-2026-06-11T08-52-02-542Z",
+      "league": "f0",
+      "targetWildcards": 0,
+      "board": "data/puzzles_only/f0/epoch-000041-2026-06-11T08-52-02-542Z.puzzle.json",
+      "moveCount": 9,
+      "score": 270,
+      "sourceReplay": "data/training/selfplay/f0/epoch-000041-2026-06-11T08-52-02-542Z.json"
+    },
+    {
+      "id": "epoch-000041-2026-06-11T09-57-48-179Z",
+      "league": "f0",
+      "targetWildcards": 0,
+      "board": "data/puzzles_only/f0/epoch-000041-2026-06-11T09-57-48-179Z.puzzle.json",
+      "moveCount": 9,
+      "score": 260,
+      "sourceReplay": "data/training/selfplay/f0/epoch-000041-2026-06-11T09-57-48-179Z.json"
+    },
+    {
+      "id": "epoch-000042-2026-06-11T09-57-59-061Z",
+      "league": "f0",
+      "targetWildcards": 0,
+      "board": "data/puzzles_only/f0/epoch-000042-2026-06-11T09-57-59-061Z.puzzle.json",
+      "moveCount": 10,
+      "score": 1524,
+      "sourceReplay": "data/training/selfplay/f0/epoch-000042-2026-06-11T09-57-59-061Z.json"
+    },
+    {
+      "id": "epoch-000043-2026-06-11T08-52-53-807Z",
+      "league": "f0",
+      "targetWildcards": 0,
+      "board": "data/puzzles_only/f0/epoch-000043-2026-06-11T08-52-53-807Z.puzzle.json",
+      "moveCount": 9,
+      "score": 190,
+      "sourceReplay": "data/training/selfplay/f0/epoch-000043-2026-06-11T08-52-53-807Z.json"
+    },
+    {
+      "id": "epoch-000043-2026-06-11T09-58-17-071Z",
+      "league": "f0",
+      "targetWildcards": 0,
+      "board": "data/puzzles_only/f0/epoch-000043-2026-06-11T09-58-17-071Z.puzzle.json",
+      "moveCount": 10,
+      "score": 302,
+      "sourceReplay": "data/training/selfplay/f0/epoch-000043-2026-06-11T09-58-17-071Z.json"
+    },
+    {
+      "id": "epoch-000044-2026-06-11T08-53-05-766Z",
+      "league": "f0",
+      "targetWildcards": 0,
+      "board": "data/puzzles_only/f0/epoch-000044-2026-06-11T08-53-05-766Z.puzzle.json",
+      "moveCount": 9,
+      "score": 200,
+      "sourceReplay": "data/training/selfplay/f0/epoch-000044-2026-06-11T08-53-05-766Z.json"
+    },
+    {
+      "id": "epoch-000045-2026-06-11T08-53-18-902Z",
+      "league": "f0",
+      "targetWildcards": 0,
+      "board": "data/puzzles_only/f0/epoch-000045-2026-06-11T08-53-18-902Z.puzzle.json",
+      "moveCount": 8,
+      "score": 238,
+      "sourceReplay": "data/training/selfplay/f0/epoch-000045-2026-06-11T08-53-18-902Z.json"
+    },
+    {
+      "id": "epoch-000045-2026-06-11T09-58-40-941Z",
+      "league": "f0",
+      "targetWildcards": 0,
+      "board": "data/puzzles_only/f0/epoch-000045-2026-06-11T09-58-40-941Z.puzzle.json",
+      "moveCount": 9,
+      "score": 260,
+      "sourceReplay": "data/training/selfplay/f0/epoch-000045-2026-06-11T09-58-40-941Z.json"
+    },
+    {
+      "id": "epoch-000046-2026-06-11T08-53-38-574Z",
+      "league": "f0",
+      "targetWildcards": 0,
+      "board": "data/puzzles_only/f0/epoch-000046-2026-06-11T08-53-38-574Z.puzzle.json",
+      "moveCount": 9,
+      "score": 245,
+      "sourceReplay": "data/training/selfplay/f0/epoch-000046-2026-06-11T08-53-38-574Z.json"
+    },
+    {
+      "id": "epoch-000047-2026-06-11T08-59-42-309Z",
+      "league": "f0",
+      "targetWildcards": 0,
+      "board": "data/puzzles_only/f0/epoch-000047-2026-06-11T08-59-42-309Z.puzzle.json",
+      "moveCount": 9,
+      "score": 270,
+      "sourceReplay": "data/training/selfplay/f0/epoch-000047-2026-06-11T08-59-42-309Z.json"
+    },
+    {
+      "id": "epoch-000049-2026-06-11T09-00-25-801Z",
+      "league": "f0",
+      "targetWildcards": 0,
+      "board": "data/puzzles_only/f0/epoch-000049-2026-06-11T09-00-25-801Z.puzzle.json",
+      "moveCount": 9,
+      "score": 260,
+      "sourceReplay": "data/training/selfplay/f0/epoch-000049-2026-06-11T09-00-25-801Z.json"
+    },
+    {
+      "id": "epoch-000000-2026-06-11T09-00-39-051Z",
+      "league": "f1",
+      "targetWildcards": 1,
+      "board": "data/puzzles_only/f1/epoch-000000-2026-06-11T09-00-39-051Z.puzzle.json",
+      "moveCount": 10,
+      "score": 5226,
+      "sourceReplay": "data/training/selfplay/f1/epoch-000000-2026-06-11T09-00-39-051Z.json"
+    },
+    {
+      "id": "epoch-000000-2026-06-12T04-05-59-007Z",
+      "league": "f1",
+      "targetWildcards": 1,
+      "board": "data/puzzles_only/f1/epoch-000000-2026-06-12T04-05-59-007Z.puzzle.json",
+      "moveCount": 8,
+      "score": 300,
+      "sourceReplay": "data/training/selfplay/f1/epoch-000000-2026-06-12T04-05-59-007Z.json"
+    },
+    {
+      "id": "epoch-000001-2026-06-12T04-06-07-964Z",
+      "league": "f1",
+      "targetWildcards": 1,
+      "board": "data/puzzles_only/f1/epoch-000001-2026-06-12T04-06-07-964Z.puzzle.json",
+      "moveCount": 10,
+      "score": 848,
+      "sourceReplay": "data/training/selfplay/f1/epoch-000001-2026-06-12T04-06-07-964Z.json"
+    },
+    {
+      "id": "epoch-000002-2026-06-11T09-01-20-441Z",
+      "league": "f1",
+      "targetWildcards": 1,
+      "board": "data/puzzles_only/f1/epoch-000002-2026-06-11T09-01-20-441Z.puzzle.json",
+      "moveCount": 9,
+      "score": 827,
+      "sourceReplay": "data/training/selfplay/f1/epoch-000002-2026-06-11T09-01-20-441Z.json"
+    },
+    {
+      "id": "epoch-000002-2026-06-12T04-06-16-715Z",
+      "league": "f1",
+      "targetWildcards": 1,
+      "board": "data/puzzles_only/f1/epoch-000002-2026-06-12T04-06-16-715Z.puzzle.json",
+      "moveCount": 9,
+      "score": 15665,
+      "sourceReplay": "data/training/selfplay/f1/epoch-000002-2026-06-12T04-06-16-715Z.json"
+    },
+    {
+      "id": "epoch-000003-2026-06-11T09-01-33-695Z",
+      "league": "f1",
+      "targetWildcards": 1,
+      "board": "data/puzzles_only/f1/epoch-000003-2026-06-11T09-01-33-695Z.puzzle.json",
+      "moveCount": 10,
+      "score": 658,
+      "sourceReplay": "data/training/selfplay/f1/epoch-000003-2026-06-11T09-01-33-695Z.json"
+    },
+    {
+      "id": "epoch-000003-2026-06-12T04-06-24-917Z",
+      "league": "f1",
+      "targetWildcards": 1,
+      "board": "data/puzzles_only/f1/epoch-000003-2026-06-12T04-06-24-917Z.puzzle.json",
+      "moveCount": 9,
+      "score": 265,
+      "sourceReplay": "data/training/selfplay/f1/epoch-000003-2026-06-12T04-06-24-917Z.json"
+    },
+    {
+      "id": "epoch-000004-2026-06-11T09-01-46-385Z",
+      "league": "f1",
+      "targetWildcards": 1,
+      "board": "data/puzzles_only/f1/epoch-000004-2026-06-11T09-01-46-385Z.puzzle.json",
+      "moveCount": 9,
+      "score": 1260,
+      "sourceReplay": "data/training/selfplay/f1/epoch-000004-2026-06-11T09-01-46-385Z.json"
+    },
+    {
+      "id": "epoch-000004-2026-06-12T04-06-42-774Z",
+      "league": "f1",
+      "targetWildcards": 1,
+      "board": "data/puzzles_only/f1/epoch-000004-2026-06-12T04-06-42-774Z.puzzle.json",
+      "moveCount": 9,
+      "score": 697,
+      "sourceReplay": "data/training/selfplay/f1/epoch-000004-2026-06-12T04-06-42-774Z.json"
+    },
+    {
+      "id": "epoch-000005-2026-06-11T09-01-58-663Z",
+      "league": "f1",
+      "targetWildcards": 1,
+      "board": "data/puzzles_only/f1/epoch-000005-2026-06-11T09-01-58-663Z.puzzle.json",
+      "moveCount": 10,
+      "score": 297,
+      "sourceReplay": "data/training/selfplay/f1/epoch-000005-2026-06-11T09-01-58-663Z.json"
+    },
+    {
+      "id": "epoch-000006-2026-06-11T09-02-12-307Z",
+      "league": "f1",
+      "targetWildcards": 1,
+      "board": "data/puzzles_only/f1/epoch-000006-2026-06-11T09-02-12-307Z.puzzle.json",
+      "moveCount": 10,
+      "score": 337,
+      "sourceReplay": "data/training/selfplay/f1/epoch-000006-2026-06-11T09-02-12-307Z.json"
+    },
+    {
+      "id": "epoch-000007-2026-06-11T09-02-25-211Z",
+      "league": "f1",
+      "targetWildcards": 1,
+      "board": "data/puzzles_only/f1/epoch-000007-2026-06-11T09-02-25-211Z.puzzle.json",
+      "moveCount": 9,
+      "score": 523,
+      "sourceReplay": "data/training/selfplay/f1/epoch-000007-2026-06-11T09-02-25-211Z.json"
+    },
+    {
+      "id": "epoch-000009-2026-06-11T09-02-51-915Z",
+      "league": "f1",
+      "targetWildcards": 1,
+      "board": "data/puzzles_only/f1/epoch-000009-2026-06-11T09-02-51-915Z.puzzle.json",
+      "moveCount": 9,
+      "score": 280,
+      "sourceReplay": "data/training/selfplay/f1/epoch-000009-2026-06-11T09-02-51-915Z.json"
+    },
+    {
+      "id": "epoch-000010-2026-06-11T09-03-04-326Z",
+      "league": "f1",
+      "targetWildcards": 1,
+      "board": "data/puzzles_only/f1/epoch-000010-2026-06-11T09-03-04-326Z.puzzle.json",
+      "moveCount": 9,
+      "score": 377,
+      "sourceReplay": "data/training/selfplay/f1/epoch-000010-2026-06-11T09-03-04-326Z.json"
+    },
+    {
+      "id": "epoch-000011-2026-06-11T09-03-16-612Z",
+      "league": "f1",
+      "targetWildcards": 1,
+      "board": "data/puzzles_only/f1/epoch-000011-2026-06-11T09-03-16-612Z.puzzle.json",
+      "moveCount": 9,
+      "score": 225,
+      "sourceReplay": "data/training/selfplay/f1/epoch-000011-2026-06-11T09-03-16-612Z.json"
+    },
+    {
+      "id": "epoch-000012-2026-06-11T09-03-29-069Z",
+      "league": "f1",
+      "targetWildcards": 1,
+      "board": "data/puzzles_only/f1/epoch-000012-2026-06-11T09-03-29-069Z.puzzle.json",
+      "moveCount": 10,
+      "score": 530,
+      "sourceReplay": "data/training/selfplay/f1/epoch-000012-2026-06-11T09-03-29-069Z.json"
+    },
+    {
+      "id": "epoch-000013-2026-06-11T09-03-41-142Z",
+      "league": "f1",
+      "targetWildcards": 1,
+      "board": "data/puzzles_only/f1/epoch-000013-2026-06-11T09-03-41-142Z.puzzle.json",
+      "moveCount": 10,
+      "score": 291,
+      "sourceReplay": "data/training/selfplay/f1/epoch-000013-2026-06-11T09-03-41-142Z.json"
+    },
+    {
+      "id": "epoch-000015-2026-06-11T09-04-17-490Z",
+      "league": "f1",
+      "targetWildcards": 1,
+      "board": "data/puzzles_only/f1/epoch-000015-2026-06-11T09-04-17-490Z.puzzle.json",
+      "moveCount": 10,
+      "score": 357,
+      "sourceReplay": "data/training/selfplay/f1/epoch-000015-2026-06-11T09-04-17-490Z.json"
+    },
+    {
+      "id": "epoch-000018-2026-06-11T09-04-56-910Z",
+      "league": "f1",
+      "targetWildcards": 1,
+      "board": "data/puzzles_only/f1/epoch-000018-2026-06-11T09-04-56-910Z.puzzle.json",
+      "moveCount": 9,
+      "score": 245,
+      "sourceReplay": "data/training/selfplay/f1/epoch-000018-2026-06-11T09-04-56-910Z.json"
+    },
+    {
+      "id": "epoch-000019-2026-06-11T09-05-12-871Z",
+      "league": "f1",
+      "targetWildcards": 1,
+      "board": "data/puzzles_only/f1/epoch-000019-2026-06-11T09-05-12-871Z.puzzle.json",
+      "moveCount": 10,
+      "score": 163746,
+      "sourceReplay": "data/training/selfplay/f1/epoch-000019-2026-06-11T09-05-12-871Z.json"
+    },
+    {
+      "id": "epoch-000022-2026-06-11T06-26-16-660Z",
+      "league": "f1",
+      "targetWildcards": 1,
+      "board": "data/puzzles_only/f1/epoch-000022-2026-06-11T06-26-16-660Z.puzzle.json",
+      "moveCount": 10,
+      "score": 416,
+      "sourceReplay": "data/training/selfplay/f1/epoch-000022-2026-06-11T06-26-16-660Z.json"
+    },
+    {
+      "id": "epoch-000022-2026-06-11T09-05-54-613Z",
+      "league": "f1",
+      "targetWildcards": 1,
+      "board": "data/puzzles_only/f1/epoch-000022-2026-06-11T09-05-54-613Z.puzzle.json",
+      "moveCount": 10,
+      "score": 7912,
+      "sourceReplay": "data/training/selfplay/f1/epoch-000022-2026-06-11T09-05-54-613Z.json"
+    },
+    {
+      "id": "epoch-000023-2026-06-11T09-06-08-018Z",
+      "league": "f1",
+      "targetWildcards": 1,
+      "board": "data/puzzles_only/f1/epoch-000023-2026-06-11T09-06-08-018Z.puzzle.json",
+      "moveCount": 10,
+      "score": 401,
+      "sourceReplay": "data/training/selfplay/f1/epoch-000023-2026-06-11T09-06-08-018Z.json"
+    },
+    {
+      "id": "epoch-000024-2026-06-11T09-06-21-874Z",
+      "league": "f1",
+      "targetWildcards": 1,
+      "board": "data/puzzles_only/f1/epoch-000024-2026-06-11T09-06-21-874Z.puzzle.json",
+      "moveCount": 9,
+      "score": 305,
+      "sourceReplay": "data/training/selfplay/f1/epoch-000024-2026-06-11T09-06-21-874Z.json"
+    },
+    {
+      "id": "epoch-000025-2026-06-11T06-27-18-862Z",
+      "league": "f1",
+      "targetWildcards": 1,
+      "board": "data/puzzles_only/f1/epoch-000025-2026-06-11T06-27-18-862Z.puzzle.json",
+      "moveCount": 9,
+      "score": 290,
+      "sourceReplay": "data/training/selfplay/f1/epoch-000025-2026-06-11T06-27-18-862Z.json"
+    },
+    {
+      "id": "epoch-000025-2026-06-11T09-06-34-360Z",
+      "league": "f1",
+      "targetWildcards": 1,
+      "board": "data/puzzles_only/f1/epoch-000025-2026-06-11T09-06-34-360Z.puzzle.json",
+      "moveCount": 9,
+      "score": 1781,
+      "sourceReplay": "data/training/selfplay/f1/epoch-000025-2026-06-11T09-06-34-360Z.json"
+    },
+    {
+      "id": "epoch-000026-2026-06-11T06-27-32-332Z",
+      "league": "f1",
+      "targetWildcards": 1,
+      "board": "data/puzzles_only/f1/epoch-000026-2026-06-11T06-27-32-332Z.puzzle.json",
+      "moveCount": 9,
+      "score": 235,
+      "sourceReplay": "data/training/selfplay/f1/epoch-000026-2026-06-11T06-27-32-332Z.json"
+    },
+    {
+      "id": "epoch-000027-2026-06-11T09-07-08-554Z",
+      "league": "f1",
+      "targetWildcards": 1,
+      "board": "data/puzzles_only/f1/epoch-000027-2026-06-11T09-07-08-554Z.puzzle.json",
+      "moveCount": 9,
+      "score": 319,
+      "sourceReplay": "data/training/selfplay/f1/epoch-000027-2026-06-11T09-07-08-554Z.json"
+    },
+    {
+      "id": "epoch-000028-2026-06-11T06-28-15-935Z",
+      "league": "f1",
+      "targetWildcards": 1,
+      "board": "data/puzzles_only/f1/epoch-000028-2026-06-11T06-28-15-935Z.puzzle.json",
+      "moveCount": 10,
+      "score": 267,
+      "sourceReplay": "data/training/selfplay/f1/epoch-000028-2026-06-11T06-28-15-935Z.json"
+    },
+    {
+      "id": "epoch-000028-2026-06-11T09-07-20-704Z",
+      "league": "f1",
+      "targetWildcards": 1,
+      "board": "data/puzzles_only/f1/epoch-000028-2026-06-11T09-07-20-704Z.puzzle.json",
+      "moveCount": 9,
+      "score": 275,
+      "sourceReplay": "data/training/selfplay/f1/epoch-000028-2026-06-11T09-07-20-704Z.json"
+    },
+    {
+      "id": "epoch-000030-2026-06-11T09-07-49-006Z",
+      "league": "f1",
+      "targetWildcards": 1,
+      "board": "data/puzzles_only/f1/epoch-000030-2026-06-11T09-07-49-006Z.puzzle.json",
+      "moveCount": 9,
+      "score": 190,
+      "sourceReplay": "data/training/selfplay/f1/epoch-000030-2026-06-11T09-07-49-006Z.json"
+    },
+    {
+      "id": "epoch-000031-2026-06-11T06-28-58-382Z",
+      "league": "f1",
+      "targetWildcards": 1,
+      "board": "data/puzzles_only/f1/epoch-000031-2026-06-11T06-28-58-382Z.puzzle.json",
+      "moveCount": 9,
+      "score": 539,
+      "sourceReplay": "data/training/selfplay/f1/epoch-000031-2026-06-11T06-28-58-382Z.json"
+    },
+    {
+      "id": "epoch-000032-2026-06-11T06-29-12-370Z",
+      "league": "f1",
+      "targetWildcards": 1,
+      "board": "data/puzzles_only/f1/epoch-000032-2026-06-11T06-29-12-370Z.puzzle.json",
+      "moveCount": 10,
+      "score": 591,
+      "sourceReplay": "data/training/selfplay/f1/epoch-000032-2026-06-11T06-29-12-370Z.json"
+    },
+    {
+      "id": "epoch-000033-2026-06-11T06-29-27-984Z",
+      "league": "f1",
+      "targetWildcards": 1,
+      "board": "data/puzzles_only/f1/epoch-000033-2026-06-11T06-29-27-984Z.puzzle.json",
+      "moveCount": 9,
+      "score": 235,
+      "sourceReplay": "data/training/selfplay/f1/epoch-000033-2026-06-11T06-29-27-984Z.json"
+    },
+    {
+      "id": "epoch-000034-2026-06-11T06-29-42-690Z",
+      "league": "f1",
+      "targetWildcards": 1,
+      "board": "data/puzzles_only/f1/epoch-000034-2026-06-11T06-29-42-690Z.puzzle.json",
+      "moveCount": 9,
+      "score": 290,
+      "sourceReplay": "data/training/selfplay/f1/epoch-000034-2026-06-11T06-29-42-690Z.json"
+    },
+    {
+      "id": "epoch-000034-2026-06-11T09-08-44-486Z",
+      "league": "f1",
+      "targetWildcards": 1,
+      "board": "data/puzzles_only/f1/epoch-000034-2026-06-11T09-08-44-486Z.puzzle.json",
+      "moveCount": 9,
+      "score": 19965,
+      "sourceReplay": "data/training/selfplay/f1/epoch-000034-2026-06-11T09-08-44-486Z.json"
+    },
+    {
+      "id": "epoch-000035-2026-06-11T09-08-56-843Z",
+      "league": "f1",
+      "targetWildcards": 1,
+      "board": "data/puzzles_only/f1/epoch-000035-2026-06-11T09-08-56-843Z.puzzle.json",
+      "moveCount": 10,
+      "score": 974,
+      "sourceReplay": "data/training/selfplay/f1/epoch-000035-2026-06-11T09-08-56-843Z.json"
+    },
+    {
+      "id": "epoch-000036-2026-06-11T06-30-10-321Z",
+      "league": "f1",
+      "targetWildcards": 1,
+      "board": "data/puzzles_only/f1/epoch-000036-2026-06-11T06-30-10-321Z.puzzle.json",
+      "moveCount": 9,
+      "score": 478,
+      "sourceReplay": "data/training/selfplay/f1/epoch-000036-2026-06-11T06-30-10-321Z.json"
+    },
+    {
+      "id": "epoch-000036-2026-06-11T09-09-09-753Z",
+      "league": "f1",
+      "targetWildcards": 1,
+      "board": "data/puzzles_only/f1/epoch-000036-2026-06-11T09-09-09-753Z.puzzle.json",
+      "moveCount": 10,
+      "score": 1547,
+      "sourceReplay": "data/training/selfplay/f1/epoch-000036-2026-06-11T09-09-09-753Z.json"
+    },
+    {
+      "id": "epoch-000037-2026-06-11T06-30-25-456Z",
+      "league": "f1",
+      "targetWildcards": 1,
+      "board": "data/puzzles_only/f1/epoch-000037-2026-06-11T06-30-25-456Z.puzzle.json",
+      "moveCount": 10,
+      "score": 5097,
+      "sourceReplay": "data/training/selfplay/f1/epoch-000037-2026-06-11T06-30-25-456Z.json"
+    },
+    {
+      "id": "epoch-000038-2026-06-11T09-09-41-990Z",
+      "league": "f1",
+      "targetWildcards": 1,
+      "board": "data/puzzles_only/f1/epoch-000038-2026-06-11T09-09-41-990Z.puzzle.json",
+      "moveCount": 9,
+      "score": 1006,
+      "sourceReplay": "data/training/selfplay/f1/epoch-000038-2026-06-11T09-09-41-990Z.json"
+    },
+    {
+      "id": "epoch-000039-2026-06-11T06-31-28-306Z",
+      "league": "f1",
+      "targetWildcards": 1,
+      "board": "data/puzzles_only/f1/epoch-000039-2026-06-11T06-31-28-306Z.puzzle.json",
+      "moveCount": 9,
+      "score": 347,
+      "sourceReplay": "data/training/selfplay/f1/epoch-000039-2026-06-11T06-31-28-306Z.json"
+    },
+    {
+      "id": "epoch-000039-2026-06-11T09-09-55-857Z",
+      "league": "f1",
+      "targetWildcards": 1,
+      "board": "data/puzzles_only/f1/epoch-000039-2026-06-11T09-09-55-857Z.puzzle.json",
+      "moveCount": 10,
+      "score": 1863,
+      "sourceReplay": "data/training/selfplay/f1/epoch-000039-2026-06-11T09-09-55-857Z.json"
+    },
+    {
+      "id": "epoch-000040-2026-06-11T06-31-41-001Z",
+      "league": "f1",
+      "targetWildcards": 1,
+      "board": "data/puzzles_only/f1/epoch-000040-2026-06-11T06-31-41-001Z.puzzle.json",
+      "moveCount": 10,
+      "score": 739,
+      "sourceReplay": "data/training/selfplay/f1/epoch-000040-2026-06-11T06-31-41-001Z.json"
+    },
+    {
+      "id": "epoch-000040-2026-06-11T09-10-09-056Z",
+      "league": "f1",
+      "targetWildcards": 1,
+      "board": "data/puzzles_only/f1/epoch-000040-2026-06-11T09-10-09-056Z.puzzle.json",
+      "moveCount": 9,
+      "score": 305,
+      "sourceReplay": "data/training/selfplay/f1/epoch-000040-2026-06-11T09-10-09-056Z.json"
+    },
+    {
+      "id": "epoch-000041-2026-06-11T09-10-21-461Z",
+      "league": "f1",
+      "targetWildcards": 1,
+      "board": "data/puzzles_only/f1/epoch-000041-2026-06-11T09-10-21-461Z.puzzle.json",
+      "moveCount": 10,
+      "score": 267,
+      "sourceReplay": "data/training/selfplay/f1/epoch-000041-2026-06-11T09-10-21-461Z.json"
+    },
+    {
+      "id": "epoch-000042-2026-06-11T06-32-13-092Z",
+      "league": "f1",
+      "targetWildcards": 1,
+      "board": "data/puzzles_only/f1/epoch-000042-2026-06-11T06-32-13-092Z.puzzle.json",
+      "moveCount": 9,
+      "score": 270,
+      "sourceReplay": "data/training/selfplay/f1/epoch-000042-2026-06-11T06-32-13-092Z.json"
+    },
+    {
+      "id": "epoch-000042-2026-06-11T09-10-33-831Z",
+      "league": "f1",
+      "targetWildcards": 1,
+      "board": "data/puzzles_only/f1/epoch-000042-2026-06-11T09-10-33-831Z.puzzle.json",
+      "moveCount": 9,
+      "score": 290,
+      "sourceReplay": "data/training/selfplay/f1/epoch-000042-2026-06-11T09-10-33-831Z.json"
+    },
+    {
+      "id": "epoch-000043-2026-06-11T09-10-58-005Z",
+      "league": "f1",
+      "targetWildcards": 1,
+      "board": "data/puzzles_only/f1/epoch-000043-2026-06-11T09-10-58-005Z.puzzle.json",
+      "moveCount": 10,
+      "score": 322,
+      "sourceReplay": "data/training/selfplay/f1/epoch-000043-2026-06-11T09-10-58-005Z.json"
+    },
+    {
+      "id": "epoch-000044-2026-06-11T09-11-11-674Z",
+      "league": "f1",
+      "targetWildcards": 1,
+      "board": "data/puzzles_only/f1/epoch-000044-2026-06-11T09-11-11-674Z.puzzle.json",
+      "moveCount": 10,
+      "score": 2928,
+      "sourceReplay": "data/training/selfplay/f1/epoch-000044-2026-06-11T09-11-11-674Z.json"
+    },
+    {
+      "id": "epoch-000045-2026-06-11T06-33-18-552Z",
+      "league": "f1",
+      "targetWildcards": 1,
+      "board": "data/puzzles_only/f1/epoch-000045-2026-06-11T06-33-18-552Z.puzzle.json",
+      "moveCount": 9,
+      "score": 267,
+      "sourceReplay": "data/training/selfplay/f1/epoch-000045-2026-06-11T06-33-18-552Z.json"
+    },
+    {
+      "id": "epoch-000045-2026-06-11T09-11-24-259Z",
+      "league": "f1",
+      "targetWildcards": 1,
+      "board": "data/puzzles_only/f1/epoch-000045-2026-06-11T09-11-24-259Z.puzzle.json",
+      "moveCount": 10,
+      "score": 3005,
+      "sourceReplay": "data/training/selfplay/f1/epoch-000045-2026-06-11T09-11-24-259Z.json"
+    },
+    {
+      "id": "epoch-000046-2026-06-11T06-33-32-568Z",
+      "league": "f1",
+      "targetWildcards": 1,
+      "board": "data/puzzles_only/f1/epoch-000046-2026-06-11T06-33-32-568Z.puzzle.json",
+      "moveCount": 9,
+      "score": 315,
+      "sourceReplay": "data/training/selfplay/f1/epoch-000046-2026-06-11T06-33-32-568Z.json"
+    },
+    {
+      "id": "epoch-000047-2026-06-11T06-33-54-892Z",
+      "league": "f1",
+      "targetWildcards": 1,
+      "board": "data/puzzles_only/f1/epoch-000047-2026-06-11T06-33-54-892Z.puzzle.json",
+      "moveCount": 9,
+      "score": 325,
+      "sourceReplay": "data/training/selfplay/f1/epoch-000047-2026-06-11T06-33-54-892Z.json"
+    },
+    {
+      "id": "epoch-000047-2026-06-11T09-12-13-637Z",
+      "league": "f1",
+      "targetWildcards": 1,
+      "board": "data/puzzles_only/f1/epoch-000047-2026-06-11T09-12-13-637Z.puzzle.json",
+      "moveCount": 9,
+      "score": 357,
+      "sourceReplay": "data/training/selfplay/f1/epoch-000047-2026-06-11T09-12-13-637Z.json"
+    },
+    {
+      "id": "epoch-000049-2026-06-11T06-34-22-531Z",
+      "league": "f1",
+      "targetWildcards": 1,
+      "board": "data/puzzles_only/f1/epoch-000049-2026-06-11T06-34-22-531Z.puzzle.json",
+      "moveCount": 9,
+      "score": 305,
+      "sourceReplay": "data/training/selfplay/f1/epoch-000049-2026-06-11T06-34-22-531Z.json"
+    },
+    {
+      "id": "epoch-000049-2026-06-11T09-12-51-859Z",
+      "league": "f1",
+      "targetWildcards": 1,
+      "board": "data/puzzles_only/f1/epoch-000049-2026-06-11T09-12-51-859Z.puzzle.json",
+      "moveCount": 9,
+      "score": 315,
+      "sourceReplay": "data/training/selfplay/f1/epoch-000049-2026-06-11T09-12-51-859Z.json"
+    },
+    {
+      "id": "epoch-000000-2026-06-11T09-13-07-832Z",
+      "league": "f2",
+      "targetWildcards": 2,
+      "board": "data/puzzles_only/f2/epoch-000000-2026-06-11T09-13-07-832Z.puzzle.json",
+      "moveCount": 9,
+      "score": 405,
+      "sourceReplay": "data/training/selfplay/f2/epoch-000000-2026-06-11T09-13-07-832Z.json"
+    },
+    {
+      "id": "epoch-000000-2026-06-12T04-06-54-067Z",
+      "league": "f2",
+      "targetWildcards": 2,
+      "board": "data/puzzles_only/f2/epoch-000000-2026-06-12T04-06-54-067Z.puzzle.json",
+      "moveCount": 9,
+      "score": 500,
+      "sourceReplay": "data/training/selfplay/f2/epoch-000000-2026-06-12T04-06-54-067Z.json"
+    },
+    {
+      "id": "epoch-000001-2026-06-11T09-13-25-695Z",
+      "league": "f2",
+      "targetWildcards": 2,
+      "board": "data/puzzles_only/f2/epoch-000001-2026-06-11T09-13-25-695Z.puzzle.json",
+      "moveCount": 9,
+      "score": 240,
+      "sourceReplay": "data/training/selfplay/f2/epoch-000001-2026-06-11T09-13-25-695Z.json"
+    },
+    {
+      "id": "epoch-000001-2026-06-12T04-07-04-389Z",
+      "league": "f2",
+      "targetWildcards": 2,
+      "board": "data/puzzles_only/f2/epoch-000001-2026-06-12T04-07-04-389Z.puzzle.json",
+      "moveCount": 9,
+      "score": 5016,
+      "sourceReplay": "data/training/selfplay/f2/epoch-000001-2026-06-12T04-07-04-389Z.json"
+    },
+    {
+      "id": "epoch-000002-2026-06-12T04-07-14-810Z",
+      "league": "f2",
+      "targetWildcards": 2,
+      "board": "data/puzzles_only/f2/epoch-000002-2026-06-12T04-07-14-810Z.puzzle.json",
+      "moveCount": 10,
+      "score": 555,
+      "sourceReplay": "data/training/selfplay/f2/epoch-000002-2026-06-12T04-07-14-810Z.json"
+    },
+    {
+      "id": "epoch-000003-2026-06-12T04-07-27-683Z",
+      "league": "f2",
+      "targetWildcards": 2,
+      "board": "data/puzzles_only/f2/epoch-000003-2026-06-12T04-07-27-683Z.puzzle.json",
+      "moveCount": 10,
+      "score": 7298,
+      "sourceReplay": "data/training/selfplay/f2/epoch-000003-2026-06-12T04-07-27-683Z.json"
+    },
+    {
+      "id": "epoch-000005-2026-06-11T09-14-28-515Z",
+      "league": "f2",
+      "targetWildcards": 2,
+      "board": "data/puzzles_only/f2/epoch-000005-2026-06-11T09-14-28-515Z.puzzle.json",
+      "moveCount": 10,
+      "score": 7815,
+      "sourceReplay": "data/training/selfplay/f2/epoch-000005-2026-06-11T09-14-28-515Z.json"
+    },
+    {
+      "id": "epoch-000006-2026-06-11T09-14-46-553Z",
+      "league": "f2",
+      "targetWildcards": 2,
+      "board": "data/puzzles_only/f2/epoch-000006-2026-06-11T09-14-46-553Z.puzzle.json",
+      "moveCount": 9,
+      "score": 647,
+      "sourceReplay": "data/training/selfplay/f2/epoch-000006-2026-06-11T09-14-46-553Z.json"
+    },
+    {
+      "id": "epoch-000007-2026-06-11T09-15-07-302Z",
+      "league": "f2",
+      "targetWildcards": 2,
+      "board": "data/puzzles_only/f2/epoch-000007-2026-06-11T09-15-07-302Z.puzzle.json",
+      "moveCount": 10,
+      "score": 441,
+      "sourceReplay": "data/training/selfplay/f2/epoch-000007-2026-06-11T09-15-07-302Z.json"
+    },
+    {
+      "id": "epoch-000008-2026-06-11T09-20-50-848Z",
+      "league": "f2",
+      "targetWildcards": 2,
+      "board": "data/puzzles_only/f2/epoch-000008-2026-06-11T09-20-50-848Z.puzzle.json",
+      "moveCount": 9,
+      "score": 395,
+      "sourceReplay": "data/training/selfplay/f2/epoch-000008-2026-06-11T09-20-50-848Z.json"
+    },
+    {
+      "id": "epoch-000009-2026-06-11T09-21-06-703Z",
+      "league": "f2",
+      "targetWildcards": 2,
+      "board": "data/puzzles_only/f2/epoch-000009-2026-06-11T09-21-06-703Z.puzzle.json",
+      "moveCount": 10,
+      "score": 402,
+      "sourceReplay": "data/training/selfplay/f2/epoch-000009-2026-06-11T09-21-06-703Z.json"
+    },
+    {
+      "id": "epoch-000010-2026-06-11T09-21-22-135Z",
+      "league": "f2",
+      "targetWildcards": 2,
+      "board": "data/puzzles_only/f2/epoch-000010-2026-06-11T09-21-22-135Z.puzzle.json",
+      "moveCount": 9,
+      "score": 438,
+      "sourceReplay": "data/training/selfplay/f2/epoch-000010-2026-06-11T09-21-22-135Z.json"
+    },
+    {
+      "id": "epoch-000011-2026-06-11T09-21-55-715Z",
+      "league": "f2",
+      "targetWildcards": 2,
+      "board": "data/puzzles_only/f2/epoch-000011-2026-06-11T09-21-55-715Z.puzzle.json",
+      "moveCount": 9,
+      "score": 360,
+      "sourceReplay": "data/training/selfplay/f2/epoch-000011-2026-06-11T09-21-55-715Z.json"
+    },
+    {
+      "id": "epoch-000012-2026-06-11T09-22-42-661Z",
+      "league": "f2",
+      "targetWildcards": 2,
+      "board": "data/puzzles_only/f2/epoch-000012-2026-06-11T09-22-42-661Z.puzzle.json",
+      "moveCount": 10,
+      "score": 3628,
+      "sourceReplay": "data/training/selfplay/f2/epoch-000012-2026-06-11T09-22-42-661Z.json"
+    },
+    {
+      "id": "epoch-000013-2026-06-11T09-22-58-299Z",
+      "league": "f2",
+      "targetWildcards": 2,
+      "board": "data/puzzles_only/f2/epoch-000013-2026-06-11T09-22-58-299Z.puzzle.json",
+      "moveCount": 9,
+      "score": 435,
+      "sourceReplay": "data/training/selfplay/f2/epoch-000013-2026-06-11T09-22-58-299Z.json"
+    },
+    {
+      "id": "epoch-000014-2026-06-11T09-23-14-769Z",
+      "league": "f2",
+      "targetWildcards": 2,
+      "board": "data/puzzles_only/f2/epoch-000014-2026-06-11T09-23-14-769Z.puzzle.json",
+      "moveCount": 9,
+      "score": 360,
+      "sourceReplay": "data/training/selfplay/f2/epoch-000014-2026-06-11T09-23-14-769Z.json"
+    },
+    {
+      "id": "epoch-000015-2026-06-11T09-23-31-357Z",
+      "league": "f2",
+      "targetWildcards": 2,
+      "board": "data/puzzles_only/f2/epoch-000015-2026-06-11T09-23-31-357Z.puzzle.json",
+      "moveCount": 9,
+      "score": 4621,
+      "sourceReplay": "data/training/selfplay/f2/epoch-000015-2026-06-11T09-23-31-357Z.json"
+    },
+    {
+      "id": "epoch-000016-2026-06-11T09-24-01-471Z",
+      "league": "f2",
+      "targetWildcards": 2,
+      "board": "data/puzzles_only/f2/epoch-000016-2026-06-11T09-24-01-471Z.puzzle.json",
+      "moveCount": 9,
+      "score": 3210,
+      "sourceReplay": "data/training/selfplay/f2/epoch-000016-2026-06-11T09-24-01-471Z.json"
+    },
+    {
+      "id": "epoch-000017-2026-06-11T09-24-16-548Z",
+      "league": "f2",
+      "targetWildcards": 2,
+      "board": "data/puzzles_only/f2/epoch-000017-2026-06-11T09-24-16-548Z.puzzle.json",
+      "moveCount": 8,
+      "score": 397,
+      "sourceReplay": "data/training/selfplay/f2/epoch-000017-2026-06-11T09-24-16-548Z.json"
+    },
+    {
+      "id": "epoch-000019-2026-06-11T09-24-49-185Z",
+      "league": "f2",
+      "targetWildcards": 2,
+      "board": "data/puzzles_only/f2/epoch-000019-2026-06-11T09-24-49-185Z.puzzle.json",
+      "moveCount": 9,
+      "score": 765,
+      "sourceReplay": "data/training/selfplay/f2/epoch-000019-2026-06-11T09-24-49-185Z.json"
+    },
+    {
+      "id": "epoch-000020-2026-06-11T09-25-05-360Z",
+      "league": "f2",
+      "targetWildcards": 2,
+      "board": "data/puzzles_only/f2/epoch-000020-2026-06-11T09-25-05-360Z.puzzle.json",
+      "moveCount": 9,
+      "score": 340,
+      "sourceReplay": "data/training/selfplay/f2/epoch-000020-2026-06-11T09-25-05-360Z.json"
+    },
+    {
+      "id": "epoch-000021-2026-06-11T09-25-21-226Z",
+      "league": "f2",
+      "targetWildcards": 2,
+      "board": "data/puzzles_only/f2/epoch-000021-2026-06-11T09-25-21-226Z.puzzle.json",
+      "moveCount": 9,
+      "score": 355,
+      "sourceReplay": "data/training/selfplay/f2/epoch-000021-2026-06-11T09-25-21-226Z.json"
+    },
+    {
+      "id": "epoch-000022-2026-06-11T09-25-47-404Z",
+      "league": "f2",
+      "targetWildcards": 2,
+      "board": "data/puzzles_only/f2/epoch-000022-2026-06-11T09-25-47-404Z.puzzle.json",
+      "moveCount": 10,
+      "score": 432,
+      "sourceReplay": "data/training/selfplay/f2/epoch-000022-2026-06-11T09-25-47-404Z.json"
+    },
+    {
+      "id": "epoch-000023-2026-06-11T09-26-05-468Z",
+      "league": "f2",
+      "targetWildcards": 2,
+      "board": "data/puzzles_only/f2/epoch-000023-2026-06-11T09-26-05-468Z.puzzle.json",
+      "moveCount": 9,
+      "score": 365,
+      "sourceReplay": "data/training/selfplay/f2/epoch-000023-2026-06-11T09-26-05-468Z.json"
+    },
+    {
+      "id": "epoch-000024-2026-06-11T09-26-25-712Z",
+      "league": "f2",
+      "targetWildcards": 2,
+      "board": "data/puzzles_only/f2/epoch-000024-2026-06-11T09-26-25-712Z.puzzle.json",
+      "moveCount": 9,
+      "score": 405,
+      "sourceReplay": "data/training/selfplay/f2/epoch-000024-2026-06-11T09-26-25-712Z.json"
+    },
+    {
+      "id": "epoch-000025-2026-06-11T09-26-40-847Z",
+      "league": "f2",
+      "targetWildcards": 2,
+      "board": "data/puzzles_only/f2/epoch-000025-2026-06-11T09-26-40-847Z.puzzle.json",
+      "moveCount": 9,
+      "score": 410,
+      "sourceReplay": "data/training/selfplay/f2/epoch-000025-2026-06-11T09-26-40-847Z.json"
+    },
+    {
+      "id": "epoch-000026-2026-06-11T09-27-07-783Z",
+      "league": "f2",
+      "targetWildcards": 2,
+      "board": "data/puzzles_only/f2/epoch-000026-2026-06-11T09-27-07-783Z.puzzle.json",
+      "moveCount": 9,
+      "score": 473,
+      "sourceReplay": "data/training/selfplay/f2/epoch-000026-2026-06-11T09-27-07-783Z.json"
+    },
+    {
+      "id": "epoch-000027-2026-06-11T09-27-26-114Z",
+      "league": "f2",
+      "targetWildcards": 2,
+      "board": "data/puzzles_only/f2/epoch-000027-2026-06-11T09-27-26-114Z.puzzle.json",
+      "moveCount": 9,
+      "score": 370,
+      "sourceReplay": "data/training/selfplay/f2/epoch-000027-2026-06-11T09-27-26-114Z.json"
+    },
+    {
+      "id": "epoch-000028-2026-06-11T09-27-41-230Z",
+      "league": "f2",
+      "targetWildcards": 2,
+      "board": "data/puzzles_only/f2/epoch-000028-2026-06-11T09-27-41-230Z.puzzle.json",
+      "moveCount": 9,
+      "score": 305,
+      "sourceReplay": "data/training/selfplay/f2/epoch-000028-2026-06-11T09-27-41-230Z.json"
+    },
+    {
+      "id": "epoch-000029-2026-06-11T09-28-12-445Z",
+      "league": "f2",
+      "targetWildcards": 2,
+      "board": "data/puzzles_only/f2/epoch-000029-2026-06-11T09-28-12-445Z.puzzle.json",
+      "moveCount": 10,
+      "score": 565,
+      "sourceReplay": "data/training/selfplay/f2/epoch-000029-2026-06-11T09-28-12-445Z.json"
+    },
+    {
+      "id": "epoch-000030-2026-06-11T09-28-29-410Z",
+      "league": "f2",
+      "targetWildcards": 2,
+      "board": "data/puzzles_only/f2/epoch-000030-2026-06-11T09-28-29-410Z.puzzle.json",
+      "moveCount": 9,
+      "score": 285,
+      "sourceReplay": "data/training/selfplay/f2/epoch-000030-2026-06-11T09-28-29-410Z.json"
+    },
+    {
+      "id": "epoch-000031-2026-06-11T09-28-45-515Z",
+      "league": "f2",
+      "targetWildcards": 2,
+      "board": "data/puzzles_only/f2/epoch-000031-2026-06-11T09-28-45-515Z.puzzle.json",
+      "moveCount": 9,
+      "score": 464,
+      "sourceReplay": "data/training/selfplay/f2/epoch-000031-2026-06-11T09-28-45-515Z.json"
+    },
+    {
+      "id": "epoch-000033-2026-06-11T09-29-19-724Z",
+      "league": "f2",
+      "targetWildcards": 2,
+      "board": "data/puzzles_only/f2/epoch-000033-2026-06-11T09-29-19-724Z.puzzle.json",
+      "moveCount": 9,
+      "score": 235,
+      "sourceReplay": "data/training/selfplay/f2/epoch-000033-2026-06-11T09-29-19-724Z.json"
+    },
+    {
+      "id": "epoch-000034-2026-06-11T09-29-41-848Z",
+      "league": "f2",
+      "targetWildcards": 2,
+      "board": "data/puzzles_only/f2/epoch-000034-2026-06-11T09-29-41-848Z.puzzle.json",
+      "moveCount": 9,
+      "score": 265,
+      "sourceReplay": "data/training/selfplay/f2/epoch-000034-2026-06-11T09-29-41-848Z.json"
+    },
+    {
+      "id": "epoch-000035-2026-06-11T09-30-01-623Z",
+      "league": "f2",
+      "targetWildcards": 2,
+      "board": "data/puzzles_only/f2/epoch-000035-2026-06-11T09-30-01-623Z.puzzle.json",
+      "moveCount": 9,
+      "score": 348180,
+      "sourceReplay": "data/training/selfplay/f2/epoch-000035-2026-06-11T09-30-01-623Z.json"
+    },
+    {
+      "id": "epoch-000036-2026-06-11T09-30-18-409Z",
+      "league": "f2",
+      "targetWildcards": 2,
+      "board": "data/puzzles_only/f2/epoch-000036-2026-06-11T09-30-18-409Z.puzzle.json",
+      "moveCount": 10,
+      "score": 130538,
+      "sourceReplay": "data/training/selfplay/f2/epoch-000036-2026-06-11T09-30-18-409Z.json"
+    },
+    {
+      "id": "epoch-000038-2026-06-11T09-30-52-055Z",
+      "league": "f2",
+      "targetWildcards": 2,
+      "board": "data/puzzles_only/f2/epoch-000038-2026-06-11T09-30-52-055Z.puzzle.json",
+      "moveCount": 10,
+      "score": 372,
+      "sourceReplay": "data/training/selfplay/f2/epoch-000038-2026-06-11T09-30-52-055Z.json"
+    },
+    {
+      "id": "epoch-000039-2026-06-11T09-31-10-456Z",
+      "league": "f2",
+      "targetWildcards": 2,
+      "board": "data/puzzles_only/f2/epoch-000039-2026-06-11T09-31-10-456Z.puzzle.json",
+      "moveCount": 9,
+      "score": 8415,
+      "sourceReplay": "data/training/selfplay/f2/epoch-000039-2026-06-11T09-31-10-456Z.json"
+    },
+    {
+      "id": "epoch-000040-2026-06-11T09-31-26-511Z",
+      "league": "f2",
+      "targetWildcards": 2,
+      "board": "data/puzzles_only/f2/epoch-000040-2026-06-11T09-31-26-511Z.puzzle.json",
+      "moveCount": 9,
+      "score": 553,
+      "sourceReplay": "data/training/selfplay/f2/epoch-000040-2026-06-11T09-31-26-511Z.json"
+    },
+    {
+      "id": "epoch-000041-2026-06-11T09-31-41-980Z",
+      "league": "f2",
+      "targetWildcards": 2,
+      "board": "data/puzzles_only/f2/epoch-000041-2026-06-11T09-31-41-980Z.puzzle.json",
+      "moveCount": 8,
+      "score": 785,
+      "sourceReplay": "data/training/selfplay/f2/epoch-000041-2026-06-11T09-31-41-980Z.json"
+    },
+    {
+      "id": "epoch-000045-2026-06-11T09-33-23-243Z",
+      "league": "f2",
+      "targetWildcards": 2,
+      "board": "data/puzzles_only/f2/epoch-000045-2026-06-11T09-33-23-243Z.puzzle.json",
+      "moveCount": 9,
+      "score": 14677,
+      "sourceReplay": "data/training/selfplay/f2/epoch-000045-2026-06-11T09-33-23-243Z.json"
+    },
+    {
+      "id": "epoch-000046-2026-06-11T09-33-40-972Z",
+      "league": "f2",
+      "targetWildcards": 2,
+      "board": "data/puzzles_only/f2/epoch-000046-2026-06-11T09-33-40-972Z.puzzle.json",
+      "moveCount": 9,
+      "score": 310,
+      "sourceReplay": "data/training/selfplay/f2/epoch-000046-2026-06-11T09-33-40-972Z.json"
+    },
+    {
+      "id": "epoch-000049-2026-06-11T09-34-37-427Z",
+      "league": "f2",
+      "targetWildcards": 2,
+      "board": "data/puzzles_only/f2/epoch-000049-2026-06-11T09-34-37-427Z.puzzle.json",
+      "moveCount": 9,
+      "score": 375,
+      "sourceReplay": "data/training/selfplay/f2/epoch-000049-2026-06-11T09-34-37-427Z.json"
+    },
+    {
+      "id": "epoch-000050-2026-06-11T06-34-49-964Z",
+      "league": "f2",
+      "targetWildcards": 2,
+      "board": "data/puzzles_only/f2/epoch-000050-2026-06-11T06-34-49-964Z.puzzle.json",
+      "moveCount": 10,
+      "score": 407,
+      "sourceReplay": "data/training/selfplay/f2/epoch-000050-2026-06-11T06-34-49-964Z.json"
+    },
+    {
+      "id": "epoch-000050-2026-06-11T09-34-53-251Z",
+      "league": "f2",
+      "targetWildcards": 2,
+      "board": "data/puzzles_only/f2/epoch-000050-2026-06-11T09-34-53-251Z.puzzle.json",
+      "moveCount": 9,
+      "score": 449,
+      "sourceReplay": "data/training/selfplay/f2/epoch-000050-2026-06-11T09-34-53-251Z.json"
+    },
+    {
+      "id": "epoch-000052-2026-06-11T09-36-06-706Z",
+      "league": "f2",
+      "targetWildcards": 2,
+      "board": "data/puzzles_only/f2/epoch-000052-2026-06-11T09-36-06-706Z.puzzle.json",
+      "moveCount": 9,
+      "score": 425,
+      "sourceReplay": "data/training/selfplay/f2/epoch-000052-2026-06-11T09-36-06-706Z.json"
+    },
+    {
+      "id": "epoch-000053-2026-06-11T06-35-40-128Z",
+      "league": "f2",
+      "targetWildcards": 2,
+      "board": "data/puzzles_only/f2/epoch-000053-2026-06-11T06-35-40-128Z.puzzle.json",
+      "moveCount": 9,
+      "score": 3690,
+      "sourceReplay": "data/training/selfplay/f2/epoch-000053-2026-06-11T06-35-40-128Z.json"
+    },
+    {
+      "id": "epoch-000053-2026-06-11T09-36-22-746Z",
+      "league": "f2",
+      "targetWildcards": 2,
+      "board": "data/puzzles_only/f2/epoch-000053-2026-06-11T09-36-22-746Z.puzzle.json",
+      "moveCount": 9,
+      "score": 365,
+      "sourceReplay": "data/training/selfplay/f2/epoch-000053-2026-06-11T09-36-22-746Z.json"
+    },
+    {
+      "id": "epoch-000054-2026-06-11T06-35-56-849Z",
+      "league": "f2",
+      "targetWildcards": 2,
+      "board": "data/puzzles_only/f2/epoch-000054-2026-06-11T06-35-56-849Z.puzzle.json",
+      "moveCount": 9,
+      "score": 460,
+      "sourceReplay": "data/training/selfplay/f2/epoch-000054-2026-06-11T06-35-56-849Z.json"
+    },
+    {
+      "id": "epoch-000054-2026-06-11T09-36-40-131Z",
+      "league": "f2",
+      "targetWildcards": 2,
+      "board": "data/puzzles_only/f2/epoch-000054-2026-06-11T09-36-40-131Z.puzzle.json",
+      "moveCount": 9,
+      "score": 320,
+      "sourceReplay": "data/training/selfplay/f2/epoch-000054-2026-06-11T09-36-40-131Z.json"
+    },
+    {
+      "id": "epoch-000056-2026-06-11T09-37-14-311Z",
+      "league": "f2",
+      "targetWildcards": 2,
+      "board": "data/puzzles_only/f2/epoch-000056-2026-06-11T09-37-14-311Z.puzzle.json",
+      "moveCount": 9,
+      "score": 425,
+      "sourceReplay": "data/training/selfplay/f2/epoch-000056-2026-06-11T09-37-14-311Z.json"
+    },
+    {
+      "id": "epoch-000058-2026-06-11T09-37-51-785Z",
+      "league": "f2",
+      "targetWildcards": 2,
+      "board": "data/puzzles_only/f2/epoch-000058-2026-06-11T09-37-51-785Z.puzzle.json",
+      "moveCount": 9,
+      "score": 435,
+      "sourceReplay": "data/training/selfplay/f2/epoch-000058-2026-06-11T09-37-51-785Z.json"
+    },
+    {
+      "id": "epoch-000059-2026-06-11T06-37-18-282Z",
+      "league": "f2",
+      "targetWildcards": 2,
+      "board": "data/puzzles_only/f2/epoch-000059-2026-06-11T06-37-18-282Z.puzzle.json",
+      "moveCount": 9,
+      "score": 385,
+      "sourceReplay": "data/training/selfplay/f2/epoch-000059-2026-06-11T06-37-18-282Z.json"
+    },
+    {
+      "id": "epoch-000059-2026-06-11T09-38-08-943Z",
+      "league": "f2",
+      "targetWildcards": 2,
+      "board": "data/puzzles_only/f2/epoch-000059-2026-06-11T09-38-08-943Z.puzzle.json",
+      "moveCount": 9,
+      "score": 380,
+      "sourceReplay": "data/training/selfplay/f2/epoch-000059-2026-06-11T09-38-08-943Z.json"
+    },
+    {
+      "id": "epoch-000060-2026-06-11T09-38-26-539Z",
+      "league": "f2",
+      "targetWildcards": 2,
+      "board": "data/puzzles_only/f2/epoch-000060-2026-06-11T09-38-26-539Z.puzzle.json",
+      "moveCount": 10,
+      "score": 88013,
+      "sourceReplay": "data/training/selfplay/f2/epoch-000060-2026-06-11T09-38-26-539Z.json"
+    },
+    {
+      "id": "epoch-000061-2026-06-11T06-38-02-297Z",
+      "league": "f2",
+      "targetWildcards": 2,
+      "board": "data/puzzles_only/f2/epoch-000061-2026-06-11T06-38-02-297Z.puzzle.json",
+      "moveCount": 9,
+      "score": 425,
+      "sourceReplay": "data/training/selfplay/f2/epoch-000061-2026-06-11T06-38-02-297Z.json"
+    },
+    {
+      "id": "epoch-000061-2026-06-11T09-38-42-846Z",
+      "league": "f2",
+      "targetWildcards": 2,
+      "board": "data/puzzles_only/f2/epoch-000061-2026-06-11T09-38-42-846Z.puzzle.json",
+      "moveCount": 10,
+      "score": 14663,
+      "sourceReplay": "data/training/selfplay/f2/epoch-000061-2026-06-11T09-38-42-846Z.json"
+    },
+    {
+      "id": "epoch-000062-2026-06-11T06-38-18-931Z",
+      "league": "f2",
+      "targetWildcards": 2,
+      "board": "data/puzzles_only/f2/epoch-000062-2026-06-11T06-38-18-931Z.puzzle.json",
+      "moveCount": 9,
+      "score": 631,
+      "sourceReplay": "data/training/selfplay/f2/epoch-000062-2026-06-11T06-38-18-931Z.json"
+    },
+    {
+      "id": "epoch-000062-2026-06-11T09-39-16-628Z",
+      "league": "f2",
+      "targetWildcards": 2,
+      "board": "data/puzzles_only/f2/epoch-000062-2026-06-11T09-39-16-628Z.puzzle.json",
+      "moveCount": 9,
+      "score": 5793,
+      "sourceReplay": "data/training/selfplay/f2/epoch-000062-2026-06-11T09-39-16-628Z.json"
+    },
+    {
+      "id": "epoch-000063-2026-06-11T06-38-36-226Z",
+      "league": "f2",
+      "targetWildcards": 2,
+      "board": "data/puzzles_only/f2/epoch-000063-2026-06-11T06-38-36-226Z.puzzle.json",
+      "moveCount": 9,
+      "score": 1464,
+      "sourceReplay": "data/training/selfplay/f2/epoch-000063-2026-06-11T06-38-36-226Z.json"
+    },
+    {
+      "id": "epoch-000063-2026-06-11T09-40-01-882Z",
+      "league": "f2",
+      "targetWildcards": 2,
+      "board": "data/puzzles_only/f2/epoch-000063-2026-06-11T09-40-01-882Z.puzzle.json",
+      "moveCount": 9,
+      "score": 295,
+      "sourceReplay": "data/training/selfplay/f2/epoch-000063-2026-06-11T09-40-01-882Z.json"
+    },
+    {
+      "id": "epoch-000064-2026-06-11T06-38-51-390Z",
+      "league": "f2",
+      "targetWildcards": 2,
+      "board": "data/puzzles_only/f2/epoch-000064-2026-06-11T06-38-51-390Z.puzzle.json",
+      "moveCount": 10,
+      "score": 4089,
+      "sourceReplay": "data/training/selfplay/f2/epoch-000064-2026-06-11T06-38-51-390Z.json"
+    },
+    {
+      "id": "epoch-000064-2026-06-11T09-40-33-431Z",
+      "league": "f2",
+      "targetWildcards": 2,
+      "board": "data/puzzles_only/f2/epoch-000064-2026-06-11T09-40-33-431Z.puzzle.json",
+      "moveCount": 9,
+      "score": 713,
+      "sourceReplay": "data/training/selfplay/f2/epoch-000064-2026-06-11T09-40-33-431Z.json"
+    },
+    {
+      "id": "epoch-000065-2026-06-11T06-39-06-610Z",
+      "league": "f2",
+      "targetWildcards": 2,
+      "board": "data/puzzles_only/f2/epoch-000065-2026-06-11T06-39-06-610Z.puzzle.json",
+      "moveCount": 9,
+      "score": 440,
+      "sourceReplay": "data/training/selfplay/f2/epoch-000065-2026-06-11T06-39-06-610Z.json"
+    },
+    {
+      "id": "epoch-000065-2026-06-11T09-40-52-407Z",
+      "league": "f2",
+      "targetWildcards": 2,
+      "board": "data/puzzles_only/f2/epoch-000065-2026-06-11T09-40-52-407Z.puzzle.json",
+      "moveCount": 10,
+      "score": 706,
+      "sourceReplay": "data/training/selfplay/f2/epoch-000065-2026-06-11T09-40-52-407Z.json"
+    },
+    {
+      "id": "epoch-000067-2026-06-11T06-39-36-901Z",
+      "league": "f2",
+      "targetWildcards": 2,
+      "board": "data/puzzles_only/f2/epoch-000067-2026-06-11T06-39-36-901Z.puzzle.json",
+      "moveCount": 10,
+      "score": 398,
+      "sourceReplay": "data/training/selfplay/f2/epoch-000067-2026-06-11T06-39-36-901Z.json"
+    },
+    {
+      "id": "epoch-000067-2026-06-11T09-41-42-714Z",
+      "league": "f2",
+      "targetWildcards": 2,
+      "board": "data/puzzles_only/f2/epoch-000067-2026-06-11T09-41-42-714Z.puzzle.json",
+      "moveCount": 9,
+      "score": 595,
+      "sourceReplay": "data/training/selfplay/f2/epoch-000067-2026-06-11T09-41-42-714Z.json"
+    },
+    {
+      "id": "epoch-000069-2026-06-11T06-40-39-144Z",
+      "league": "f2",
+      "targetWildcards": 2,
+      "board": "data/puzzles_only/f2/epoch-000069-2026-06-11T06-40-39-144Z.puzzle.json",
+      "moveCount": 9,
+      "score": 415,
+      "sourceReplay": "data/training/selfplay/f2/epoch-000069-2026-06-11T06-40-39-144Z.json"
+    },
+    {
+      "id": "epoch-000069-2026-06-11T09-42-15-293Z",
+      "league": "f2",
+      "targetWildcards": 2,
+      "board": "data/puzzles_only/f2/epoch-000069-2026-06-11T09-42-15-293Z.puzzle.json",
+      "moveCount": 9,
+      "score": 250,
+      "sourceReplay": "data/training/selfplay/f2/epoch-000069-2026-06-11T09-42-15-293Z.json"
+    },
+    {
+      "id": "epoch-000070-2026-06-11T06-40-54-670Z",
+      "league": "f2",
+      "targetWildcards": 2,
+      "board": "data/puzzles_only/f2/epoch-000070-2026-06-11T06-40-54-670Z.puzzle.json",
+      "moveCount": 9,
+      "score": 4515,
+      "sourceReplay": "data/training/selfplay/f2/epoch-000070-2026-06-11T06-40-54-670Z.json"
+    },
+    {
+      "id": "epoch-000070-2026-06-11T09-42-31-807Z",
+      "league": "f2",
+      "targetWildcards": 2,
+      "board": "data/puzzles_only/f2/epoch-000070-2026-06-11T09-42-31-807Z.puzzle.json",
+      "moveCount": 9,
+      "score": 732,
+      "sourceReplay": "data/training/selfplay/f2/epoch-000070-2026-06-11T09-42-31-807Z.json"
+    },
+    {
+      "id": "epoch-000071-2026-06-11T06-41-09-800Z",
+      "league": "f2",
+      "targetWildcards": 2,
+      "board": "data/puzzles_only/f2/epoch-000071-2026-06-11T06-41-09-800Z.puzzle.json",
+      "moveCount": 9,
+      "score": 8016,
+      "sourceReplay": "data/training/selfplay/f2/epoch-000071-2026-06-11T06-41-09-800Z.json"
+    },
+    {
+      "id": "epoch-000071-2026-06-11T09-43-24-964Z",
+      "league": "f2",
+      "targetWildcards": 2,
+      "board": "data/puzzles_only/f2/epoch-000071-2026-06-11T09-43-24-964Z.puzzle.json",
+      "moveCount": 8,
+      "score": 343,
+      "sourceReplay": "data/training/selfplay/f2/epoch-000071-2026-06-11T09-43-24-964Z.json"
+    },
+    {
+      "id": "epoch-000072-2026-06-11T06-41-25-114Z",
+      "league": "f2",
+      "targetWildcards": 2,
+      "board": "data/puzzles_only/f2/epoch-000072-2026-06-11T06-41-25-114Z.puzzle.json",
+      "moveCount": 10,
+      "score": 434,
+      "sourceReplay": "data/training/selfplay/f2/epoch-000072-2026-06-11T06-41-25-114Z.json"
+    },
+    {
+      "id": "epoch-000072-2026-06-11T09-43-40-804Z",
+      "league": "f2",
+      "targetWildcards": 2,
+      "board": "data/puzzles_only/f2/epoch-000072-2026-06-11T09-43-40-804Z.puzzle.json",
+      "moveCount": 10,
+      "score": 1403,
+      "sourceReplay": "data/training/selfplay/f2/epoch-000072-2026-06-11T09-43-40-804Z.json"
+    },
+    {
+      "id": "epoch-000073-2026-06-11T06-41-42-629Z",
+      "league": "f2",
+      "targetWildcards": 2,
+      "board": "data/puzzles_only/f2/epoch-000073-2026-06-11T06-41-42-629Z.puzzle.json",
+      "moveCount": 9,
+      "score": 340,
+      "sourceReplay": "data/training/selfplay/f2/epoch-000073-2026-06-11T06-41-42-629Z.json"
+    },
+    {
+      "id": "epoch-000073-2026-06-11T09-43-57-008Z",
+      "league": "f2",
+      "targetWildcards": 2,
+      "board": "data/puzzles_only/f2/epoch-000073-2026-06-11T09-43-57-008Z.puzzle.json",
+      "moveCount": 9,
+      "score": 300,
+      "sourceReplay": "data/training/selfplay/f2/epoch-000073-2026-06-11T09-43-57-008Z.json"
+    },
+    {
+      "id": "epoch-000074-2026-06-11T06-42-00-346Z",
+      "league": "f2",
+      "targetWildcards": 2,
+      "board": "data/puzzles_only/f2/epoch-000074-2026-06-11T06-42-00-346Z.puzzle.json",
+      "moveCount": 9,
+      "score": 1931,
+      "sourceReplay": "data/training/selfplay/f2/epoch-000074-2026-06-11T06-42-00-346Z.json"
+    },
+    {
+      "id": "epoch-000074-2026-06-11T09-44-13-463Z",
+      "league": "f2",
+      "targetWildcards": 2,
+      "board": "data/puzzles_only/f2/epoch-000074-2026-06-11T09-44-13-463Z.puzzle.json",
+      "moveCount": 8,
+      "score": 515,
+      "sourceReplay": "data/training/selfplay/f2/epoch-000074-2026-06-11T09-44-13-463Z.json"
+    },
+    {
+      "id": "epoch-000075-2026-06-11T06-42-25-743Z",
+      "league": "f2",
+      "targetWildcards": 2,
+      "board": "data/puzzles_only/f2/epoch-000075-2026-06-11T06-42-25-743Z.puzzle.json",
+      "moveCount": 10,
+      "score": 457,
+      "sourceReplay": "data/training/selfplay/f2/epoch-000075-2026-06-11T06-42-25-743Z.json"
+    },
+    {
+      "id": "epoch-000076-2026-06-11T06-42-51-648Z",
+      "league": "f2",
+      "targetWildcards": 2,
+      "board": "data/puzzles_only/f2/epoch-000076-2026-06-11T06-42-51-648Z.puzzle.json",
+      "moveCount": 10,
+      "score": 362,
+      "sourceReplay": "data/training/selfplay/f2/epoch-000076-2026-06-11T06-42-51-648Z.json"
+    },
+    {
+      "id": "epoch-000076-2026-06-11T09-44-48-046Z",
+      "league": "f2",
+      "targetWildcards": 2,
+      "board": "data/puzzles_only/f2/epoch-000076-2026-06-11T09-44-48-046Z.puzzle.json",
+      "moveCount": 9,
+      "score": 533,
+      "sourceReplay": "data/training/selfplay/f2/epoch-000076-2026-06-11T09-44-48-046Z.json"
+    },
+    {
+      "id": "epoch-000077-2026-06-11T06-43-14-023Z",
+      "league": "f2",
+      "targetWildcards": 2,
+      "board": "data/puzzles_only/f2/epoch-000077-2026-06-11T06-43-14-023Z.puzzle.json",
+      "moveCount": 10,
+      "score": 397,
+      "sourceReplay": "data/training/selfplay/f2/epoch-000077-2026-06-11T06-43-14-023Z.json"
+    },
+    {
+      "id": "epoch-000078-2026-06-11T09-45-18-317Z",
+      "league": "f2",
+      "targetWildcards": 2,
+      "board": "data/puzzles_only/f2/epoch-000078-2026-06-11T09-45-18-317Z.puzzle.json",
+      "moveCount": 9,
+      "score": 2652,
+      "sourceReplay": "data/training/selfplay/f2/epoch-000078-2026-06-11T09-45-18-317Z.json"
+    },
+    {
+      "id": "epoch-000079-2026-06-11T06-44-00-794Z",
+      "league": "f2",
+      "targetWildcards": 2,
+      "board": "data/puzzles_only/f2/epoch-000079-2026-06-11T06-44-00-794Z.puzzle.json",
+      "moveCount": 10,
+      "score": 3427,
+      "sourceReplay": "data/training/selfplay/f2/epoch-000079-2026-06-11T06-44-00-794Z.json"
+    },
+    {
+      "id": "epoch-000080-2026-06-11T06-44-17-092Z",
+      "league": "f2",
+      "targetWildcards": 2,
+      "board": "data/puzzles_only/f2/epoch-000080-2026-06-11T06-44-17-092Z.puzzle.json",
+      "moveCount": 11,
+      "score": 28887,
+      "sourceReplay": "data/training/selfplay/f2/epoch-000080-2026-06-11T06-44-17-092Z.json"
+    },
+    {
+      "id": "epoch-000081-2026-06-11T06-44-34-984Z",
+      "league": "f2",
+      "targetWildcards": 2,
+      "board": "data/puzzles_only/f2/epoch-000081-2026-06-11T06-44-34-984Z.puzzle.json",
+      "moveCount": 9,
+      "score": 355,
+      "sourceReplay": "data/training/selfplay/f2/epoch-000081-2026-06-11T06-44-34-984Z.json"
+    },
+    {
+      "id": "epoch-000082-2026-06-11T06-44-51-148Z",
+      "league": "f2",
+      "targetWildcards": 2,
+      "board": "data/puzzles_only/f2/epoch-000082-2026-06-11T06-44-51-148Z.puzzle.json",
+      "moveCount": 10,
+      "score": 3796,
+      "sourceReplay": "data/training/selfplay/f2/epoch-000082-2026-06-11T06-44-51-148Z.json"
+    },
+    {
+      "id": "epoch-000083-2026-06-11T06-45-06-918Z",
+      "league": "f2",
+      "targetWildcards": 2,
+      "board": "data/puzzles_only/f2/epoch-000083-2026-06-11T06-45-06-918Z.puzzle.json",
+      "moveCount": 10,
+      "score": 550,
+      "sourceReplay": "data/training/selfplay/f2/epoch-000083-2026-06-11T06-45-06-918Z.json"
+    },
+    {
+      "id": "epoch-000084-2026-06-11T06-45-22-093Z",
+      "league": "f2",
+      "targetWildcards": 2,
+      "board": "data/puzzles_only/f2/epoch-000084-2026-06-11T06-45-22-093Z.puzzle.json",
+      "moveCount": 9,
+      "score": 560,
+      "sourceReplay": "data/training/selfplay/f2/epoch-000084-2026-06-11T06-45-22-093Z.json"
+    },
+    {
+      "id": "epoch-000085-2026-06-11T06-45-40-273Z",
+      "league": "f2",
+      "targetWildcards": 2,
+      "board": "data/puzzles_only/f2/epoch-000085-2026-06-11T06-45-40-273Z.puzzle.json",
+      "moveCount": 8,
+      "score": 293,
+      "sourceReplay": "data/training/selfplay/f2/epoch-000085-2026-06-11T06-45-40-273Z.json"
+    },
+    {
+      "id": "epoch-000086-2026-06-11T06-45-55-463Z",
+      "league": "f2",
+      "targetWildcards": 2,
+      "board": "data/puzzles_only/f2/epoch-000086-2026-06-11T06-45-55-463Z.puzzle.json",
+      "moveCount": 10,
+      "score": 21926,
+      "sourceReplay": "data/training/selfplay/f2/epoch-000086-2026-06-11T06-45-55-463Z.json"
+    },
+    {
+      "id": "epoch-000087-2026-06-11T06-46-13-468Z",
+      "league": "f2",
+      "targetWildcards": 2,
+      "board": "data/puzzles_only/f2/epoch-000087-2026-06-11T06-46-13-468Z.puzzle.json",
+      "moveCount": 9,
+      "score": 360,
+      "sourceReplay": "data/training/selfplay/f2/epoch-000087-2026-06-11T06-46-13-468Z.json"
+    },
+    {
+      "id": "epoch-000088-2026-06-11T06-46-30-417Z",
+      "league": "f2",
+      "targetWildcards": 2,
+      "board": "data/puzzles_only/f2/epoch-000088-2026-06-11T06-46-30-417Z.puzzle.json",
+      "moveCount": 10,
+      "score": 876,
+      "sourceReplay": "data/training/selfplay/f2/epoch-000088-2026-06-11T06-46-30-417Z.json"
+    },
+    {
+      "id": "epoch-000089-2026-06-11T06-46-48-022Z",
+      "league": "f2",
+      "targetWildcards": 2,
+      "board": "data/puzzles_only/f2/epoch-000089-2026-06-11T06-46-48-022Z.puzzle.json",
+      "moveCount": 10,
+      "score": 491,
+      "sourceReplay": "data/training/selfplay/f2/epoch-000089-2026-06-11T06-46-48-022Z.json"
+    },
+    {
+      "id": "epoch-000090-2026-06-11T06-47-03-294Z",
+      "league": "f2",
+      "targetWildcards": 2,
+      "board": "data/puzzles_only/f2/epoch-000090-2026-06-11T06-47-03-294Z.puzzle.json",
+      "moveCount": 9,
+      "score": 1097,
+      "sourceReplay": "data/training/selfplay/f2/epoch-000090-2026-06-11T06-47-03-294Z.json"
+    },
+    {
+      "id": "epoch-000091-2026-06-11T06-48-11-904Z",
+      "league": "f2",
+      "targetWildcards": 2,
+      "board": "data/puzzles_only/f2/epoch-000091-2026-06-11T06-48-11-904Z.puzzle.json",
+      "moveCount": 9,
+      "score": 315,
+      "sourceReplay": "data/training/selfplay/f2/epoch-000091-2026-06-11T06-48-11-904Z.json"
+    },
+    {
+      "id": "epoch-000092-2026-06-11T06-48-32-422Z",
+      "league": "f2",
+      "targetWildcards": 2,
+      "board": "data/puzzles_only/f2/epoch-000092-2026-06-11T06-48-32-422Z.puzzle.json",
+      "moveCount": 9,
+      "score": 439,
+      "sourceReplay": "data/training/selfplay/f2/epoch-000092-2026-06-11T06-48-32-422Z.json"
+    },
+    {
+      "id": "epoch-000093-2026-06-11T06-49-02-311Z",
+      "league": "f2",
+      "targetWildcards": 2,
+      "board": "data/puzzles_only/f2/epoch-000093-2026-06-11T06-49-02-311Z.puzzle.json",
+      "moveCount": 9,
+      "score": 380,
+      "sourceReplay": "data/training/selfplay/f2/epoch-000093-2026-06-11T06-49-02-311Z.json"
+    },
+    {
+      "id": "epoch-000095-2026-06-11T06-49-33-694Z",
+      "league": "f2",
+      "targetWildcards": 2,
+      "board": "data/puzzles_only/f2/epoch-000095-2026-06-11T06-49-33-694Z.puzzle.json",
+      "moveCount": 9,
+      "score": 350,
+      "sourceReplay": "data/training/selfplay/f2/epoch-000095-2026-06-11T06-49-33-694Z.json"
+    },
+    {
+      "id": "epoch-000096-2026-06-11T06-49-50-657Z",
+      "league": "f2",
+      "targetWildcards": 2,
+      "board": "data/puzzles_only/f2/epoch-000096-2026-06-11T06-49-50-657Z.puzzle.json",
+      "moveCount": 10,
+      "score": 397,
+      "sourceReplay": "data/training/selfplay/f2/epoch-000096-2026-06-11T06-49-50-657Z.json"
+    },
+    {
+      "id": "epoch-000097-2026-06-11T06-50-06-919Z",
+      "league": "f2",
+      "targetWildcards": 2,
+      "board": "data/puzzles_only/f2/epoch-000097-2026-06-11T06-50-06-919Z.puzzle.json",
+      "moveCount": 9,
+      "score": 355,
+      "sourceReplay": "data/training/selfplay/f2/epoch-000097-2026-06-11T06-50-06-919Z.json"
+    },
+    {
+      "id": "epoch-000098-2026-06-11T06-50-23-771Z",
+      "league": "f2",
+      "targetWildcards": 2,
+      "board": "data/puzzles_only/f2/epoch-000098-2026-06-11T06-50-23-771Z.puzzle.json",
+      "moveCount": 10,
+      "score": 945,
+      "sourceReplay": "data/training/selfplay/f2/epoch-000098-2026-06-11T06-50-23-771Z.json"
+    },
+    {
+      "id": "epoch-000099-2026-06-11T06-50-42-844Z",
+      "league": "f2",
+      "targetWildcards": 2,
+      "board": "data/puzzles_only/f2/epoch-000099-2026-06-11T06-50-42-844Z.puzzle.json",
+      "moveCount": 10,
+      "score": 1354,
+      "sourceReplay": "data/training/selfplay/f2/epoch-000099-2026-06-11T06-50-42-844Z.json"
+    },
+    {
+      "id": "epoch-000000-2026-06-11T09-45-52-994Z",
+      "league": "f3",
+      "targetWildcards": 3,
+      "board": "data/puzzles_only/f3/epoch-000000-2026-06-11T09-45-52-994Z.puzzle.json",
+      "moveCount": 10,
+      "score": 2305,
+      "sourceReplay": "data/training/selfplay/f3/epoch-000000-2026-06-11T09-45-52-994Z.json"
+    },
+    {
+      "id": "epoch-000000-2026-06-12T04-12-08-564Z",
+      "league": "f3",
+      "targetWildcards": 3,
+      "board": "data/puzzles_only/f3/epoch-000000-2026-06-12T04-12-08-564Z.puzzle.json",
+      "moveCount": 9,
+      "score": 976,
+      "sourceReplay": "data/training/selfplay/f3/epoch-000000-2026-06-12T04-12-08-564Z.json"
+    },
+    {
+      "id": "epoch-000000-2026-06-12T06-08-09-389Z",
+      "league": "f3",
+      "targetWildcards": 3,
+      "board": "data/puzzles_only/f3/epoch-000000-2026-06-12T06-08-09-389Z.puzzle.json",
+      "moveCount": 9,
+      "score": 9475,
+      "sourceReplay": "data/training/selfplay/f3/epoch-000000-2026-06-12T06-08-09-389Z.json"
+    },
+    {
+      "id": "epoch-000001-2026-06-11T09-46-11-973Z",
+      "league": "f3",
+      "targetWildcards": 3,
+      "board": "data/puzzles_only/f3/epoch-000001-2026-06-11T09-46-11-973Z.puzzle.json",
+      "moveCount": 9,
+      "score": 8500,
+      "sourceReplay": "data/training/selfplay/f3/epoch-000001-2026-06-11T09-46-11-973Z.json"
+    },
+    {
+      "id": "epoch-000001-2026-06-12T04-12-30-761Z",
+      "league": "f3",
+      "targetWildcards": 3,
+      "board": "data/puzzles_only/f3/epoch-000001-2026-06-12T04-12-30-761Z.puzzle.json",
+      "moveCount": 10,
+      "score": 2646,
+      "sourceReplay": "data/training/selfplay/f3/epoch-000001-2026-06-12T04-12-30-761Z.json"
+    },
+    {
+      "id": "epoch-000001-2026-06-12T06-08-32-533Z",
+      "league": "f3",
+      "targetWildcards": 3,
+      "board": "data/puzzles_only/f3/epoch-000001-2026-06-12T06-08-32-533Z.puzzle.json",
+      "moveCount": 9,
+      "score": 865,
+      "sourceReplay": "data/training/selfplay/f3/epoch-000001-2026-06-12T06-08-32-533Z.json"
+    },
+    {
+      "id": "epoch-000002-2026-06-11T09-46-30-382Z",
+      "league": "f3",
+      "targetWildcards": 3,
+      "board": "data/puzzles_only/f3/epoch-000002-2026-06-11T09-46-30-382Z.puzzle.json",
+      "moveCount": 9,
+      "score": 31563,
+      "sourceReplay": "data/training/selfplay/f3/epoch-000002-2026-06-11T09-46-30-382Z.json"
+    },
+    {
+      "id": "epoch-000002-2026-06-12T04-12-54-022Z",
+      "league": "f3",
+      "targetWildcards": 3,
+      "board": "data/puzzles_only/f3/epoch-000002-2026-06-12T04-12-54-022Z.puzzle.json",
+      "moveCount": 10,
+      "score": 17864,
+      "sourceReplay": "data/training/selfplay/f3/epoch-000002-2026-06-12T04-12-54-022Z.json"
+    },
+    {
+      "id": "epoch-000002-2026-06-12T06-09-16-880Z",
+      "league": "f3",
+      "targetWildcards": 3,
+      "board": "data/puzzles_only/f3/epoch-000002-2026-06-12T06-09-16-880Z.puzzle.json",
+      "moveCount": 10,
+      "score": 762,
+      "sourceReplay": "data/training/selfplay/f3/epoch-000002-2026-06-12T06-09-16-880Z.json"
+    },
+    {
+      "id": "epoch-000003-2026-06-11T09-46-49-786Z",
+      "league": "f3",
+      "targetWildcards": 3,
+      "board": "data/puzzles_only/f3/epoch-000003-2026-06-11T09-46-49-786Z.puzzle.json",
+      "moveCount": 9,
+      "score": 28498,
+      "sourceReplay": "data/training/selfplay/f3/epoch-000003-2026-06-11T09-46-49-786Z.json"
+    },
+    {
+      "id": "epoch-000003-2026-06-12T04-13-18-096Z",
+      "league": "f3",
+      "targetWildcards": 3,
+      "board": "data/puzzles_only/f3/epoch-000003-2026-06-12T04-13-18-096Z.puzzle.json",
+      "moveCount": 10,
+      "score": 240242,
+      "sourceReplay": "data/training/selfplay/f3/epoch-000003-2026-06-12T04-13-18-096Z.json"
+    },
+    {
+      "id": "epoch-000003-2026-06-12T06-09-43-504Z",
+      "league": "f3",
+      "targetWildcards": 3,
+      "board": "data/puzzles_only/f3/epoch-000003-2026-06-12T06-09-43-504Z.puzzle.json",
+      "moveCount": 9,
+      "score": 1733,
+      "sourceReplay": "data/training/selfplay/f3/epoch-000003-2026-06-12T06-09-43-504Z.json"
+    },
+    {
+      "id": "epoch-000004-2026-06-12T04-13-41-536Z",
+      "league": "f3",
+      "targetWildcards": 3,
+      "board": "data/puzzles_only/f3/epoch-000004-2026-06-12T04-13-41-536Z.puzzle.json",
+      "moveCount": 9,
+      "score": 42704,
+      "sourceReplay": "data/training/selfplay/f3/epoch-000004-2026-06-12T04-13-41-536Z.json"
+    },
+    {
+      "id": "epoch-000004-2026-06-12T06-10-11-742Z",
+      "league": "f3",
+      "targetWildcards": 3,
+      "board": "data/puzzles_only/f3/epoch-000004-2026-06-12T06-10-11-742Z.puzzle.json",
+      "moveCount": 9,
+      "score": 820,
+      "sourceReplay": "data/training/selfplay/f3/epoch-000004-2026-06-12T06-10-11-742Z.json"
+    },
+    {
+      "id": "epoch-000005-2026-06-12T06-10-48-355Z",
+      "league": "f3",
+      "targetWildcards": 3,
+      "board": "data/puzzles_only/f3/epoch-000005-2026-06-12T06-10-48-355Z.puzzle.json",
+      "moveCount": 9,
+      "score": 790,
+      "sourceReplay": "data/training/selfplay/f3/epoch-000005-2026-06-12T06-10-48-355Z.json"
+    },
+    {
+      "id": "epoch-000006-2026-06-12T04-15-42-069Z",
+      "league": "f3",
+      "targetWildcards": 3,
+      "board": "data/puzzles_only/f3/epoch-000006-2026-06-12T04-15-42-069Z.puzzle.json",
+      "moveCount": 10,
+      "score": 219345,
+      "sourceReplay": "data/training/selfplay/f3/epoch-000006-2026-06-12T04-15-42-069Z.json"
+    },
+    {
+      "id": "epoch-000006-2026-06-12T06-11-11-775Z",
+      "league": "f3",
+      "targetWildcards": 3,
+      "board": "data/puzzles_only/f3/epoch-000006-2026-06-12T06-11-11-775Z.puzzle.json",
+      "moveCount": 10,
+      "score": 8633,
+      "sourceReplay": "data/training/selfplay/f3/epoch-000006-2026-06-12T06-11-11-775Z.json"
+    },
+    {
+      "id": "epoch-000007-2026-06-12T04-16-04-676Z",
+      "league": "f3",
+      "targetWildcards": 3,
+      "board": "data/puzzles_only/f3/epoch-000007-2026-06-12T04-16-04-676Z.puzzle.json",
+      "moveCount": 8,
+      "score": 895,
+      "sourceReplay": "data/training/selfplay/f3/epoch-000007-2026-06-12T04-16-04-676Z.json"
+    },
+    {
+      "id": "epoch-000007-2026-06-12T06-11-35-638Z",
+      "league": "f3",
+      "targetWildcards": 3,
+      "board": "data/puzzles_only/f3/epoch-000007-2026-06-12T06-11-35-638Z.puzzle.json",
+      "moveCount": 10,
+      "score": 884,
+      "sourceReplay": "data/training/selfplay/f3/epoch-000007-2026-06-12T06-11-35-638Z.json"
+    },
+    {
+      "id": "epoch-000008-2026-06-12T04-16-26-926Z",
+      "league": "f3",
+      "targetWildcards": 3,
+      "board": "data/puzzles_only/f3/epoch-000008-2026-06-12T04-16-26-926Z.puzzle.json",
+      "moveCount": 9,
+      "score": 21568,
+      "sourceReplay": "data/training/selfplay/f3/epoch-000008-2026-06-12T04-16-26-926Z.json"
+    },
+    {
+      "id": "epoch-000008-2026-06-12T06-11-57-932Z",
+      "league": "f3",
+      "targetWildcards": 3,
+      "board": "data/puzzles_only/f3/epoch-000008-2026-06-12T06-11-57-932Z.puzzle.json",
+      "moveCount": 9,
+      "score": 1031,
+      "sourceReplay": "data/training/selfplay/f3/epoch-000008-2026-06-12T06-11-57-932Z.json"
+    },
+    {
+      "id": "epoch-000009-2026-06-12T04-16-50-466Z",
+      "league": "f3",
+      "targetWildcards": 3,
+      "board": "data/puzzles_only/f3/epoch-000009-2026-06-12T04-16-50-466Z.puzzle.json",
+      "moveCount": 9,
+      "score": 1497,
+      "sourceReplay": "data/training/selfplay/f3/epoch-000009-2026-06-12T04-16-50-466Z.json"
+    },
+    {
+      "id": "epoch-000009-2026-06-12T06-12-22-160Z",
+      "league": "f3",
+      "targetWildcards": 3,
+      "board": "data/puzzles_only/f3/epoch-000009-2026-06-12T06-12-22-160Z.puzzle.json",
+      "moveCount": 9,
+      "score": 815,
+      "sourceReplay": "data/training/selfplay/f3/epoch-000009-2026-06-12T06-12-22-160Z.json"
+    },
+    {
+      "id": "epoch-000010-2026-06-12T04-17-19-367Z",
+      "league": "f3",
+      "targetWildcards": 3,
+      "board": "data/puzzles_only/f3/epoch-000010-2026-06-12T04-17-19-367Z.puzzle.json",
+      "moveCount": 9,
+      "score": 750,
+      "sourceReplay": "data/training/selfplay/f3/epoch-000010-2026-06-12T04-17-19-367Z.json"
+    },
+    {
+      "id": "epoch-000010-2026-06-12T06-12-48-736Z",
+      "league": "f3",
+      "targetWildcards": 3,
+      "board": "data/puzzles_only/f3/epoch-000010-2026-06-12T06-12-48-736Z.puzzle.json",
+      "moveCount": 9,
+      "score": 115789,
+      "sourceReplay": "data/training/selfplay/f3/epoch-000010-2026-06-12T06-12-48-736Z.json"
+    },
+    {
+      "id": "epoch-000011-2026-06-12T04-17-42-590Z",
+      "league": "f3",
+      "targetWildcards": 3,
+      "board": "data/puzzles_only/f3/epoch-000011-2026-06-12T04-17-42-590Z.puzzle.json",
+      "moveCount": 9,
+      "score": 11514,
+      "sourceReplay": "data/training/selfplay/f3/epoch-000011-2026-06-12T04-17-42-590Z.json"
+    },
+    {
+      "id": "epoch-000011-2026-06-12T06-13-13-214Z",
+      "league": "f3",
+      "targetWildcards": 3,
+      "board": "data/puzzles_only/f3/epoch-000011-2026-06-12T06-13-13-214Z.puzzle.json",
+      "moveCount": 10,
+      "score": 697,
+      "sourceReplay": "data/training/selfplay/f3/epoch-000011-2026-06-12T06-13-13-214Z.json"
+    },
+    {
+      "id": "epoch-000012-2026-06-12T04-18-05-955Z",
+      "league": "f3",
+      "targetWildcards": 3,
+      "board": "data/puzzles_only/f3/epoch-000012-2026-06-12T04-18-05-955Z.puzzle.json",
+      "moveCount": 10,
+      "score": 877,
+      "sourceReplay": "data/training/selfplay/f3/epoch-000012-2026-06-12T04-18-05-955Z.json"
+    },
+    {
+      "id": "epoch-000012-2026-06-12T06-13-36-932Z",
+      "league": "f3",
+      "targetWildcards": 3,
+      "board": "data/puzzles_only/f3/epoch-000012-2026-06-12T06-13-36-932Z.puzzle.json",
+      "moveCount": 9,
+      "score": 106999,
+      "sourceReplay": "data/training/selfplay/f3/epoch-000012-2026-06-12T06-13-36-932Z.json"
+    },
+    {
+      "id": "epoch-000013-2026-06-12T04-18-28-022Z",
+      "league": "f3",
+      "targetWildcards": 3,
+      "board": "data/puzzles_only/f3/epoch-000013-2026-06-12T04-18-28-022Z.puzzle.json",
+      "moveCount": 8,
+      "score": 1295,
+      "sourceReplay": "data/training/selfplay/f3/epoch-000013-2026-06-12T04-18-28-022Z.json"
+    },
+    {
+      "id": "epoch-000013-2026-06-12T06-14-01-019Z",
+      "league": "f3",
+      "targetWildcards": 3,
+      "board": "data/puzzles_only/f3/epoch-000013-2026-06-12T06-14-01-019Z.puzzle.json",
+      "moveCount": 9,
+      "score": 720,
+      "sourceReplay": "data/training/selfplay/f3/epoch-000013-2026-06-12T06-14-01-019Z.json"
+    },
+    {
+      "id": "epoch-000014-2026-06-12T04-19-01-306Z",
+      "league": "f3",
+      "targetWildcards": 3,
+      "board": "data/puzzles_only/f3/epoch-000014-2026-06-12T04-19-01-306Z.puzzle.json",
+      "moveCount": 9,
+      "score": 755,
+      "sourceReplay": "data/training/selfplay/f3/epoch-000014-2026-06-12T04-19-01-306Z.json"
+    },
+    {
+      "id": "epoch-000014-2026-06-12T06-14-24-067Z",
+      "league": "f3",
+      "targetWildcards": 3,
+      "board": "data/puzzles_only/f3/epoch-000014-2026-06-12T06-14-24-067Z.puzzle.json",
+      "moveCount": 9,
+      "score": 855,
+      "sourceReplay": "data/training/selfplay/f3/epoch-000014-2026-06-12T06-14-24-067Z.json"
+    },
+    {
+      "id": "epoch-000015-2026-06-12T04-19-24-223Z",
+      "league": "f3",
+      "targetWildcards": 3,
+      "board": "data/puzzles_only/f3/epoch-000015-2026-06-12T04-19-24-223Z.puzzle.json",
+      "moveCount": 9,
+      "score": 9624,
+      "sourceReplay": "data/training/selfplay/f3/epoch-000015-2026-06-12T04-19-24-223Z.json"
+    },
+    {
+      "id": "epoch-000015-2026-06-12T06-14-50-014Z",
+      "league": "f3",
+      "targetWildcards": 3,
+      "board": "data/puzzles_only/f3/epoch-000015-2026-06-12T06-14-50-014Z.puzzle.json",
+      "moveCount": 10,
+      "score": 921,
+      "sourceReplay": "data/training/selfplay/f3/epoch-000015-2026-06-12T06-14-50-014Z.json"
+    },
+    {
+      "id": "epoch-000016-2026-06-12T04-19-46-902Z",
+      "league": "f3",
+      "targetWildcards": 3,
+      "board": "data/puzzles_only/f3/epoch-000016-2026-06-12T04-19-46-902Z.puzzle.json",
+      "moveCount": 10,
+      "score": 9401,
+      "sourceReplay": "data/training/selfplay/f3/epoch-000016-2026-06-12T04-19-46-902Z.json"
+    },
+    {
+      "id": "epoch-000016-2026-06-12T06-15-13-695Z",
+      "league": "f3",
+      "targetWildcards": 3,
+      "board": "data/puzzles_only/f3/epoch-000016-2026-06-12T06-15-13-695Z.puzzle.json",
+      "moveCount": 10,
+      "score": 707,
+      "sourceReplay": "data/training/selfplay/f3/epoch-000016-2026-06-12T06-15-13-695Z.json"
+    },
+    {
+      "id": "epoch-000017-2026-06-12T04-20-11-468Z",
+      "league": "f3",
+      "targetWildcards": 3,
+      "board": "data/puzzles_only/f3/epoch-000017-2026-06-12T04-20-11-468Z.puzzle.json",
+      "moveCount": 9,
+      "score": 837,
+      "sourceReplay": "data/training/selfplay/f3/epoch-000017-2026-06-12T04-20-11-468Z.json"
+    },
+    {
+      "id": "epoch-000017-2026-06-12T06-15-37-806Z",
+      "league": "f3",
+      "targetWildcards": 3,
+      "board": "data/puzzles_only/f3/epoch-000017-2026-06-12T06-15-37-806Z.puzzle.json",
+      "moveCount": 10,
+      "score": 922,
+      "sourceReplay": "data/training/selfplay/f3/epoch-000017-2026-06-12T06-15-37-806Z.json"
+    },
+    {
+      "id": "epoch-000018-2026-06-12T04-20-34-640Z",
+      "league": "f3",
+      "targetWildcards": 3,
+      "board": "data/puzzles_only/f3/epoch-000018-2026-06-12T04-20-34-640Z.puzzle.json",
+      "moveCount": 10,
+      "score": 877,
+      "sourceReplay": "data/training/selfplay/f3/epoch-000018-2026-06-12T04-20-34-640Z.json"
+    },
+    {
+      "id": "epoch-000018-2026-06-12T06-16-02-402Z",
+      "league": "f3",
+      "targetWildcards": 3,
+      "board": "data/puzzles_only/f3/epoch-000018-2026-06-12T06-16-02-402Z.puzzle.json",
+      "moveCount": 9,
+      "score": 4278,
+      "sourceReplay": "data/training/selfplay/f3/epoch-000018-2026-06-12T06-16-02-402Z.json"
+    },
+    {
+      "id": "epoch-000019-2026-06-12T04-21-05-684Z",
+      "league": "f3",
+      "targetWildcards": 3,
+      "board": "data/puzzles_only/f3/epoch-000019-2026-06-12T04-21-05-684Z.puzzle.json",
+      "moveCount": 9,
+      "score": 875,
+      "sourceReplay": "data/training/selfplay/f3/epoch-000019-2026-06-12T04-21-05-684Z.json"
+    },
+    {
+      "id": "epoch-000019-2026-06-12T06-16-25-769Z",
+      "league": "f3",
+      "targetWildcards": 3,
+      "board": "data/puzzles_only/f3/epoch-000019-2026-06-12T06-16-25-769Z.puzzle.json",
+      "moveCount": 10,
+      "score": 4464,
+      "sourceReplay": "data/training/selfplay/f3/epoch-000019-2026-06-12T06-16-25-769Z.json"
+    },
+    {
+      "id": "epoch-000020-2026-06-12T04-21-29-913Z",
+      "league": "f3",
+      "targetWildcards": 3,
+      "board": "data/puzzles_only/f3/epoch-000020-2026-06-12T04-21-29-913Z.puzzle.json",
+      "moveCount": 9,
+      "score": 5029,
+      "sourceReplay": "data/training/selfplay/f3/epoch-000020-2026-06-12T04-21-29-913Z.json"
+    },
+    {
+      "id": "epoch-000020-2026-06-12T06-17-00-172Z",
+      "league": "f3",
+      "targetWildcards": 3,
+      "board": "data/puzzles_only/f3/epoch-000020-2026-06-12T06-17-00-172Z.puzzle.json",
+      "moveCount": 10,
+      "score": 12457,
+      "sourceReplay": "data/training/selfplay/f3/epoch-000020-2026-06-12T06-17-00-172Z.json"
+    },
+    {
+      "id": "epoch-000021-2026-06-12T04-21-52-657Z",
+      "league": "f3",
+      "targetWildcards": 3,
+      "board": "data/puzzles_only/f3/epoch-000021-2026-06-12T04-21-52-657Z.puzzle.json",
+      "moveCount": 10,
+      "score": 103951,
+      "sourceReplay": "data/training/selfplay/f3/epoch-000021-2026-06-12T04-21-52-657Z.json"
+    },
+    {
+      "id": "epoch-000021-2026-06-12T06-17-23-288Z",
+      "league": "f3",
+      "targetWildcards": 3,
+      "board": "data/puzzles_only/f3/epoch-000021-2026-06-12T06-17-23-288Z.puzzle.json",
+      "moveCount": 10,
+      "score": 792,
+      "sourceReplay": "data/training/selfplay/f3/epoch-000021-2026-06-12T06-17-23-288Z.json"
+    },
+    {
+      "id": "epoch-000022-2026-06-12T06-18-13-649Z",
+      "league": "f3",
+      "targetWildcards": 3,
+      "board": "data/puzzles_only/f3/epoch-000022-2026-06-12T06-18-13-649Z.puzzle.json",
+      "moveCount": 9,
+      "score": 6153,
+      "sourceReplay": "data/training/selfplay/f3/epoch-000022-2026-06-12T06-18-13-649Z.json"
+    },
+    {
+      "id": "epoch-000023-2026-06-12T06-18-36-958Z",
+      "league": "f3",
+      "targetWildcards": 3,
+      "board": "data/puzzles_only/f3/epoch-000023-2026-06-12T06-18-36-958Z.puzzle.json",
+      "moveCount": 9,
+      "score": 1687,
+      "sourceReplay": "data/training/selfplay/f3/epoch-000023-2026-06-12T06-18-36-958Z.json"
+    },
+    {
+      "id": "epoch-000024-2026-06-12T06-19-02-182Z",
+      "league": "f3",
+      "targetWildcards": 3,
+      "board": "data/puzzles_only/f3/epoch-000024-2026-06-12T06-19-02-182Z.puzzle.json",
+      "moveCount": 9,
+      "score": 12275,
+      "sourceReplay": "data/training/selfplay/f3/epoch-000024-2026-06-12T06-19-02-182Z.json"
+    },
+    {
+      "id": "epoch-000025-2026-06-12T06-19-25-705Z",
+      "league": "f3",
+      "targetWildcards": 3,
+      "board": "data/puzzles_only/f3/epoch-000025-2026-06-12T06-19-25-705Z.puzzle.json",
+      "moveCount": 9,
+      "score": 6692,
+      "sourceReplay": "data/training/selfplay/f3/epoch-000025-2026-06-12T06-19-25-705Z.json"
+    },
+    {
+      "id": "epoch-000026-2026-06-12T06-20-00-131Z",
+      "league": "f3",
+      "targetWildcards": 3,
+      "board": "data/puzzles_only/f3/epoch-000026-2026-06-12T06-20-00-131Z.puzzle.json",
+      "moveCount": 10,
+      "score": 37217,
+      "sourceReplay": "data/training/selfplay/f3/epoch-000026-2026-06-12T06-20-00-131Z.json"
+    },
+    {
+      "id": "epoch-000027-2026-06-12T06-20-23-032Z",
+      "league": "f3",
+      "targetWildcards": 3,
+      "board": "data/puzzles_only/f3/epoch-000027-2026-06-12T06-20-23-032Z.puzzle.json",
+      "moveCount": 9,
+      "score": 4679,
+      "sourceReplay": "data/training/selfplay/f3/epoch-000027-2026-06-12T06-20-23-032Z.json"
+    },
+    {
+      "id": "epoch-000028-2026-06-12T06-20-47-355Z",
+      "league": "f3",
+      "targetWildcards": 3,
+      "board": "data/puzzles_only/f3/epoch-000028-2026-06-12T06-20-47-355Z.puzzle.json",
+      "moveCount": 9,
+      "score": 850,
+      "sourceReplay": "data/training/selfplay/f3/epoch-000028-2026-06-12T06-20-47-355Z.json"
+    },
+    {
+      "id": "epoch-000029-2026-06-12T06-21-12-946Z",
+      "league": "f3",
+      "targetWildcards": 3,
+      "board": "data/puzzles_only/f3/epoch-000029-2026-06-12T06-21-12-946Z.puzzle.json",
+      "moveCount": 9,
+      "score": 850,
+      "sourceReplay": "data/training/selfplay/f3/epoch-000029-2026-06-12T06-21-12-946Z.json"
+    },
+    {
+      "id": "epoch-000030-2026-06-12T06-21-37-267Z",
+      "league": "f3",
+      "targetWildcards": 3,
+      "board": "data/puzzles_only/f3/epoch-000030-2026-06-12T06-21-37-267Z.puzzle.json",
+      "moveCount": 10,
+      "score": 5838,
+      "sourceReplay": "data/training/selfplay/f3/epoch-000030-2026-06-12T06-21-37-267Z.json"
+    },
+    {
+      "id": "epoch-000031-2026-06-12T06-22-00-903Z",
+      "league": "f3",
+      "targetWildcards": 3,
+      "board": "data/puzzles_only/f3/epoch-000031-2026-06-12T06-22-00-903Z.puzzle.json",
+      "moveCount": 9,
+      "score": 7576,
+      "sourceReplay": "data/training/selfplay/f3/epoch-000031-2026-06-12T06-22-00-903Z.json"
+    },
+    {
+      "id": "epoch-000032-2026-06-12T06-23-11-835Z",
+      "league": "f3",
+      "targetWildcards": 3,
+      "board": "data/puzzles_only/f3/epoch-000032-2026-06-12T06-23-11-835Z.puzzle.json",
+      "moveCount": 9,
+      "score": 2966,
+      "sourceReplay": "data/training/selfplay/f3/epoch-000032-2026-06-12T06-23-11-835Z.json"
+    },
+    {
+      "id": "epoch-000033-2026-06-12T06-23-36-334Z",
+      "league": "f3",
+      "targetWildcards": 3,
+      "board": "data/puzzles_only/f3/epoch-000033-2026-06-12T06-23-36-334Z.puzzle.json",
+      "moveCount": 9,
+      "score": 859,
+      "sourceReplay": "data/training/selfplay/f3/epoch-000033-2026-06-12T06-23-36-334Z.json"
+    },
+    {
+      "id": "epoch-000034-2026-06-12T06-24-02-684Z",
+      "league": "f3",
+      "targetWildcards": 3,
+      "board": "data/puzzles_only/f3/epoch-000034-2026-06-12T06-24-02-684Z.puzzle.json",
+      "moveCount": 9,
+      "score": 805,
+      "sourceReplay": "data/training/selfplay/f3/epoch-000034-2026-06-12T06-24-02-684Z.json"
+    },
+    {
+      "id": "epoch-000035-2026-06-12T06-24-55-878Z",
+      "league": "f3",
+      "targetWildcards": 3,
+      "board": "data/puzzles_only/f3/epoch-000035-2026-06-12T06-24-55-878Z.puzzle.json",
+      "moveCount": 9,
+      "score": 24709,
+      "sourceReplay": "data/training/selfplay/f3/epoch-000035-2026-06-12T06-24-55-878Z.json"
+    },
+    {
+      "id": "epoch-000036-2026-06-12T06-25-20-962Z",
+      "league": "f3",
+      "targetWildcards": 3,
+      "board": "data/puzzles_only/f3/epoch-000036-2026-06-12T06-25-20-962Z.puzzle.json",
+      "moveCount": 9,
+      "score": 825,
+      "sourceReplay": "data/training/selfplay/f3/epoch-000036-2026-06-12T06-25-20-962Z.json"
+    },
+    {
+      "id": "epoch-000037-2026-06-12T06-25-46-226Z",
+      "league": "f3",
+      "targetWildcards": 3,
+      "board": "data/puzzles_only/f3/epoch-000037-2026-06-12T06-25-46-226Z.puzzle.json",
+      "moveCount": 9,
+      "score": 1271,
+      "sourceReplay": "data/training/selfplay/f3/epoch-000037-2026-06-12T06-25-46-226Z.json"
+    },
+    {
+      "id": "epoch-000038-2026-06-12T06-26-12-170Z",
+      "league": "f3",
+      "targetWildcards": 3,
+      "board": "data/puzzles_only/f3/epoch-000038-2026-06-12T06-26-12-170Z.puzzle.json",
+      "moveCount": 9,
+      "score": 9014,
+      "sourceReplay": "data/training/selfplay/f3/epoch-000038-2026-06-12T06-26-12-170Z.json"
+    },
+    {
+      "id": "epoch-000039-2026-06-12T06-27-17-546Z",
+      "league": "f3",
+      "targetWildcards": 3,
+      "board": "data/puzzles_only/f3/epoch-000039-2026-06-12T06-27-17-546Z.puzzle.json",
+      "moveCount": 9,
+      "score": 957,
+      "sourceReplay": "data/training/selfplay/f3/epoch-000039-2026-06-12T06-27-17-546Z.json"
+    }
+  ],
+  "skippedFiles": []
+}

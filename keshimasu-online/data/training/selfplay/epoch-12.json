@@ -1,0 +1,889 @@
+{
+  "epoch": 12,
+  "puzzle": [
+    [
+      null,
+      null,
+      null,
+      "え"
+    ],
+    [
+      "い",
+      null,
+      null,
+      null
+    ],
+    [
+      "え",
+      null,
+      null,
+      null
+    ],
+    [
+      null,
+      null,
+      null,
+      "い"
+    ]
+  ],
+  "solvedBoard": [
+    [
+      "あ",
+      "い",
+      "う",
+      "え"
+    ],
+    [
+      "い",
+      "え",
+      "あ",
+      "う"
+    ],
+    [
+      "え",
+      "う",
+      "い",
+      "あ"
+    ],
+    [
+      "う",
+      "あ",
+      "え",
+      "い"
+    ]
+  ],
+  "difficulty": 37.000543,
+  "stats": {
+    "exploredNodes": 13,
+    "backtracks": 0,
+    "deadEnds": 0,
+    "forcedMoves": 0,
+    "maxDepth": 12,
+    "elapsedMs": 0.054300000000012005,
+    "branchingHistogram": {
+      "2": 9,
+      "3": 3
+    },
+    "path": [
+      {
+        "boardTensor": [
+          [
+            0,
+            0,
+            0,
+            4
+          ],
+          [
+            2,
+            0,
+            0,
+            0
+          ],
+          [
+            4,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            2
+          ]
+        ],
+        "selectedCell": [
+          0,
+          0
+        ],
+        "candidateCount": 3,
+        "depth": 0
+      },
+      {
+        "boardTensor": [
+          [
+            1,
+            0,
+            0,
+            4
+          ],
+          [
+            2,
+            0,
+            0,
+            0
+          ],
+          [
+            4,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            2
+          ]
+        ],
+        "selectedCell": [
+          3,
+          0
+        ],
+        "candidateCount": 2,
+        "depth": 1
+      },
+      {
+        "boardTensor": [
+          [
+            1,
+            0,
+            0,
+            4
+          ],
+          [
+            2,
+            0,
+            0,
+            0
+          ],
+          [
+            4,
+            0,
+            0,
+            0
+          ],
+          [
+            3,
+            0,
+            0,
+            2
+          ]
+        ],
+        "selectedCell": [
+          0,
+          1
+        ],
+        "candidateCount": 3,
+        "depth": 2
+      },
+      {
+        "boardTensor": [
+          [
+            1,
+            2,
+            0,
+            4
+          ],
+          [
+            2,
+            0,
+            0,
+            0
+          ],
+          [
+            4,
+            0,
+            0,
+            0
+          ],
+          [
+            3,
+            0,
+            0,
+            2
+          ]
+        ],
+        "selectedCell": [
+          0,
+          2
+        ],
+        "candidateCount": 2,
+        "depth": 3
+      },
+      {
+        "boardTensor": [
+          [
+            1,
+            2,
+            3,
+            4
+          ],
+          [
+            2,
+            0,
+            0,
+            0
+          ],
+          [
+            4,
+            0,
+            0,
+            0
+          ],
+          [
+            3,
+            0,
+            0,
+            2
+          ]
+        ],
+        "selectedCell": [
+          1,
+          2
+        ],
+        "candidateCount": 3,
+        "depth": 4
+      },
+      {
+        "boardTensor": [
+          [
+            1,
+            2,
+            3,
+            4
+          ],
+          [
+            2,
+            0,
+            1,
+            0
+          ],
+          [
+            4,
+            0,
+            0,
+            0
+          ],
+          [
+            3,
+            0,
+            0,
+            2
+          ]
+        ],
+        "selectedCell": [
+          1,
+          3
+        ],
+        "candidateCount": 2,
+        "depth": 5
+      },
+      {
+        "boardTensor": [
+          [
+            1,
+            2,
+            3,
+            4
+          ],
+          [
+            2,
+            0,
+            1,
+            3
+          ],
+          [
+            4,
+            0,
+            0,
+            0
+          ],
+          [
+            3,
+            0,
+            0,
+            2
+          ]
+        ],
+        "selectedCell": [
+          1,
+          1
+        ],
+        "candidateCount": 2,
+        "depth": 6
+      },
+      {
+        "boardTensor": [
+          [
+            1,
+            2,
+            3,
+            4
+          ],
+          [
+            2,
+            4,
+            1,
+            3
+          ],
+          [
+            4,
+            0,
+            0,
+            0
+          ],
+          [
+            3,
+            0,
+            0,
+            2
+          ]
+        ],
+        "selectedCell": [
+          2,
+          2
+        ],
+        "candidateCount": 2,
+        "depth": 7
+      },
+      {
+        "boardTensor": [
+          [
+            1,
+            2,
+            3,
+            4
+          ],
+          [
+            2,
+            4,
+            1,
+            3
+          ],
+          [
+            4,
+            0,
+            2,
+            0
+          ],
+          [
+            3,
+            0,
+            0,
+            2
+          ]
+        ],
+        "selectedCell": [
+          2,
+          3
+        ],
+        "candidateCount": 2,
+        "depth": 8
+      },
+      {
+        "boardTensor": [
+          [
+            1,
+            2,
+            3,
+            4
+          ],
+          [
+            2,
+            4,
+            1,
+            3
+          ],
+          [
+            4,
+            0,
+            2,
+            1
+          ],
+          [
+            3,
+            0,
+            0,
+            2
+          ]
+        ],
+        "selectedCell": [
+          2,
+          1
+        ],
+        "candidateCount": 2,
+        "depth": 9
+      },
+      {
+        "boardTensor": [
+          [
+            1,
+            2,
+            3,
+            4
+          ],
+          [
+            2,
+            4,
+            1,
+            3
+          ],
+          [
+            4,
+            3,
+            2,
+            1
+          ],
+          [
+            3,
+            0,
+            0,
+            2
+          ]
+        ],
+        "selectedCell": [
+          3,
+          1
+        ],
+        "candidateCount": 2,
+        "depth": 10
+      },
+      {
+        "boardTensor": [
+          [
+            1,
+            2,
+            3,
+            4
+          ],
+          [
+            2,
+            4,
+            1,
+            3
+          ],
+          [
+            4,
+            3,
+            2,
+            1
+          ],
+          [
+            3,
+            1,
+            0,
+            2
+          ]
+        ],
+        "selectedCell": [
+          3,
+          2
+        ],
+        "candidateCount": 2,
+        "depth": 11
+      }
+    ]
+  },
+  "path": [
+    {
+      "boardTensor": [
+        [
+          0,
+          0,
+          0,
+          4
+        ],
+        [
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          4,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          2
+        ]
+      ],
+      "selectedCell": [
+        0,
+        0
+      ],
+      "candidateCount": 3,
+      "depth": 0
+    },
+    {
+      "boardTensor": [
+        [
+          1,
+          0,
+          0,
+          4
+        ],
+        [
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          4,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          2
+        ]
+      ],
+      "selectedCell": [
+        3,
+        0
+      ],
+      "candidateCount": 2,
+      "depth": 1
+    },
+    {
+      "boardTensor": [
+        [
+          1,
+          0,
+          0,
+          4
+        ],
+        [
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          4,
+          0,
+          0,
+          0
+        ],
+        [
+          3,
+          0,
+          0,
+          2
+        ]
+      ],
+      "selectedCell": [
+        0,
+        1
+      ],
+      "candidateCount": 3,
+      "depth": 2
+    },
+    {
+      "boardTensor": [
+        [
+          1,
+          2,
+          0,
+          4
+        ],
+        [
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          4,
+          0,
+          0,
+          0
+        ],
+        [
+          3,
+          0,
+          0,
+          2
+        ]
+      ],
+      "selectedCell": [
+        0,
+        2
+      ],
+      "candidateCount": 2,
+      "depth": 3
+    },
+    {
+      "boardTensor": [
+        [
+          1,
+          2,
+          3,
+          4
+        ],
+        [
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          4,
+          0,
+          0,
+          0
+        ],
+        [
+          3,
+          0,
+          0,
+          2
+        ]
+      ],
+      "selectedCell": [
+        1,
+        2
+      ],
+      "candidateCount": 3,
+      "depth": 4
+    },
+    {
+      "boardTensor": [
+        [
+          1,
+          2,
+          3,
+          4
+        ],
+        [
+          2,
+          0,
+          1,
+          0
+        ],
+        [
+          4,
+          0,
+          0,
+          0
+        ],
+        [
+          3,
+          0,
+          0,
+          2
+        ]
+      ],
+      "selectedCell": [
+        1,
+        3
+      ],
+      "candidateCount": 2,
+      "depth": 5
+    },
+    {
+      "boardTensor": [
+        [
+          1,
+          2,
+          3,
+          4
+        ],
+        [
+          2,
+          0,
+          1,
+          3
+        ],
+        [
+          4,
+          0,
+          0,
+          0
+        ],
+        [
+          3,
+          0,
+          0,
+          2
+        ]
+      ],
+      "selectedCell": [
+        1,
+        1
+      ],
+      "candidateCount": 2,
+      "depth": 6
+    },
+    {
+      "boardTensor": [
+        [
+          1,
+          2,
+          3,
+          4
+        ],
+        [
+          2,
+          4,
+          1,
+          3
+        ],
+        [
+          4,
+          0,
+          0,
+          0
+        ],
+        [
+          3,
+          0,
+          0,
+          2
+        ]
+      ],
+      "selectedCell": [
+        2,
+        2
+      ],
+      "candidateCount": 2,
+      "depth": 7
+    },
+    {
+      "boardTensor": [
+        [
+          1,
+          2,
+          3,
+          4
+        ],
+        [
+          2,
+          4,
+          1,
+          3
+        ],
+        [
+          4,
+          0,
+          2,
+          0
+        ],
+        [
+          3,
+          0,
+          0,
+          2
+        ]
+      ],
+      "selectedCell": [
+        2,
+        3
+      ],
+      "candidateCount": 2,
+      "depth": 8
+    },
+    {
+      "boardTensor": [
+        [
+          1,
+          2,
+          3,
+          4
+        ],
+        [
+          2,
+          4,
+          1,
+          3
+        ],
+        [
+          4,
+          0,
+          2,
+          1
+        ],
+        [
+          3,
+          0,
+          0,
+          2
+        ]
+      ],
+      "selectedCell": [
+        2,
+        1
+      ],
+      "candidateCount": 2,
+      "depth": 9
+    },
+    {
+      "boardTensor": [
+        [
+          1,
+          2,
+          3,
+          4
+        ],
+        [
+          2,
+          4,
+          1,
+          3
+        ],
+        [
+          4,
+          3,
+          2,
+          1
+        ],
+        [
+          3,
+          0,
+          0,
+          2
+        ]
+      ],
+      "selectedCell": [
+        3,
+        1
+      ],
+      "candidateCount": 2,
+      "depth": 10
+    },
+    {
+      "boardTensor": [
+        [
+          1,
+          2,
+          3,
+          4
+        ],
+        [
+          2,
+          4,
+          1,
+          3
+        ],
+        [
+          4,
+          3,
+          2,
+          1
+        ],
+        [
+          3,
+          1,
+          0,
+          2
+        ]
+      ],
+      "selectedCell": [
+        3,
+        2
+      ],
+      "candidateCount": 2,
+      "depth": 11
+    }
+  ],
+  "createdAt": "2026-06-11T00:04:55.078Z"
+}

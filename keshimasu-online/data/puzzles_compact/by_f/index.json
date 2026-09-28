@@ -1,0 +1,30 @@
+{
+  "format": "keshimasu-puzzles-compact-by-f-index-v1",
+  "input": "data/puzzles_compact/puzzles_compact.csv",
+  "outputDir": "data/puzzles_compact/by_f",
+  "totalRows": 328,
+  "byF": {
+    "f0": {
+      "rows": 102,
+      "file": "data/puzzles_compact/by_f/f0.csv"
+    },
+    "f1": {
+      "rows": 57,
+      "file": "data/puzzles_compact/by_f/f1.csv"
+    },
+    "f2": {
+      "rows": 104,
+      "file": "data/puzzles_compact/by_f/f2.csv"
+    },
+    "f3": {
+      "rows": 65,
+      "file": "data/puzzles_compact/by_f/f3.csv"
+    }
+  },
+  "files": [
+    "data/puzzles_compact/by_f/f0.csv",
+    "data/puzzles_compact/by_f/f1.csv",
+    "data/puzzles_compact/by_f/f2.csv",
+    "data/puzzles_compact/by_f/f3.csv"
+  ]
+}

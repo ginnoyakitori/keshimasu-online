@@ -1,0 +1,11 @@
+{
+  "name": "005-no-repeat-word-rule",
+  "kind": "no-repeat",
+  "description": "same word cannot be used more than once",
+  "usedWordsBefore": ["マリ"],
+  "move": {
+    "word": "マリ",
+    "path": [[7, 0], [7, 1]]
+  },
+  "expectedNoRepeatLegal": false
+}

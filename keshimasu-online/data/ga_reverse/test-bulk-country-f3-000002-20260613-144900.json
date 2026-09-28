@@ -1,0 +1,586 @@
+{
+  "format": "keshimasu-ga-reverse-full-board-v2-parallel",
+  "createdAt": "2026-06-13T14:49:01",
+  "versions": {
+    "generator": "gen-000003-ga-reverse-parallel-fullboard-v3-version-fixed",
+    "solver": "gen-000003-onnx-policy-solver-v2-benchmarked",
+    "model": "gen-000003-onnx-policy-solver-v2-benchmarked",
+    "manifests": {
+      "generator": {
+        "kind": "generator",
+        "generation": 3,
+        "name": "ga-reverse-parallel-fullboard-v3-version-fixed",
+        "snapshotName": "gen-000003-ga-reverse-parallel-fullboard-v3-version-fixed",
+        "createdAt": "2026-06-12T11:59:05.947465+00:00",
+        "note": "Fix version embedding helper function",
+        "git": {
+          "commit": null,
+          "branch": null,
+          "statusShort": null
+        },
+        "fileCount": 4,
+        "missingFileCount": 0
+      },
+      "solver": {
+        "kind": "solver",
+        "generation": 3,
+        "name": "onnx-policy-solver-v2-benchmarked",
+        "snapshotName": "gen-000003-onnx-policy-solver-v2-benchmarked",
+        "createdAt": "2026-06-12T11:50:02.940255+00:00",
+        "note": "X/Y preprocessed policy model with f2/f3 benchmarks",
+        "git": {
+          "commit": null,
+          "branch": null,
+          "statusShort": null
+        },
+        "fileCount": 17,
+        "missingFileCount": 0
+      },
+      "model": {
+        "kind": "solver",
+        "generation": 3,
+        "name": "onnx-policy-solver-v2-benchmarked",
+        "snapshotName": "gen-000003-onnx-policy-solver-v2-benchmarked",
+        "createdAt": "2026-06-12T11:50:02.940255+00:00",
+        "note": "X/Y preprocessed policy model with f2/f3 benchmarks",
+        "git": {
+          "commit": null,
+          "branch": null,
+          "statusShort": null
+        },
+        "fileCount": 17,
+        "missingFileCount": 0
+      }
+    },
+    "source": {
+      "generatorLatest": "C:\\Users\\ramuc\\keshimasu-ai\\data\\program_versions\\generator\\LATEST.txt",
+      "solverLatest": "C:\\Users\\ramuc\\keshimasu-ai\\data\\program_versions\\solver\\LATEST.txt"
+    }
+  },
+  "targetWildcards": 3,
+  "actualWildcards": 3,
+  "fullBoardRequired": true,
+  "filledCount": 40,
+  "emptyCount": 0,
+  "fitness": 3005.0,
+  "policyTrapBonus": 0.0,
+  "policyTrapWeight": 0.5,
+  "policyTrap": {
+    "enabled": false,
+    "reason": "worker evaluation only"
+  },
+  "solved": true,
+  "score": 3005.0,
+  "board": [
+    [
+      "チ",
+      "ニ",
+      "ブ",
+      "ア",
+      "モ"
+    ],
+    [
+      "リ",
+      "Ｆ",
+      "ル",
+      "ン",
+      "ル"
+    ],
+    [
+      "グ",
+      "エ",
+      "ガ",
+      "ド",
+      "デ"
+    ],
+    [
+      "レ",
+      "パ",
+      "リ",
+      "ラ",
+      "ィ"
+    ],
+    [
+      "ナ",
+      "ナ",
+      "Ｆ",
+      "ス",
+      "ブ"
+    ],
+    [
+      "ダ",
+      "マ",
+      "ギ",
+      "ペ",
+      "ペ"
+    ],
+    [
+      "タ",
+      "マ",
+      "ニ",
+      "イ",
+      "ル"
+    ],
+    [
+      "Ｆ",
+      "リ",
+      "ア",
+      "ン",
+      "ー"
+    ]
+  ],
+  "boardText": "チ ニ ブ ア モ\nリ Ｆ ル ン ル\nグ エ ガ ド デ\nレ パ リ ラ ィ\nナ ナ Ｆ ス ブ\nダ マ ギ ペ ペ\nタ マ ニ イ ル\nＦ リ ア ン ー",
+  "boardKey": "チニブアモ/リＦルンル/グエガドデ/レパリラィ/ナナＦスブ/ダマギペペ/タマニイル/Ｆリアンー",
+  "solutionMoves": [
+    {
+      "word_id": 54,
+      "word": "スペイン",
+      "row": 4,
+      "col": 3,
+      "direction": "V",
+      "path": [
+        [
+          4,
+          3
+        ],
+        [
+          5,
+          3
+        ],
+        [
+          6,
+          3
+        ],
+        [
+          7,
+          3
+        ]
+      ]
+    },
+    {
+      "word_id": 4,
+      "word": "アンドラ",
+      "row": 4,
+      "col": 3,
+      "direction": "V",
+      "path": [
+        [
+          4,
+          3
+        ],
+        [
+          5,
+          3
+        ],
+        [
+          6,
+          3
+        ],
+        [
+          7,
+          3
+        ]
+      ]
+    },
+    {
+      "word_id": 34,
+      "word": "ギニア",
+      "row": 5,
+      "col": 2,
+      "direction": "V",
+      "path": [
+        [
+          5,
+          2
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          7,
+          2
+        ]
+      ]
+    },
+    {
+      "word_id": 98,
+      "word": "ブルガリア",
+      "row": 3,
+      "col": 2,
+      "direction": "V",
+      "path": [
+        [
+          3,
+          2
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          7,
+          2
+        ]
+      ]
+    },
+    {
+      "word_id": 108,
+      "word": "ペルー",
+      "row": 5,
+      "col": 4,
+      "direction": "V",
+      "path": [
+        [
+          5,
+          4
+        ],
+        [
+          6,
+          4
+        ],
+        [
+          7,
+          4
+        ]
+      ]
+    },
+    {
+      "word_id": 120,
+      "word": "モルディブ",
+      "row": 3,
+      "col": 4,
+      "direction": "V",
+      "path": [
+        [
+          3,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          5,
+          4
+        ],
+        [
+          6,
+          4
+        ],
+        [
+          7,
+          4
+        ]
+      ]
+    },
+    {
+      "word_id": 91,
+      "word": "パナマ",
+      "row": 3,
+      "col": 1,
+      "direction": "V",
+      "path": [
+        [
+          3,
+          1
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          5,
+          1
+        ]
+      ]
+    },
+    {
+      "word_id": 78,
+      "word": "ニウエ",
+      "row": 3,
+      "col": 1,
+      "direction": "V",
+      "path": [
+        [
+          3,
+          1
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          5,
+          1
+        ]
+      ]
+    },
+    {
+      "word_id": 114,
+      "word": "マリ",
+      "row": 6,
+      "col": 1,
+      "direction": "V",
+      "path": [
+        [
+          6,
+          1
+        ],
+        [
+          7,
+          1
+        ]
+      ]
+    },
+    {
+      "word_id": 64,
+      "word": "タイ",
+      "row": 6,
+      "col": 0,
+      "direction": "V",
+      "path": [
+        [
+          6,
+          0
+        ],
+        [
+          7,
+          0
+        ]
+      ]
+    },
+    {
+      "word_id": 39,
+      "word": "グレナダ",
+      "row": 4,
+      "col": 0,
+      "direction": "V",
+      "path": [
+        [
+          4,
+          0
+        ],
+        [
+          5,
+          0
+        ],
+        [
+          6,
+          0
+        ],
+        [
+          7,
+          0
+        ]
+      ]
+    },
+    {
+      "word_id": 69,
+      "word": "チリ",
+      "row": 6,
+      "col": 0,
+      "direction": "V",
+      "path": [
+        [
+          6,
+          0
+        ],
+        [
+          7,
+          0
+        ]
+      ]
+    }
+  ],
+  "solverStats": {
+    "exploredNodes": 803,
+    "backtracks": 423,
+    "deadEnds": 367,
+    "forcedMoves": 281,
+    "maxDepth": 12,
+    "elapsedMs": 6.269699995755218,
+    "branchingHistogram": {
+      "0": 367,
+      "1": 281,
+      "2": 69,
+      "3": 35,
+      "4": 16,
+      "5": 2,
+      "6": 5,
+      "7": 3,
+      "8": 13,
+      "9": 11
+    }
+  },
+  "genes": [
+    {
+      "word": "チリ",
+      "direction": "V",
+      "startCol": 0,
+      "length": 2,
+      "wildMask": [
+        false,
+        false
+      ]
+    },
+    {
+      "word": "グレナダ",
+      "direction": "V",
+      "startCol": 0,
+      "length": 4,
+      "wildMask": [
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "word": "タイ",
+      "direction": "V",
+      "startCol": 0,
+      "length": 2,
+      "wildMask": [
+        false,
+        true
+      ]
+    },
+    {
+      "word": "ブルガリア",
+      "direction": "V",
+      "startCol": 2,
+      "length": 5,
+      "wildMask": [
+        false,
+        false,
+        false,
+        false,
+        true
+      ]
+    },
+    {
+      "word": "アンドラ",
+      "direction": "V",
+      "startCol": 3,
+      "length": 4,
+      "wildMask": [
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "word": "ニウエ",
+      "direction": "V",
+      "startCol": 1,
+      "length": 3,
+      "wildMask": [
+        false,
+        true,
+        false
+      ]
+    },
+    {
+      "word": "パナマ",
+      "direction": "V",
+      "startCol": 1,
+      "length": 3,
+      "wildMask": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "word": "モルディブ",
+      "direction": "V",
+      "startCol": 4,
+      "length": 5,
+      "wildMask": [
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "word": "スペイン",
+      "direction": "V",
+      "startCol": 3,
+      "length": 4,
+      "wildMask": [
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "word": "ペルー",
+      "direction": "V",
+      "startCol": 4,
+      "length": 3,
+      "wildMask": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "word": "ギニア",
+      "direction": "V",
+      "startCol": 2,
+      "length": 3,
+      "wildMask": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "word": "マリ",
+      "direction": "V",
+      "startCol": 1,
+      "length": 2,
+      "wildMask": [
+        false,
+        false
+      ]
+    }
+  ],
+  "config": {
+    "rows": 8,
+    "cols": 5,
+    "boardCells": 40,
+    "playableStartRow": 3,
+    "reverseBuildTopRow": 0,
+    "emptyId": 0,
+    "maxWordLength": 5,
+    "steps": 12,
+    "populationSize": 40,
+    "generations": 3,
+    "eliteCount": 8,
+    "mutationRate": 0.18,
+    "maxNodes": 300000,
+    "maxDepth": 130,
+    "maxPathsPerWord": 80,
+    "usePolicyTrap": false,
+    "policyTrapWeight": 0.5,
+    "policyTrapTopK": 20,
+    "workers": 1,
+    "seed": null,
+    "wordMode": "country",
+    "wordsFile": "C:\\Users\\ramuc\\keshimasu-ai\\data\\words\\countries.json"
+  }
+}

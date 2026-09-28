@@ -1,0 +1,8 @@
+Metadata-Version: 2.4
+Name: keshimasu-ai-python
+Version: 0.1.0
+Summary: Python/Numba/PyTorch core for Keshimasu AI
+Requires-Python: <3.14,>=3.11
+Requires-Dist: numpy>=1.24.0
+Requires-Dist: numba>=0.59.0
+Requires-Dist: torch>=2.1.0

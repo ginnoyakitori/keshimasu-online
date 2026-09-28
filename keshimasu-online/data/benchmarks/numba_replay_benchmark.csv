@@ -1,0 +1,6 @@
+backtracksDiff,deadEndsDiff,elapsedMsDiff,file,jsBacktracks,jsDeadEnds,jsElapsedMs,jsForcedMoves,jsMaxBranch,jsMaxDepth,jsMultiBranchCount,jsNodes,jsSolved,league,nodesDiff,pyBacktracks,pyDeadEnds,pyElapsedMs,pyForcedMoves,pyMaxBranch,pyMaxDepth,pyMultiBranchCount,pyNodes,pySolved,targetWildcards
+-658,-420,-12.092800003185403,C:\Users\ramuc\keshimasu-ai\data\training\selfplay\f2\epoch-000000-2026-06-11T09-13-07-832Z.json,0,0,2.937299999874085,1,15,9,8,10,True,f2,-1078,658,420,15.030100003059488,375,15,9,292,1088,True,2
+0,0,2.591399999393616,C:\Users\ramuc\keshimasu-ai\data\training\selfplay\f2\epoch-000001-2026-06-11T09-13-25-695Z.json,0,0,2.810300000011921,4,9,9,5,10,True,f2,0,0,0,0.21890000061830506,4,9,9,5,10,True,2
+0,0,4.106200000736862,C:\Users\ramuc\keshimasu-ai\data\training\selfplay\f2\epoch-000002-2026-06-11T09-13-41-606Z.json,0,0,4.346900000004098,1,16,10,9,11,True,f2,0,0,0,0.2406999992672354,1,16,10,9,11,True,2
+0,0,6.191500004031695,C:\Users\ramuc\keshimasu-ai\data\training\selfplay\f2\epoch-000003-2026-06-11T09-13-56-778Z.json,12,5,6.6936000001151115,14,15,10,8,28,True,f2,0,12,5,0.502099996083416,14,15,10,8,28,True,2
+0,0,32.5062000019243,C:\Users\ramuc\keshimasu-ai\data\training\selfplay\f2\epoch-000004-2026-06-11T09-14-12-849Z.json,65,43,34.3043000001926,54,11,10,21,119,True,f2,0,65,43,1.7980999982682988,54,11,10,21,119,True,2

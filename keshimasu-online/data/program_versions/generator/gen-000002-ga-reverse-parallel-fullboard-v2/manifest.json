@@ -1,0 +1,43 @@
+{
+  "format": "keshimasu-program-version-v1",
+  "kind": "generator",
+  "generation": 2,
+  "name": "ga-reverse-parallel-fullboard-v2",
+  "snapshotName": "gen-000002-ga-reverse-parallel-fullboard-v2",
+  "createdAt": "2026-06-12T11:55:55.552594+00:00",
+  "note": "ProcessPoolExecutor parallel evaluation + vertical full-board fallback + version embedding",
+  "root": "C:\\Users\\ramuc\\keshimasu-ai",
+  "git": {
+    "commit": null,
+    "branch": null,
+    "statusShort": null
+  },
+  "files": [
+    {
+      "path": "python/src/keshimasu_py/ga_reverse.py",
+      "size": 55266,
+      "sha256": "9a000e39e264168c320ea8b2c65cced9959c8d0356be0a8099c36589afd70653"
+    },
+    {
+      "path": "python/apps/build_numpy_dataset.py",
+      "size": 34493,
+      "sha256": "fd7fd9e24b6655351af638b3a3d49448e5c75512a6bc4c8427856521d19163cb"
+    },
+    {
+      "path": "python/apps/train_policy.py",
+      "size": 13137,
+      "sha256": "c063ef6b00fb5d14c4360949ed8c46286a02589a8ef100408274d36b3df09f43"
+    },
+    {
+      "path": "python/apps/export_policy_onnx.py",
+      "size": 17272,
+      "sha256": "3e783a8f85523ae2475158f28d28faea52ad54fed7d952cbbf9ad512f530504b"
+    }
+  ],
+  "missingFiles": [],
+  "options": {
+    "includeModel": false,
+    "includeBenchmarks": false,
+    "extraFiles": []
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "ROWS": 8,
+  "COLS": 5,
+  "PLAYABLE_START_ROW": 3,
+  "MAX_WORD_LENGTH": 5,
+  "WILDCARD_CHAR": "F",
+  "EMPTY_DISPLAY": "・",
+  "WILDCARD_DISPLAY": "Ｆ",
+  "DIRECTIONS": {
+    "H": 0,
+    "V": 1
+  }
+}

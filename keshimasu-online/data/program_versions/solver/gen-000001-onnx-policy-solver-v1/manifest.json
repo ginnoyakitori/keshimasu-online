@@ -1,0 +1,101 @@
+{
+  "format": "keshimasu-program-version-v1",
+  "kind": "solver",
+  "generation": 1,
+  "name": "onnx-policy-solver-v1",
+  "snapshotName": "gen-000001-onnx-policy-solver-v1",
+  "createdAt": "2026-06-12T11:34:46.990279+00:00",
+  "note": "X/Y preprocessed policy model",
+  "root": "C:\\Users\\ramuc\\keshimasu-ai",
+  "git": {
+    "commit": null,
+    "branch": null,
+    "statusShort": null
+  },
+  "files": [
+    {
+      "path": "python/src/keshimasu_py/core_solver.py",
+      "size": 15108,
+      "sha256": "bc99f4a5dd97848bd09a0eedff3df90cedbfcea743942cfa36f212076775f4ff"
+    },
+    {
+      "path": "python/src/keshimasu_py/torch_policy.py",
+      "size": 16951,
+      "sha256": "1f1b5e5f35e5b160ad1b0bd6537365e02ae53fc557d33f9f126afa9e0954dd33"
+    },
+    {
+      "path": "python/src/keshimasu_py/policy_inference.py",
+      "size": 6131,
+      "sha256": "75f3eae4bbc5d3c50c749f69a69356309b2f40db9b25e7f954c9fd07266a3604"
+    },
+    {
+      "path": "python/apps/solver_policy.py",
+      "size": 32372,
+      "sha256": "a97ac9303dbd42aca976bdfe8ade950bea9c54ff064356a8132b611ab8cceaa2"
+    },
+    {
+      "path": "src/solver/solver.js",
+      "size": 8658,
+      "sha256": "cdf8ec2bb3a396ef2976a7ceec65ac7899811193a65916492ef34e4cc2553847"
+    },
+    {
+      "path": "src/solver/solver-policy.js",
+      "size": 15295,
+      "sha256": "e28c346fd4b7015bba811dc3bc3f01b1298683d12c6341c968a32914348a9d5c"
+    },
+    {
+      "path": "src/solver/word-search.js",
+      "size": 9291,
+      "sha256": "17b1e8229edc808430362f393b17a4254f516fcb3e1ac32bca173ff60356afb4"
+    },
+    {
+      "path": "src/solver/gravity.js",
+      "size": 2315,
+      "sha256": "8b9f3597a86c840aa6fcf13ba2d5ee06183955ca4d6ee231f7780bdb05924de9"
+    },
+    {
+      "path": "src/neural/onnx-policy.js",
+      "size": 17022,
+      "sha256": "47752aad324f25ca69997605a0e116cf1779d09fa356afbdf7b004185e6d112a"
+    },
+    {
+      "path": "src/neural/inference.js",
+      "size": 5723,
+      "sha256": "09437d8b9cea13640996a49047879b5a0346673328ebf50376882d20e6b3c889"
+    },
+    {
+      "path": "data/models/torch_policy/policy_model.pt",
+      "size": 237267,
+      "sha256": "74d17753c3284929f8f9b0d80947f33d26489ec15056daaa9c593e4bcd67a05d"
+    },
+    {
+      "path": "data/models/torch_policy/policy_model.onnx",
+      "size": 237798,
+      "sha256": "0040732ecd9a7184e60a7ec6d16b99b677158498049a6593c5eac3f5af7d15a2"
+    },
+    {
+      "path": "data/models/torch_policy/metadata.json",
+      "size": 8065,
+      "sha256": "a6ac5ad8b57db6a59183ee997668d43071540925bade94dd8b584d16c99ac113"
+    },
+    {
+      "path": "data/models/torch_policy/onnx_metadata.json",
+      "size": 8686,
+      "sha256": "9e53db939d652d5d807d0a078db06df80353fe0791cf4c08db3a0f6f18ff93ca"
+    },
+    {
+      "path": "data/cleanup/benchmark_onnx_policy_result.json",
+      "size": 32885,
+      "sha256": "68ec1aefc6c2de4a006e963d93dd3fdb8c9e89c02a3d84050b4dab94b39732a8"
+    }
+  ],
+  "missingFiles": [
+    "data/models/torch_policy/benchmark_f3_50.json",
+    "data/models/torch_policy/benchmark_f2_50.json"
+  ],
+  "options": {
+    "includeModel": true,
+    "includeBenchmarks": true,
+    "extraFiles": []
+  }
+}

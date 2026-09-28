@@ -1,0 +1,590 @@
+{
+  "format": "keshimasu-ga-reverse-full-board-v2-parallel",
+  "createdAt": "2026-06-13T14:52:55",
+  "versions": {
+    "generator": "gen-000003-ga-reverse-parallel-fullboard-v3-version-fixed",
+    "solver": "gen-000003-onnx-policy-solver-v2-benchmarked",
+    "model": "gen-000003-onnx-policy-solver-v2-benchmarked",
+    "manifests": {
+      "generator": {
+        "kind": "generator",
+        "generation": 3,
+        "name": "ga-reverse-parallel-fullboard-v3-version-fixed",
+        "snapshotName": "gen-000003-ga-reverse-parallel-fullboard-v3-version-fixed",
+        "createdAt": "2026-06-12T11:59:05.947465+00:00",
+        "note": "Fix version embedding helper function",
+        "git": {
+          "commit": null,
+          "branch": null,
+          "statusShort": null
+        },
+        "fileCount": 4,
+        "missingFileCount": 0
+      },
+      "solver": {
+        "kind": "solver",
+        "generation": 3,
+        "name": "onnx-policy-solver-v2-benchmarked",
+        "snapshotName": "gen-000003-onnx-policy-solver-v2-benchmarked",
+        "createdAt": "2026-06-12T11:50:02.940255+00:00",
+        "note": "X/Y preprocessed policy model with f2/f3 benchmarks",
+        "git": {
+          "commit": null,
+          "branch": null,
+          "statusShort": null
+        },
+        "fileCount": 17,
+        "missingFileCount": 0
+      },
+      "model": {
+        "kind": "solver",
+        "generation": 3,
+        "name": "onnx-policy-solver-v2-benchmarked",
+        "snapshotName": "gen-000003-onnx-policy-solver-v2-benchmarked",
+        "createdAt": "2026-06-12T11:50:02.940255+00:00",
+        "note": "X/Y preprocessed policy model with f2/f3 benchmarks",
+        "git": {
+          "commit": null,
+          "branch": null,
+          "statusShort": null
+        },
+        "fileCount": 17,
+        "missingFileCount": 0
+      }
+    },
+    "source": {
+      "generatorLatest": "C:\\Users\\ramuc\\keshimasu-ai\\data\\program_versions\\generator\\LATEST.txt",
+      "solverLatest": "C:\\Users\\ramuc\\keshimasu-ai\\data\\program_versions\\solver\\LATEST.txt"
+    }
+  },
+  "targetWildcards": 2,
+  "actualWildcards": 2,
+  "fullBoardRequired": true,
+  "filledCount": 40,
+  "emptyCount": 0,
+  "fitness": 754231.0,
+  "policyTrapBonus": 0.0,
+  "policyTrapWeight": 0.5,
+  "policyTrap": {
+    "enabled": false,
+    "reason": "worker evaluation only"
+  },
+  "solved": true,
+  "score": 754231.0,
+  "board": [
+    [
+      "タ",
+      "チ",
+      "ロ",
+      "ブ",
+      "ハ"
+    ],
+    [
+      "イ",
+      "ャ",
+      "シ",
+      "ル",
+      "ン"
+    ],
+    [
+      "コ",
+      "ド",
+      "ア",
+      "ガ",
+      "ガ"
+    ],
+    [
+      "ソ",
+      "チ",
+      "ア",
+      "リ",
+      "リ"
+    ],
+    [
+      "ボ",
+      "Ｆ",
+      "ル",
+      "ア",
+      "ー"
+    ],
+    [
+      "リ",
+      "Ｆ",
+      "バ",
+      "ス",
+      "ド"
+    ],
+    [
+      "ビ",
+      "ン",
+      "ニ",
+      "イ",
+      "イ"
+    ],
+    [
+      "ア",
+      "ド",
+      "ア",
+      "ス",
+      "ツ"
+    ]
+  ],
+  "boardText": "タ チ ロ ブ ハ\nイ ャ シ ル ン\nコ ド ア ガ ガ\nソ チ ア リ リ\nボ Ｆ ル ア ー\nリ Ｆ バ ス ド\nビ ン ニ イ イ\nア ド ア ス ツ",
+  "boardKey": "タチロブハ/イャシルン/コドアガガ/ソチアリリ/ボＦルアー/リＦバスド/ビンニイイ/アドアスツ",
+  "solutionMoves": [
+    {
+      "word_id": 1,
+      "word": "アルバニア",
+      "row": 3,
+      "col": 2,
+      "direction": "V",
+      "path": [
+        [
+          3,
+          2
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          7,
+          2
+        ]
+      ]
+    },
+    {
+      "word_id": 53,
+      "word": "スイス",
+      "row": 5,
+      "col": 3,
+      "direction": "V",
+      "path": [
+        [
+          5,
+          3
+        ],
+        [
+          6,
+          3
+        ],
+        [
+          7,
+          3
+        ]
+      ]
+    },
+    {
+      "word_id": 98,
+      "word": "ブルガリア",
+      "row": 3,
+      "col": 3,
+      "direction": "V",
+      "path": [
+        [
+          3,
+          3
+        ],
+        [
+          4,
+          3
+        ],
+        [
+          5,
+          3
+        ],
+        [
+          6,
+          3
+        ],
+        [
+          7,
+          3
+        ]
+      ]
+    },
+    {
+      "word_id": 75,
+      "word": "ドイツ",
+      "row": 5,
+      "col": 4,
+      "direction": "V",
+      "path": [
+        [
+          5,
+          4
+        ],
+        [
+          6,
+          4
+        ],
+        [
+          7,
+          4
+        ]
+      ]
+    },
+    {
+      "word_id": 85,
+      "word": "ハンガリー",
+      "row": 3,
+      "col": 4,
+      "direction": "V",
+      "path": [
+        [
+          3,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          5,
+          4
+        ],
+        [
+          6,
+          4
+        ],
+        [
+          7,
+          4
+        ]
+      ]
+    },
+    {
+      "word_id": 128,
+      "word": "リビア",
+      "row": 5,
+      "col": 0,
+      "direction": "V",
+      "path": [
+        [
+          5,
+          0
+        ],
+        [
+          6,
+          0
+        ],
+        [
+          7,
+          0
+        ]
+      ]
+    },
+    {
+      "word_id": 42,
+      "word": "コソボ",
+      "row": 5,
+      "col": 0,
+      "direction": "V",
+      "path": [
+        [
+          5,
+          0
+        ],
+        [
+          6,
+          0
+        ],
+        [
+          7,
+          0
+        ]
+      ]
+    },
+    {
+      "word_id": 134,
+      "word": "ロシア",
+      "row": 5,
+      "col": 2,
+      "direction": "V",
+      "path": [
+        [
+          5,
+          2
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          7,
+          2
+        ]
+      ]
+    },
+    {
+      "word_id": 11,
+      "word": "インド",
+      "row": 5,
+      "col": 1,
+      "direction": "V",
+      "path": [
+        [
+          5,
+          1
+        ],
+        [
+          6,
+          1
+        ],
+        [
+          7,
+          1
+        ]
+      ]
+    },
+    {
+      "word_id": 67,
+      "word": "チャド",
+      "row": 3,
+      "col": 1,
+      "direction": "V",
+      "path": [
+        [
+          3,
+          1
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          5,
+          1
+        ]
+      ]
+    },
+    {
+      "word_id": 64,
+      "word": "タイ",
+      "row": 6,
+      "col": 0,
+      "direction": "V",
+      "path": [
+        [
+          6,
+          0
+        ],
+        [
+          7,
+          0
+        ]
+      ]
+    },
+    {
+      "word_id": 69,
+      "word": "チリ",
+      "row": 6,
+      "col": 1,
+      "direction": "V",
+      "path": [
+        [
+          6,
+          1
+        ],
+        [
+          7,
+          1
+        ]
+      ]
+    }
+  ],
+  "solverStats": {
+    "exploredNodes": 224509,
+    "backtracks": 143996,
+    "deadEnds": 80500,
+    "forcedMoves": 86303,
+    "maxDepth": 12,
+    "elapsedMs": 2041.0692000004929,
+    "branchingHistogram": {
+      "0": 80500,
+      "1": 86303,
+      "2": 42354,
+      "3": 12285,
+      "4": 2240,
+      "5": 243,
+      "6": 11,
+      "10": 194,
+      "11": 186,
+      "12": 72,
+      "13": 46,
+      "14": 42,
+      "15": 24,
+      "16": 8
+    }
+  },
+  "genes": [
+    {
+      "word": "ロシア",
+      "direction": "V",
+      "startCol": 2,
+      "length": 3,
+      "wildMask": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "word": "チャド",
+      "direction": "V",
+      "startCol": 1,
+      "length": 3,
+      "wildMask": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "word": "ブルガリア",
+      "direction": "V",
+      "startCol": 3,
+      "length": 5,
+      "wildMask": [
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "word": "チリ",
+      "direction": "V",
+      "startCol": 1,
+      "length": 2,
+      "wildMask": [
+        false,
+        true
+      ]
+    },
+    {
+      "word": "ハンガリー",
+      "direction": "V",
+      "startCol": 4,
+      "length": 5,
+      "wildMask": [
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "word": "スイス",
+      "direction": "V",
+      "startCol": 3,
+      "length": 3,
+      "wildMask": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "word": "タイ",
+      "direction": "V",
+      "startCol": 0,
+      "length": 2,
+      "wildMask": [
+        false,
+        false
+      ]
+    },
+    {
+      "word": "コソボ",
+      "direction": "V",
+      "startCol": 0,
+      "length": 3,
+      "wildMask": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "word": "アルバニア",
+      "direction": "V",
+      "startCol": 2,
+      "length": 5,
+      "wildMask": [
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "word": "リビア",
+      "direction": "V",
+      "startCol": 0,
+      "length": 3,
+      "wildMask": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "word": "ドイツ",
+      "direction": "V",
+      "startCol": 4,
+      "length": 3,
+      "wildMask": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "word": "インド",
+      "direction": "V",
+      "startCol": 1,
+      "length": 3,
+      "wildMask": [
+        true,
+        false,
+        false
+      ]
+    }
+  ],
+  "config": {
+    "rows": 8,
+    "cols": 5,
+    "boardCells": 40,
+    "playableStartRow": 3,
+    "reverseBuildTopRow": 0,
+    "emptyId": 0,
+    "maxWordLength": 5,
+    "steps": 12,
+    "populationSize": 80,
+    "generations": 5,
+    "eliteCount": 8,
+    "mutationRate": 0.18,
+    "maxNodes": 300000,
+    "maxDepth": 130,
+    "maxPathsPerWord": 80,
+    "usePolicyTrap": false,
+    "policyTrapWeight": 0.5,
+    "policyTrapTopK": 20,
+    "workers": 12,
+    "seed": null,
+    "wordMode": "country",
+    "wordsFile": "C:\\Users\\ramuc\\keshimasu-ai\\data\\words\\countries.json"
+  }
+}
