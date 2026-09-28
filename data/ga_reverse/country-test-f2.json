@@ -1,0 +1,587 @@
+{
+  "format": "keshimasu-ga-reverse-full-board-v2-parallel",
+  "createdAt": "2026-06-13T14:23:02",
+  "versions": {
+    "generator": "gen-000003-ga-reverse-parallel-fullboard-v3-version-fixed",
+    "solver": "gen-000003-onnx-policy-solver-v2-benchmarked",
+    "model": "gen-000003-onnx-policy-solver-v2-benchmarked",
+    "manifests": {
+      "generator": {
+        "kind": "generator",
+        "generation": 3,
+        "name": "ga-reverse-parallel-fullboard-v3-version-fixed",
+        "snapshotName": "gen-000003-ga-reverse-parallel-fullboard-v3-version-fixed",
+        "createdAt": "2026-06-12T11:59:05.947465+00:00",
+        "note": "Fix version embedding helper function",
+        "git": {
+          "commit": null,
+          "branch": null,
+          "statusShort": null
+        },
+        "fileCount": 4,
+        "missingFileCount": 0
+      },
+      "solver": {
+        "kind": "solver",
+        "generation": 3,
+        "name": "onnx-policy-solver-v2-benchmarked",
+        "snapshotName": "gen-000003-onnx-policy-solver-v2-benchmarked",
+        "createdAt": "2026-06-12T11:50:02.940255+00:00",
+        "note": "X/Y preprocessed policy model with f2/f3 benchmarks",
+        "git": {
+          "commit": null,
+          "branch": null,
+          "statusShort": null
+        },
+        "fileCount": 17,
+        "missingFileCount": 0
+      },
+      "model": {
+        "kind": "solver",
+        "generation": 3,
+        "name": "onnx-policy-solver-v2-benchmarked",
+        "snapshotName": "gen-000003-onnx-policy-solver-v2-benchmarked",
+        "createdAt": "2026-06-12T11:50:02.940255+00:00",
+        "note": "X/Y preprocessed policy model with f2/f3 benchmarks",
+        "git": {
+          "commit": null,
+          "branch": null,
+          "statusShort": null
+        },
+        "fileCount": 17,
+        "missingFileCount": 0
+      }
+    },
+    "source": {
+      "generatorLatest": "C:\\Users\\ramuc\\keshimasu-ai\\data\\program_versions\\generator\\LATEST.txt",
+      "solverLatest": "C:\\Users\\ramuc\\keshimasu-ai\\data\\program_versions\\solver\\LATEST.txt"
+    }
+  },
+  "targetWildcards": 2,
+  "actualWildcards": 2,
+  "fullBoardRequired": true,
+  "filledCount": 40,
+  "emptyCount": 0,
+  "fitness": 80309.0,
+  "policyTrapBonus": 0.0,
+  "policyTrapWeight": 1.0,
+  "policyTrap": {
+    "enabled": false,
+    "reason": "worker evaluation only"
+  },
+  "solved": true,
+  "score": 80309.0,
+  "board": [
+    [
+      "リ",
+      "タ",
+      "バ",
+      "ガ",
+      "バ"
+    ],
+    [
+      "ベ",
+      "イ",
+      "ハ",
+      "ー",
+      "ー"
+    ],
+    [
+      "Ｆ",
+      "ジ",
+      "マ",
+      "ナ",
+      "レ"
+    ],
+    [
+      "ア",
+      "ブ",
+      "モ",
+      "ル",
+      "ー"
+    ],
+    [
+      "ボ",
+      "チ",
+      "ナ",
+      "ー",
+      "Ｆ"
+    ],
+    [
+      "ツ",
+      "ケ",
+      "コ",
+      "マ",
+      "リ"
+    ],
+    [
+      "ワ",
+      "ニ",
+      "マ",
+      "ニ",
+      "ビ"
+    ],
+    [
+      "ナ",
+      "ア",
+      "リ",
+      "ア",
+      "ア"
+    ]
+  ],
+  "boardText": "リ タ バ ガ バ\nベ イ ハ ー ー\nＦ ジ マ ナ レ\nア ブ モ ル ー\nボ チ ナ ー Ｆ\nツ ケ コ マ リ\nワ ニ マ ニ ビ\nナ ア リ ア ア",
+  "boardKey": "リタバガバ/ベイハーー/Ｆジマナレ/アブモルー/ボチナーＦ/ツケコマリ/ワニマニビ/ナアリアア",
+  "solutionMoves": [
+    {
+      "word_id": 131,
+      "word": "ルーマニア",
+      "row": 3,
+      "col": 3,
+      "direction": "V",
+      "path": [
+        [
+          3,
+          3
+        ],
+        [
+          4,
+          3
+        ],
+        [
+          5,
+          3
+        ],
+        [
+          6,
+          3
+        ],
+        [
+          7,
+          3
+        ]
+      ]
+    },
+    {
+      "word_id": 109,
+      "word": "ボツワナ",
+      "row": 4,
+      "col": 0,
+      "direction": "V",
+      "path": [
+        [
+          4,
+          0
+        ],
+        [
+          5,
+          0
+        ],
+        [
+          6,
+          0
+        ],
+        [
+          7,
+          0
+        ]
+      ]
+    },
+    {
+      "word_id": 129,
+      "word": "リベリア",
+      "row": 4,
+      "col": 0,
+      "direction": "V",
+      "path": [
+        [
+          4,
+          0
+        ],
+        [
+          5,
+          0
+        ],
+        [
+          6,
+          0
+        ],
+        [
+          7,
+          0
+        ]
+      ]
+    },
+    {
+      "word_id": 29,
+      "word": "ガーナ",
+      "row": 5,
+      "col": 3,
+      "direction": "V",
+      "path": [
+        [
+          5,
+          3
+        ],
+        [
+          6,
+          3
+        ],
+        [
+          7,
+          3
+        ]
+      ]
+    },
+    {
+      "word_id": 40,
+      "word": "ケニア",
+      "row": 5,
+      "col": 1,
+      "direction": "V",
+      "path": [
+        [
+          5,
+          1
+        ],
+        [
+          6,
+          1
+        ],
+        [
+          7,
+          1
+        ]
+      ]
+    },
+    {
+      "word_id": 49,
+      "word": "ジブチ",
+      "row": 5,
+      "col": 1,
+      "direction": "V",
+      "path": [
+        [
+          5,
+          1
+        ],
+        [
+          6,
+          1
+        ],
+        [
+          7,
+          1
+        ]
+      ]
+    },
+    {
+      "word_id": 128,
+      "word": "リビア",
+      "row": 5,
+      "col": 4,
+      "direction": "V",
+      "path": [
+        [
+          5,
+          4
+        ],
+        [
+          6,
+          4
+        ],
+        [
+          7,
+          4
+        ]
+      ]
+    },
+    {
+      "word_id": 89,
+      "word": "バーレーン",
+      "row": 3,
+      "col": 4,
+      "direction": "V",
+      "path": [
+        [
+          3,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          5,
+          4
+        ],
+        [
+          6,
+          4
+        ],
+        [
+          7,
+          4
+        ]
+      ]
+    },
+    {
+      "word_id": 119,
+      "word": "モナコ",
+      "row": 3,
+      "col": 2,
+      "direction": "V",
+      "path": [
+        [
+          3,
+          2
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          5,
+          2
+        ]
+      ]
+    },
+    {
+      "word_id": 87,
+      "word": "バハマ",
+      "row": 3,
+      "col": 2,
+      "direction": "V",
+      "path": [
+        [
+          3,
+          2
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          5,
+          2
+        ]
+      ]
+    },
+    {
+      "word_id": 64,
+      "word": "タイ",
+      "row": 6,
+      "col": 1,
+      "direction": "V",
+      "path": [
+        [
+          6,
+          1
+        ],
+        [
+          7,
+          1
+        ]
+      ]
+    },
+    {
+      "word_id": 114,
+      "word": "マリ",
+      "row": 6,
+      "col": 2,
+      "direction": "V",
+      "path": [
+        [
+          6,
+          2
+        ],
+        [
+          7,
+          2
+        ]
+      ]
+    }
+  ],
+  "solverStats": {
+    "exploredNodes": 23787,
+    "backtracks": 15030,
+    "deadEnds": 8744,
+    "forcedMoves": 8949,
+    "maxDepth": 12,
+    "elapsedMs": 410.98399999464164,
+    "branchingHistogram": {
+      "0": 8744,
+      "1": 8949,
+      "2": 4176,
+      "3": 1344,
+      "4": 413,
+      "5": 124,
+      "6": 26,
+      "7": 5,
+      "8": 1,
+      "9": 3,
+      "10": 1
+    }
+  },
+  "genes": [
+    {
+      "word": "タイ",
+      "direction": "V",
+      "startCol": 1,
+      "length": 2,
+      "wildMask": [
+        false,
+        false
+      ]
+    },
+    {
+      "word": "リベリア",
+      "direction": "V",
+      "startCol": 0,
+      "length": 4,
+      "wildMask": [
+        false,
+        false,
+        true,
+        false
+      ]
+    },
+    {
+      "word": "バハマ",
+      "direction": "V",
+      "startCol": 2,
+      "length": 3,
+      "wildMask": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "word": "ガーナ",
+      "direction": "V",
+      "startCol": 3,
+      "length": 3,
+      "wildMask": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "word": "ジブチ",
+      "direction": "V",
+      "startCol": 1,
+      "length": 3,
+      "wildMask": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "word": "モナコ",
+      "direction": "V",
+      "startCol": 2,
+      "length": 3,
+      "wildMask": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "word": "バーレーン",
+      "direction": "V",
+      "startCol": 4,
+      "length": 5,
+      "wildMask": [
+        false,
+        false,
+        false,
+        false,
+        true
+      ]
+    },
+    {
+      "word": "ルーマニア",
+      "direction": "V",
+      "startCol": 3,
+      "length": 5,
+      "wildMask": [
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "word": "ケニア",
+      "direction": "V",
+      "startCol": 1,
+      "length": 3,
+      "wildMask": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "word": "リビア",
+      "direction": "V",
+      "startCol": 4,
+      "length": 3,
+      "wildMask": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "word": "ボツワナ",
+      "direction": "V",
+      "startCol": 0,
+      "length": 4,
+      "wildMask": [
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "word": "マリ",
+      "direction": "V",
+      "startCol": 2,
+      "length": 2,
+      "wildMask": [
+        false,
+        false
+      ]
+    }
+  ],
+  "config": {
+    "rows": 8,
+    "cols": 5,
+    "boardCells": 40,
+    "playableStartRow": 3,
+    "reverseBuildTopRow": 0,
+    "emptyId": 0,
+    "maxWordLength": 5,
+    "steps": 12,
+    "populationSize": 80,
+    "generations": 10,
+    "eliteCount": 8,
+    "mutationRate": 0.18,
+    "maxNodes": 300000,
+    "maxDepth": 130,
+    "maxPathsPerWord": 80,
+    "usePolicyTrap": true,
+    "policyTrapWeight": 1.0,
+    "policyTrapTopK": 10,
+    "workers": 1,
+    "seed": null,
+    "wordMode": "country",
+    "wordsFile": "C:\\Users\\ramuc\\keshimasu-ai\\data\\words\\countries.json"
+  }
+}

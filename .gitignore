@@ -1,0 +1,51 @@
+# Python virtual environments
+.venv/
+.venv*/
+venv/
+env/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyd
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Python / ML artifacts
+*.pt
+*.pth
+*.onnx
+*.npy
+*.npz
+
+# Build and temporary files
+dist/
+build/
+tmp/
+temp/
+data/_tmp_combined_replays_for_numpy/
+
+# Generated training datasets
+data/numpy_dataset/
+data/models/
+
+# Local match results
+data/matches/*.json
+
+# Logs
+*.log

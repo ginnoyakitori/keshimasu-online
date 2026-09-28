@@ -1,0 +1,585 @@
+{
+  "format": "keshimasu-ga-reverse-full-board-v2-parallel",
+  "createdAt": "2026-06-13T14:48:59",
+  "versions": {
+    "generator": "gen-000003-ga-reverse-parallel-fullboard-v3-version-fixed",
+    "solver": "gen-000003-onnx-policy-solver-v2-benchmarked",
+    "model": "gen-000003-onnx-policy-solver-v2-benchmarked",
+    "manifests": {
+      "generator": {
+        "kind": "generator",
+        "generation": 3,
+        "name": "ga-reverse-parallel-fullboard-v3-version-fixed",
+        "snapshotName": "gen-000003-ga-reverse-parallel-fullboard-v3-version-fixed",
+        "createdAt": "2026-06-12T11:59:05.947465+00:00",
+        "note": "Fix version embedding helper function",
+        "git": {
+          "commit": null,
+          "branch": null,
+          "statusShort": null
+        },
+        "fileCount": 4,
+        "missingFileCount": 0
+      },
+      "solver": {
+        "kind": "solver",
+        "generation": 3,
+        "name": "onnx-policy-solver-v2-benchmarked",
+        "snapshotName": "gen-000003-onnx-policy-solver-v2-benchmarked",
+        "createdAt": "2026-06-12T11:50:02.940255+00:00",
+        "note": "X/Y preprocessed policy model with f2/f3 benchmarks",
+        "git": {
+          "commit": null,
+          "branch": null,
+          "statusShort": null
+        },
+        "fileCount": 17,
+        "missingFileCount": 0
+      },
+      "model": {
+        "kind": "solver",
+        "generation": 3,
+        "name": "onnx-policy-solver-v2-benchmarked",
+        "snapshotName": "gen-000003-onnx-policy-solver-v2-benchmarked",
+        "createdAt": "2026-06-12T11:50:02.940255+00:00",
+        "note": "X/Y preprocessed policy model with f2/f3 benchmarks",
+        "git": {
+          "commit": null,
+          "branch": null,
+          "statusShort": null
+        },
+        "fileCount": 17,
+        "missingFileCount": 0
+      }
+    },
+    "source": {
+      "generatorLatest": "C:\\Users\\ramuc\\keshimasu-ai\\data\\program_versions\\generator\\LATEST.txt",
+      "solverLatest": "C:\\Users\\ramuc\\keshimasu-ai\\data\\program_versions\\solver\\LATEST.txt"
+    }
+  },
+  "targetWildcards": 2,
+  "actualWildcards": 2,
+  "fullBoardRequired": true,
+  "filledCount": 40,
+  "emptyCount": 0,
+  "fitness": 61269.0,
+  "policyTrapBonus": 0.0,
+  "policyTrapWeight": 0.5,
+  "policyTrap": {
+    "enabled": false,
+    "reason": "worker evaluation only"
+  },
+  "solved": true,
+  "score": 61269.0,
+  "board": [
+    [
+      "チ",
+      "ベ",
+      "バ",
+      "ベ",
+      "フ"
+    ],
+    [
+      "ェ",
+      "ネ",
+      "ハ",
+      "リ",
+      "ィ"
+    ],
+    [
+      "コ",
+      "ズ",
+      "マ",
+      "ー",
+      "リ"
+    ],
+    [
+      "ト",
+      "エ",
+      "チ",
+      "ズ",
+      "ピ"
+    ],
+    [
+      "ー",
+      "ラ",
+      "リ",
+      "キ",
+      "ン"
+    ],
+    [
+      "Ｆ",
+      "Ｆ",
+      "カ",
+      "ル",
+      "パ"
+    ],
+    [
+      "タ",
+      "ビ",
+      "ナ",
+      "ギ",
+      "ナ"
+    ],
+    [
+      "イ",
+      "ア",
+      "ダ",
+      "ス",
+      "マ"
+    ]
+  ],
+  "boardText": "チ ベ バ ベ フ\nェ ネ ハ リ ィ\nコ ズ マ ー リ\nト エ チ ズ ピ\nー ラ リ キ ン\nＦ Ｆ カ ル パ\nタ ビ ナ ギ ナ\nイ ア ダ ス マ",
+  "boardKey": "チベバベフ/ェネハリィ/コズマーリ/トエチズピ/ーラリキン/ＦＦカルパ/タビナギナ/イアダスマ",
+  "solutionMoves": [
+    {
+      "word_id": 33,
+      "word": "キルギス",
+      "row": 4,
+      "col": 3,
+      "direction": "V",
+      "path": [
+        [
+          4,
+          3
+        ],
+        [
+          5,
+          3
+        ],
+        [
+          6,
+          3
+        ],
+        [
+          7,
+          3
+        ]
+      ]
+    },
+    {
+      "word_id": 106,
+      "word": "ベリーズ",
+      "row": 4,
+      "col": 3,
+      "direction": "V",
+      "path": [
+        [
+          4,
+          3
+        ],
+        [
+          5,
+          3
+        ],
+        [
+          6,
+          3
+        ],
+        [
+          7,
+          3
+        ]
+      ]
+    },
+    {
+      "word_id": 23,
+      "word": "カナダ",
+      "row": 5,
+      "col": 2,
+      "direction": "V",
+      "path": [
+        [
+          5,
+          2
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          7,
+          2
+        ]
+      ]
+    },
+    {
+      "word_id": 91,
+      "word": "パナマ",
+      "row": 5,
+      "col": 4,
+      "direction": "V",
+      "path": [
+        [
+          5,
+          4
+        ],
+        [
+          6,
+          4
+        ],
+        [
+          7,
+          4
+        ]
+      ]
+    },
+    {
+      "word_id": 95,
+      "word": "フィリピン",
+      "row": 3,
+      "col": 4,
+      "direction": "V",
+      "path": [
+        [
+          3,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          5,
+          4
+        ],
+        [
+          6,
+          4
+        ],
+        [
+          7,
+          4
+        ]
+      ]
+    },
+    {
+      "word_id": 128,
+      "word": "リビア",
+      "row": 5,
+      "col": 1,
+      "direction": "V",
+      "path": [
+        [
+          5,
+          1
+        ],
+        [
+          6,
+          1
+        ],
+        [
+          7,
+          1
+        ]
+      ]
+    },
+    {
+      "word_id": 104,
+      "word": "ベネズエラ",
+      "row": 3,
+      "col": 1,
+      "direction": "V",
+      "path": [
+        [
+          3,
+          1
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          6,
+          1
+        ],
+        [
+          7,
+          1
+        ]
+      ]
+    },
+    {
+      "word_id": 87,
+      "word": "バハマ",
+      "row": 3,
+      "col": 2,
+      "direction": "V",
+      "path": [
+        [
+          3,
+          2
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          5,
+          2
+        ]
+      ]
+    },
+    {
+      "word_id": 74,
+      "word": "トーゴ",
+      "row": 3,
+      "col": 0,
+      "direction": "V",
+      "path": [
+        [
+          3,
+          0
+        ],
+        [
+          4,
+          0
+        ],
+        [
+          5,
+          0
+        ]
+      ]
+    },
+    {
+      "word_id": 66,
+      "word": "チェコ",
+      "row": 3,
+      "col": 0,
+      "direction": "V",
+      "path": [
+        [
+          3,
+          0
+        ],
+        [
+          4,
+          0
+        ],
+        [
+          5,
+          0
+        ]
+      ]
+    },
+    {
+      "word_id": 64,
+      "word": "タイ",
+      "row": 6,
+      "col": 0,
+      "direction": "V",
+      "path": [
+        [
+          6,
+          0
+        ],
+        [
+          7,
+          0
+        ]
+      ]
+    },
+    {
+      "word_id": 69,
+      "word": "チリ",
+      "row": 6,
+      "col": 2,
+      "direction": "V",
+      "path": [
+        [
+          6,
+          2
+        ],
+        [
+          7,
+          2
+        ]
+      ]
+    }
+  ],
+  "solverStats": {
+    "exploredNodes": 18235,
+    "backtracks": 11862,
+    "deadEnds": 6360,
+    "forcedMoves": 7027,
+    "maxDepth": 12,
+    "elapsedMs": 150.18940000300063,
+    "branchingHistogram": {
+      "0": 6360,
+      "1": 7027,
+      "2": 3556,
+      "3": 1064,
+      "4": 199,
+      "5": 22,
+      "10": 2,
+      "11": 3,
+      "12": 1
+    }
+  },
+  "genes": [
+    {
+      "word": "バハマ",
+      "direction": "V",
+      "startCol": 2,
+      "length": 3,
+      "wildMask": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "word": "チリ",
+      "direction": "V",
+      "startCol": 2,
+      "length": 2,
+      "wildMask": [
+        false,
+        false
+      ]
+    },
+    {
+      "word": "ベネズエラ",
+      "direction": "V",
+      "startCol": 1,
+      "length": 5,
+      "wildMask": [
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "word": "ベリーズ",
+      "direction": "V",
+      "startCol": 3,
+      "length": 4,
+      "wildMask": [
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "word": "フィリピン",
+      "direction": "V",
+      "startCol": 4,
+      "length": 5,
+      "wildMask": [
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "word": "チェコ",
+      "direction": "V",
+      "startCol": 0,
+      "length": 3,
+      "wildMask": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "word": "トーゴ",
+      "direction": "V",
+      "startCol": 0,
+      "length": 3,
+      "wildMask": [
+        false,
+        false,
+        true
+      ]
+    },
+    {
+      "word": "リビア",
+      "direction": "V",
+      "startCol": 1,
+      "length": 3,
+      "wildMask": [
+        true,
+        false,
+        false
+      ]
+    },
+    {
+      "word": "キルギス",
+      "direction": "V",
+      "startCol": 3,
+      "length": 4,
+      "wildMask": [
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "word": "カナダ",
+      "direction": "V",
+      "startCol": 2,
+      "length": 3,
+      "wildMask": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "word": "タイ",
+      "direction": "V",
+      "startCol": 0,
+      "length": 2,
+      "wildMask": [
+        false,
+        false
+      ]
+    },
+    {
+      "word": "パナマ",
+      "direction": "V",
+      "startCol": 4,
+      "length": 3,
+      "wildMask": [
+        false,
+        false,
+        false
+      ]
+    }
+  ],
+  "config": {
+    "rows": 8,
+    "cols": 5,
+    "boardCells": 40,
+    "playableStartRow": 3,
+    "reverseBuildTopRow": 0,
+    "emptyId": 0,
+    "maxWordLength": 5,
+    "steps": 12,
+    "populationSize": 40,
+    "generations": 3,
+    "eliteCount": 8,
+    "mutationRate": 0.18,
+    "maxNodes": 300000,
+    "maxDepth": 130,
+    "maxPathsPerWord": 80,
+    "usePolicyTrap": false,
+    "policyTrapWeight": 0.5,
+    "policyTrapTopK": 20,
+    "workers": 1,
+    "seed": null,
+    "wordMode": "country",
+    "wordsFile": "C:\\Users\\ramuc\\keshimasu-ai\\data\\words\\countries.json"
+  }
+}

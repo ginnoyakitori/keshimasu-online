@@ -1,0 +1,530 @@
+{
+  "format": "keshimasu-ga-reverse-full-board-v2-parallel",
+  "createdAt": "2026-06-12T18:49:14",
+  "targetWildcards": 2,
+  "actualWildcards": 2,
+  "fullBoardRequired": true,
+  "filledCount": 40,
+  "emptyCount": 0,
+  "fitness": 430408.0,
+  "policyTrapBonus": 0.0,
+  "policyTrapWeight": 0.3,
+  "policyTrap": {
+    "enabled": false,
+    "reason": "worker evaluation only"
+  },
+  "solved": true,
+  "score": 430408.0,
+  "board": [
+    [
+      "ラ",
+      "イ",
+      "ポ",
+      "ウ",
+      "カ"
+    ],
+    [
+      "オ",
+      "エ",
+      "ー",
+      "ル",
+      "ン"
+    ],
+    [
+      "ス",
+      "メ",
+      "ラ",
+      "グ",
+      "ボ"
+    ],
+    [
+      "タ",
+      "ン",
+      "ン",
+      "ア",
+      "ジ"
+    ],
+    [
+      "イ",
+      "マ",
+      "ド",
+      "イ",
+      "ア"
+    ],
+    [
+      "ハ",
+      "リ",
+      "イ",
+      "カ",
+      "ニ"
+    ],
+    [
+      "イ",
+      "チ",
+      "Ｆ",
+      "ナ",
+      "ウ"
+    ],
+    [
+      "チ",
+      "Ｆ",
+      "ド",
+      "ダ",
+      "エ"
+    ]
+  ],
+  "boardText": "ラ イ ポ ウ カ\nオ エ ー ル ン\nス メ ラ グ ボ\nタ ン ン ア ジ\nイ マ ド イ ア\nハ リ イ カ ニ\nイ チ Ｆ ナ ウ\nチ Ｆ ド ダ エ",
+  "boardKey": "ライポウカ/オエールン/スメラグボ/タンンアジ/イマドイア/ハリイカニ/イチＦナウ/チＦドダエ",
+  "solutionMoves": [
+    {
+      "word_id": 23,
+      "word": "カナダ",
+      "row": 5,
+      "col": 3,
+      "direction": "V",
+      "path": [
+        [
+          5,
+          3
+        ],
+        [
+          6,
+          3
+        ],
+        [
+          7,
+          3
+        ]
+      ]
+    },
+    {
+      "word_id": 14,
+      "word": "ウルグアイ",
+      "row": 3,
+      "col": 3,
+      "direction": "V",
+      "path": [
+        [
+          3,
+          3
+        ],
+        [
+          4,
+          3
+        ],
+        [
+          5,
+          3
+        ],
+        [
+          6,
+          3
+        ],
+        [
+          7,
+          3
+        ]
+      ]
+    },
+    {
+      "word_id": 78,
+      "word": "ニウエ",
+      "row": 5,
+      "col": 4,
+      "direction": "V",
+      "path": [
+        [
+          5,
+          4
+        ],
+        [
+          6,
+          4
+        ],
+        [
+          7,
+          4
+        ]
+      ]
+    },
+    {
+      "word_id": 25,
+      "word": "カンボジア",
+      "row": 3,
+      "col": 4,
+      "direction": "V",
+      "path": [
+        [
+          3,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          5,
+          4
+        ],
+        [
+          6,
+          4
+        ],
+        [
+          7,
+          4
+        ]
+      ]
+    },
+    {
+      "word_id": 84,
+      "word": "ハイチ",
+      "row": 5,
+      "col": 0,
+      "direction": "V",
+      "path": [
+        [
+          5,
+          0
+        ],
+        [
+          6,
+          0
+        ],
+        [
+          7,
+          0
+        ]
+      ]
+    },
+    {
+      "word_id": 11,
+      "word": "インド",
+      "row": 5,
+      "col": 2,
+      "direction": "V",
+      "path": [
+        [
+          5,
+          2
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          7,
+          2
+        ]
+      ]
+    },
+    {
+      "word_id": 112,
+      "word": "ポーランド",
+      "row": 3,
+      "col": 2,
+      "direction": "V",
+      "path": [
+        [
+          3,
+          2
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          7,
+          2
+        ]
+      ]
+    },
+    {
+      "word_id": 125,
+      "word": "ラオス",
+      "row": 3,
+      "col": 0,
+      "direction": "V",
+      "path": [
+        [
+          3,
+          0
+        ],
+        [
+          4,
+          0
+        ],
+        [
+          5,
+          0
+        ]
+      ]
+    },
+    {
+      "word_id": 64,
+      "word": "タイ",
+      "row": 6,
+      "col": 0,
+      "direction": "V",
+      "path": [
+        [
+          6,
+          0
+        ],
+        [
+          7,
+          0
+        ]
+      ]
+    },
+    {
+      "word_id": 69,
+      "word": "チリ",
+      "row": 6,
+      "col": 1,
+      "direction": "V",
+      "path": [
+        [
+          6,
+          1
+        ],
+        [
+          7,
+          1
+        ]
+      ]
+    },
+    {
+      "word_id": 114,
+      "word": "マリ",
+      "row": 6,
+      "col": 1,
+      "direction": "V",
+      "path": [
+        [
+          6,
+          1
+        ],
+        [
+          7,
+          1
+        ]
+      ]
+    },
+    {
+      "word_id": 5,
+      "word": "イエメン",
+      "row": 4,
+      "col": 1,
+      "direction": "V",
+      "path": [
+        [
+          4,
+          1
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          6,
+          1
+        ],
+        [
+          7,
+          1
+        ]
+      ]
+    }
+  ],
+  "solverStats": {
+    "exploredNodes": 127656,
+    "backtracks": 80407,
+    "deadEnds": 47236,
+    "forcedMoves": 47066,
+    "maxDepth": 12,
+    "elapsedMs": 1221.9708000002356,
+    "branchingHistogram": {
+      "0": 47236,
+      "1": 47066,
+      "2": 22853,
+      "3": 7773,
+      "4": 2147,
+      "5": 479,
+      "6": 84,
+      "7": 11,
+      "8": 1,
+      "9": 1,
+      "10": 2,
+      "11": 2
+    }
+  },
+  "genes": [
+    {
+      "word": "イエメン",
+      "direction": "V",
+      "startCol": 1,
+      "length": 4,
+      "wildMask": [
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "word": "カンボジア",
+      "direction": "V",
+      "startCol": 4,
+      "length": 5,
+      "wildMask": [
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "word": "マリ",
+      "direction": "V",
+      "startCol": 1,
+      "length": 2,
+      "wildMask": [
+        false,
+        false
+      ]
+    },
+    {
+      "word": "チリ",
+      "direction": "V",
+      "startCol": 1,
+      "length": 2,
+      "wildMask": [
+        false,
+        true
+      ]
+    },
+    {
+      "word": "ポーランド",
+      "direction": "V",
+      "startCol": 2,
+      "length": 5,
+      "wildMask": [
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "word": "ニウエ",
+      "direction": "V",
+      "startCol": 4,
+      "length": 3,
+      "wildMask": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "word": "ラオス",
+      "direction": "V",
+      "startCol": 0,
+      "length": 3,
+      "wildMask": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "word": "タイ",
+      "direction": "V",
+      "startCol": 0,
+      "length": 2,
+      "wildMask": [
+        false,
+        false
+      ]
+    },
+    {
+      "word": "ハイチ",
+      "direction": "V",
+      "startCol": 0,
+      "length": 3,
+      "wildMask": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "word": "インド",
+      "direction": "V",
+      "startCol": 2,
+      "length": 3,
+      "wildMask": [
+        false,
+        true,
+        false
+      ]
+    },
+    {
+      "word": "ウルグアイ",
+      "direction": "V",
+      "startCol": 3,
+      "length": 5,
+      "wildMask": [
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "word": "カナダ",
+      "direction": "V",
+      "startCol": 3,
+      "length": 3,
+      "wildMask": [
+        false,
+        false,
+        false
+      ]
+    }
+  ],
+  "config": {
+    "rows": 8,
+    "cols": 5,
+    "boardCells": 40,
+    "playableStartRow": 3,
+    "reverseBuildTopRow": 0,
+    "emptyId": 0,
+    "maxWordLength": 5,
+    "steps": 12,
+    "populationSize": 80,
+    "generations": 10,
+    "eliteCount": 8,
+    "mutationRate": 0.18,
+    "maxNodes": 300000,
+    "maxDepth": 130,
+    "maxPathsPerWord": 80,
+    "usePolicyTrap": true,
+    "policyTrapWeight": 0.3,
+    "policyTrapTopK": 20,
+    "workers": 1,
+    "seed": null
+  }
+}

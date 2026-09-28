@@ -1,0 +1,432 @@
+{
+  "format": "keshimasu-ga-reverse-v3",
+  "createdAt": "2026-06-12T16:21:29",
+  "targetWildcards": 2,
+  "actualWildcards": 2,
+  "fitness": 2085.207005560398,
+  "policyTrapBonus": 760.6900185346603,
+  "policyTrapWeight": 0.3,
+  "policyTrap": {
+    "enabled": true,
+    "candidateCount": 4,
+    "scoredCandidateCount": 16,
+    "topPolicyScore": 0.5243048667907715,
+    "correctPolicyScore": 0.1310332715511322,
+    "confidenceGap": 0.3932715952396393,
+    "correctRank": 2,
+    "topPolicyIsCorrect": false,
+    "topMove": {
+      "word_id": 11,
+      "word": "インド",
+      "row": 5,
+      "col": 0,
+      "direction": "H",
+      "path": [
+        [
+          5,
+          0
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          5,
+          2
+        ]
+      ],
+      "score": 72.0
+    },
+    "correctFirstMove": {
+      "word_id": 11,
+      "word": "インド",
+      "row": 3,
+      "col": 2,
+      "direction": "V",
+      "path": [
+        [
+          3,
+          2
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          5,
+          2
+        ]
+      ]
+    },
+    "bonus": 760.6900185346603
+  },
+  "solved": true,
+  "score": 2085.207005560398,
+  "board": [
+    [
+      "・",
+      "・",
+      "・",
+      "・",
+      "・"
+    ],
+    [
+      "・",
+      "Ｆ",
+      "ン",
+      "ン",
+      "・"
+    ],
+    [
+      "ペ",
+      "ヨ",
+      "ド",
+      "ア",
+      "・"
+    ],
+    [
+      "ル",
+      "ル",
+      "イ",
+      "ル",
+      "・"
+    ],
+    [
+      "ー",
+      "ダ",
+      "ン",
+      "バ",
+      "・"
+    ],
+    [
+      "イ",
+      "ン",
+      "ド",
+      "ニ",
+      "・"
+    ],
+    [
+      "チ",
+      "ャ",
+      "Ｆ",
+      "ア",
+      "・"
+    ],
+    [
+      "ポ",
+      "ー",
+      "チ",
+      "リ",
+      "ド"
+    ]
+  ],
+  "boardText": "・ ・ ・ ・ ・\n・ Ｆ ン ン ・\nペ ヨ ド ア ・\nル ル イ ル ・\nー ダ ン バ ・\nイ ン ド ニ ・\nチ ャ Ｆ ア ・\nポ ー チ リ ド",
+  "boardKey": "・・・・・/・Ｆンン・/ペヨドア・/ルルイル・/ーダンバ・/インドニ・/チャＦア・/ポーチリド",
+  "solutionMoves": [
+    {
+      "word_id": 11,
+      "word": "インド",
+      "row": 3,
+      "col": 2,
+      "direction": "V",
+      "path": [
+        [
+          3,
+          2
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          5,
+          2
+        ]
+      ]
+    },
+    {
+      "word_id": 69,
+      "word": "チリ",
+      "row": 7,
+      "col": 2,
+      "direction": "H",
+      "path": [
+        [
+          7,
+          2
+        ],
+        [
+          7,
+          3
+        ]
+      ]
+    },
+    {
+      "word_id": 1,
+      "word": "アルバニア",
+      "row": 3,
+      "col": 3,
+      "direction": "V",
+      "path": [
+        [
+          3,
+          3
+        ],
+        [
+          4,
+          3
+        ],
+        [
+          5,
+          3
+        ],
+        [
+          6,
+          3
+        ],
+        [
+          7,
+          3
+        ]
+      ]
+    },
+    {
+      "word_id": 112,
+      "word": "ポーランド",
+      "row": 7,
+      "col": 0,
+      "direction": "H",
+      "path": [
+        [
+          7,
+          0
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          7,
+          3
+        ],
+        [
+          7,
+          4
+        ]
+      ]
+    },
+    {
+      "word_id": 124,
+      "word": "ヨルダン",
+      "row": 3,
+      "col": 1,
+      "direction": "V",
+      "path": [
+        [
+          3,
+          1
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          6,
+          1
+        ]
+      ]
+    },
+    {
+      "word_id": 67,
+      "word": "チャド",
+      "row": 7,
+      "col": 0,
+      "direction": "H",
+      "path": [
+        [
+          7,
+          0
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          7,
+          2
+        ]
+      ]
+    },
+    {
+      "word_id": 10,
+      "word": "イラン",
+      "row": 7,
+      "col": 0,
+      "direction": "H",
+      "path": [
+        [
+          7,
+          0
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          7,
+          2
+        ]
+      ]
+    },
+    {
+      "word_id": 108,
+      "word": "ペルー",
+      "row": 5,
+      "col": 0,
+      "direction": "V",
+      "path": [
+        [
+          5,
+          0
+        ],
+        [
+          6,
+          0
+        ],
+        [
+          7,
+          0
+        ]
+      ]
+    }
+  ],
+  "solverStats": {
+    "exploredNodes": 510,
+    "backtracks": 326,
+    "deadEnds": 175,
+    "forcedMoves": 196,
+    "maxDepth": 8,
+    "elapsedMs": 8.983099998658872,
+    "branchingHistogram": {
+      "0": 175,
+      "1": 196,
+      "2": 101,
+      "3": 30,
+      "4": 6,
+      "5": 1
+    }
+  },
+  "genes": [
+    {
+      "word": "ペルー",
+      "direction": "V",
+      "startCol": 0,
+      "wildMask": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "word": "イラン",
+      "direction": "H",
+      "startCol": 0,
+      "wildMask": [
+        false,
+        true,
+        false
+      ]
+    },
+    {
+      "word": "ヨルダン",
+      "direction": "V",
+      "startCol": 1,
+      "wildMask": [
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "word": "チャド",
+      "direction": "H",
+      "startCol": 0,
+      "wildMask": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "word": "インド",
+      "direction": "V",
+      "startCol": 2,
+      "wildMask": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "word": "ポーランド",
+      "direction": "H",
+      "startCol": 0,
+      "wildMask": [
+        false,
+        false,
+        true,
+        false,
+        false
+      ]
+    },
+    {
+      "word": "アルバニア",
+      "direction": "V",
+      "startCol": 3,
+      "wildMask": [
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "word": "チリ",
+      "direction": "H",
+      "startCol": 2,
+      "wildMask": [
+        false,
+        false
+      ]
+    }
+  ],
+  "config": {
+    "rows": 8,
+    "cols": 5,
+    "playableStartRow": 3,
+    "reverseBuildTopRow": 0,
+    "emptyId": 0,
+    "maxWordLength": 5,
+    "steps": 8,
+    "populationSize": 40,
+    "generations": 10,
+    "eliteCount": 8,
+    "mutationRate": 0.25,
+    "maxNodes": 300000,
+    "maxDepth": 130,
+    "maxPathsPerWord": 80,
+    "usePolicyTrap": true,
+    "policyTrapWeight": 0.3,
+    "seed": null
+  }
+}
