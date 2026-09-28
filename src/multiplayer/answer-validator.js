@@ -1,301 +1,59 @@
 "use strict";
-
 const ROWS = 8;
 const COLS = 5;
 const PLAYABLE_START_ROW = 3;
-
 const EMPTY = "・";
-const WILDS = new Set(["F", "Ｆ"]);
+const WILDS = new Set(["Ｆ", "F"]);
 
-
-function toCharacters(value) {
-  return [...String(value ?? "")];
-}
-
-
+function chars(word) { return [...String(word || "")]; }
 function normalizePath(path) {
-  if (!Array.isArray(path)) {
-    return null;
-  }
-
-  const normalized = [];
-
-  for (const position of path) {
-    if (!Array.isArray(position) || position.length !== 2) {
-      return null;
-    }
-
-    const row = Number(position[0]);
-    const col = Number(position[1]);
-
-    if (!Number.isInteger(row) || !Number.isInteger(col)) {
-      return null;
-    }
-
-    normalized.push([row, col]);
-  }
-
-  return normalized;
+  if (!Array.isArray(path)) return null;
+  const out = path.map(p => Array.isArray(p) && p.length === 2 ? [Number(p[0]), Number(p[1])] : null);
+  if (out.some(p => !p || !Number.isInteger(p[0]) || !Number.isInteger(p[1]))) return null;
+  return out;
 }
-
-
 function validatePath(path) {
-  if (!path || path.length < 2 || path.length > 5) {
-    return "2〜5マスを選択してください";
+  if (!path || path.length < 2 || path.length > 5) return "2〜5マスを選択してください";
+  if (path.some(([r,c]) => r < 0 || r >= ROWS || c < 0 || c >= COLS)) return "盤面外です";
+  if (path[0][0] < PLAYABLE_START_ROW) return "下5段から始めてください";
+  const dr = path[1][0] - path[0][0];
+  const dc = path[1][1] - path[0][1];
+  if (!((Math.abs(dr) === 1 && dc === 0) || (Math.abs(dc) === 1 && dr === 0))) return "縦または横に連続して選んでください";
+  for (let i = 1; i < path.length; i++) {
+    if (path[i][0] - path[i-1][0] !== dr || path[i][1] - path[i-1][1] !== dc) return "選択マスが連続していません";
   }
-
-  for (const [row, col] of path) {
-    if (
-      row < 0 ||
-      row >= ROWS ||
-      col < 0 ||
-      col >= COLS
-    ) {
-      return "盤面外のマスが含まれています";
-    }
-  }
-
-  if (path[0][0] < PLAYABLE_START_ROW) {
-    return "表示されている下5段から選択してください";
-  }
-
-  const rowDirection =
-    path[1][0] - path[0][0];
-
-  const colDirection =
-    path[1][1] - path[0][1];
-
-  const horizontal =
-    rowDirection === 0 &&
-    Math.abs(colDirection) === 1;
-
-  const vertical =
-    colDirection === 0 &&
-    Math.abs(rowDirection) === 1;
-
-  if (!horizontal && !vertical) {
-    return "縦または横に一直線で選択してください";
-  }
-
-  for (let index = 1; index < path.length; index += 1) {
-    const previous = path[index - 1];
-    const current = path[index];
-
-    if (
-      current[0] - previous[0] !== rowDirection ||
-      current[1] - previous[1] !== colDirection
-    ) {
-      return "選択したマスが一直線に並んでいません";
-    }
-  }
-
   return null;
 }
-
-
-function countWildcards(board, path) {
-  let count = 0;
-
-  for (const [row, col] of path) {
-    if (WILDS.has(board[row][col])) {
-      count += 1;
-    }
-  }
-
-  return count;
-}
-
-
-function buildCompletedWord({
-  board,
-  path,
-  fText,
-}) {
-  const replacementCharacters =
-    toCharacters(fText);
-
-  const selectedCharacters = [];
-
-  for (const [row, col] of path) {
-    const cell = board[row][col];
-
-    if (cell === EMPTY) {
-      return {
-        ok: false,
-        error: "空マスは選択できません",
-      };
-    }
-
-    selectedCharacters.push(cell);
-  }
-
-  const wildcardCount = selectedCharacters.filter(
-    (character) => WILDS.has(character)
-  ).length;
-
-  if (
-    wildcardCount === 0 &&
-    replacementCharacters.length > 0
-  ) {
-    return {
-      ok: false,
-      error: "Fがないため補完文字は不要です",
-    };
-  }
-
-  if (
-    wildcardCount > 0 &&
-    replacementCharacters.length !== wildcardCount
-  ) {
-    return {
-      ok: false,
-      error:
-        `Fに入る文字を${wildcardCount}文字入力してください`,
-      wildcardCount,
-    };
-  }
-
-  const completedCharacters = [];
-  let replacementIndex = 0;
-
-  for (const character of selectedCharacters) {
-    if (WILDS.has(character)) {
-      completedCharacters.push(
-        replacementCharacters[replacementIndex]
-      );
-
-      replacementIndex += 1;
-    } else {
-      completedCharacters.push(character);
-    }
-  }
-
-  return {
-    ok: true,
-    word: completedCharacters.join(""),
-    selectedText: selectedCharacters.join(""),
-    wildcardCount,
-  };
-}
-
-
 function applyGravity(board) {
-  for (let col = 0; col < COLS; col += 1) {
-    const remainingCharacters = [];
-
-    for (let row = ROWS - 1; row >= 0; row -= 1) {
-      const character = board[row][col];
-
-      if (character !== EMPTY) {
-        remainingCharacters.push(character);
-      }
-    }
-
-    for (
-      let row = ROWS - 1, index = 0;
-      row >= 0;
-      row -= 1, index += 1
-    ) {
-      board[row][col] =
-        index < remainingCharacters.length
-          ? remainingCharacters[index]
-          : EMPTY;
-    }
+  for (let c = 0; c < COLS; c++) {
+    const kept = [];
+    for (let r = ROWS - 1; r >= 0; r--) if (board[r][c] !== EMPTY) kept.push(board[r][c]);
+    for (let r = ROWS - 1, i = 0; r >= 0; r--, i++) board[r][c] = i < kept.length ? kept[i] : EMPTY;
   }
 }
-
-
 function remainingCells(board) {
-  let count = 0;
-
-  for (const row of board) {
-    for (const cell of row) {
-      if (cell !== EMPTY) {
-        count += 1;
-      }
-    }
-  }
-
-  return count;
+  let n = 0;
+  for (const row of board) for (const cell of row) if (cell !== EMPTY) n++;
+  return n;
 }
-
-
-function validateAndApply({
-  board,
-  path,
-  fText,
-  usedWords,
-  isCountry,
-}) {
-  if (!Array.isArray(board) || board.length !== ROWS) {
-    return {
-      ok: false,
-      error: "サーバー側の盤面情報が不正です",
-    };
+function validateAndApply({ board, word, path, usedWords, isCountry }) {
+  const w = chars(word);
+  const normalized = normalizePath(path);
+  const pathError = validatePath(normalized);
+  if (pathError) return { ok: false, error: pathError };
+  if (w.length !== normalized.length) return { ok: false, error: "単語と選択マスの長さが違います" };
+  if (!isCountry(word)) return { ok: false, error: "国名リストにありません" };
+  if (usedWords.has(word)) return { ok: false, error: "この問題ですでに使った国名です" };
+  for (let i = 0; i < normalized.length; i++) {
+    const [r,c] = normalized[i];
+    const cell = board[r][c];
+    if (cell === EMPTY) return { ok: false, error: "空マスは選択できません" };
+    if (!WILDS.has(cell) && cell !== w[i]) return { ok: false, error: `${i+1}文字目が一致しません` };
   }
-
-  const normalizedPath = normalizePath(path);
-  const pathError = validatePath(normalizedPath);
-
-  if (pathError) {
-    return {
-      ok: false,
-      error: pathError,
-    };
-  }
-
-  const wordResult = buildCompletedWord({
-    board,
-    path: normalizedPath,
-    fText,
-  });
-
-  if (!wordResult.ok) {
-    return wordResult;
-  }
-
-  const completedWord = wordResult.word;
-
-  if (!isCountry(completedWord)) {
-    return {
-      ok: false,
-      error:
-        `「${completedWord}」は国名リストにありません`,
-      completedWord,
-    };
-  }
-
-  if (usedWords.has(completedWord)) {
-    return {
-      ok: false,
-      error:
-        `「${completedWord}」はこの問題ですでに使用しています`,
-      completedWord,
-    };
-  }
-
-  for (const [row, col] of normalizedPath) {
-    board[row][col] = EMPTY;
-  }
-
+  for (const [r,c] of normalized) board[r][c] = EMPTY;
   applyGravity(board);
-  usedWords.add(completedWord);
-
+  usedWords.add(word);
   const remaining = remainingCells(board);
-
-  return {
-    ok: true,
-    word: completedWord,
-    board,
-    remaining,
-    cleared: remaining === 0,
-    wildcardCount: wordResult.wildcardCount,
-  };
+  return { ok: true, board, remaining, cleared: remaining === 0 };
 }
-
-
-module.exports = {
-  validateAndApply,
-  remainingCells,
-  countWildcards,
-};
+module.exports = { validateAndApply, remainingCells };
