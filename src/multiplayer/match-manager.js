@@ -1,94 +1,405 @@
 "use strict";
+
 const fs = require("node:fs");
 const path = require("node:path");
+
 const { roomCode, playerToken } = require("./room-code");
 const { cloneBoard } = require("./puzzle-loader");
 const { validateAndApply } = require("./answer-validator");
+const { RuntimePuzzleGenerator } = require("./runtime-puzzle-generator");
 
-function cleanName(v) { return String(v || "プレイヤー").trim().slice(0, 20) || "プレイヤー"; }
-function ackSafe(ack, data) { if (typeof ack === "function") ack(data); }
+const ROWS = 8;
+const COLS = 5;
+const PLAYABLE_START_ROW = 3;
+
+function cleanName(value) {
+  return String(value || "プレイヤー").trim().slice(0, 20) || "プレイヤー";
+}
+
+function ackSafe(ack, data) {
+  if (typeof ack === "function") ack(data);
+}
+
+function visibleBoard(board) {
+  if (!Array.isArray(board)) return null;
+  return board.slice(PLAYABLE_START_ROW, ROWS).map((row) => row.slice(0, COLS));
+}
+
 class MatchManager {
   constructor({ io, puzzleLoader, matchDir }) {
-    this.io = io; this.puzzleLoader = puzzleLoader; this.matchDir = matchDir;
-    this.rooms = new Map(); this.socketToPlayer = new Map();
+    this.io = io;
+    this.puzzleLoader = puzzleLoader;
+    this.matchDir = matchDir;
+    this.rooms = new Map();
+    this.socketToPlayer = new Map();
+    this.waiting = [];
+
+    this.runtimeGenerator = new RuntimePuzzleGenerator({
+      getWords: () => Array.from(this.puzzleLoader.countries || []),
+      minWildcards: Number(process.env.RUNTIME_MIN_F || 2),
+      maxWildcards: Number(process.env.RUNTIME_MAX_F || 8),
+      maxAttempts: Number(process.env.RUNTIME_GENERATION_ATTEMPTS || 100),
+    });
   }
+
   get roomCount() { return this.rooms.size; }
-  publicState(room, viewerToken) {
+  get waitingCount() { return this.waiting.length; }
+
+  newPlayer(socket, name) {
     return {
-      roomId: room.id, status: room.status, puzzleId: room.puzzle?.id ?? null,
-      startAt: room.startAt, winnerToken: room.winnerToken,
-      players: [...room.players.values()].map(p => ({
-        token: p.token, name: p.name, ready: p.ready, connected: p.connected,
-        remaining: p.remaining, moveCount: p.moveCount, finishedAt: p.finishedAt,
-        isYou: p.token === viewerToken
-      }))
+      token: playerToken(),
+      socketId: socket.id,
+      name: cleanName(name),
+      connected: true,
+      board: null,
+      usedWords: new Set(),
+      remaining: 40,
+      moveCount: 0,
+      finishedAt: null,
+      elapsedMs: null,
+      rematch: false,
     };
   }
+
+  publicState(room, viewerToken) {
+    return {
+      roomId: room.id,
+      status: room.status,
+      puzzleId: room.puzzle?.id ?? null,
+      startAt: room.startAt,
+      winnerToken: room.winnerToken,
+      players: [...room.players.values()].map((player) => ({
+        token: player.token,
+        name: player.name,
+        connected: player.connected,
+        remaining: player.remaining,
+        moveCount: player.moveCount,
+        finishedAt: player.finishedAt,
+        isYou: player.token === viewerToken,
+      })),
+    };
+  }
+
   emitState(room) {
-    for (const p of room.players.values()) if (p.socketId) this.io.to(p.socketId).emit("room:state", this.publicState(room, p.token));
+    for (const player of room.players.values()) {
+      if (player.socketId) {
+        this.io.to(player.socketId).emit(
+          "room:state",
+          this.publicState(room, player.token)
+        );
+      }
+    }
   }
-  newPlayer(socket, name) {
-    return { token: playerToken(), socketId: socket.id, name: cleanName(name), ready: false, connected: true,
-      board: null, usedWords: new Set(), remaining: 40, moveCount: 0, finishedAt: null, elapsedMs: null, rematch: false };
+
+  removeWaitingSocket(socketId) {
+    const index = this.waiting.findIndex((entry) => entry.socketId === socketId);
+    if (index < 0) return null;
+    return this.waiting.splice(index, 1)[0];
   }
-  createRoom(socket, payload = {}, ack) {
-    let id; do { id = roomCode(); } while (this.rooms.has(id));
-    const p = this.newPlayer(socket, payload.name);
-    const room = { id, status: "waiting", players: new Map([[p.token,p]]), puzzle: null, startAt: null,
-      winnerToken: null, previousPuzzleId: null, createdAt: Date.now() };
-    this.rooms.set(id, room); this.socketToPlayer.set(socket.id, { roomId:id, token:p.token }); socket.join(id);
-    ackSafe(ack, { ok:true, roomId:id, playerToken:p.token, state:this.publicState(room,p.token) }); this.emitState(room);
+
+  joinMatchmaking(socket, payload = {}, ack) {
+    if (this.socketToPlayer.has(socket.id)) {
+      return ackSafe(ack, { ok: false, error: "すでに対戦へ参加しています" });
+    }
+    if (this.waiting.some((entry) => entry.socketId === socket.id)) {
+      return ackSafe(ack, { ok: true, waiting: true });
+    }
+
+    const player = this.newPlayer(socket, payload.name);
+    this.waiting.push(player);
+    ackSafe(ack, { ok: true, waiting: true, playerToken: player.token });
+    socket.emit("matchmaking:waiting", { waitingCount: this.waiting.length });
+    this.matchNextPair();
   }
-  joinRoom(socket, payload = {}, ack) {
-    const id = String(payload.roomId || "").trim().toUpperCase(); const room = this.rooms.get(id);
-    if (!room) return ackSafe(ack,{ok:false,error:"部屋が見つかりません"});
-    if (room.players.size >= 2) return ackSafe(ack,{ok:false,error:"部屋は満員です"});
-    if (room.status !== "waiting") return ackSafe(ack,{ok:false,error:"対戦開始後は参加できません"});
-    const p=this.newPlayer(socket,payload.name); room.players.set(p.token,p); this.socketToPlayer.set(socket.id,{roomId:id,token:p.token}); socket.join(id);
-    ackSafe(ack,{ok:true,roomId:id,playerToken:p.token,state:this.publicState(room,p.token)}); this.emitState(room);
+
+  cancelMatchmaking(socket, ack) {
+    const removed = this.removeWaitingSocket(socket.id);
+    ackSafe(ack, { ok: true, cancelled: Boolean(removed) });
+    socket.emit("matchmaking:cancelled");
   }
-  resumeRoom(socket,payload={},ack) {
-    const room=this.rooms.get(String(payload.roomId||"").toUpperCase()); const p=room?.players.get(String(payload.playerToken||""));
-    if(!room||!p) return ackSafe(ack,{ok:false,error:"復帰情報が無効です"});
-    p.socketId=socket.id;p.connected=true;this.socketToPlayer.set(socket.id,{roomId:room.id,token:p.token});socket.join(room.id);
-    ackSafe(ack,{ok:true,state:this.publicState(room,p.token),board:p.board});this.emitState(room);
+
+  matchNextPair() {
+    this.waiting = this.waiting.filter(
+      (player) => player.connected && this.io.sockets.sockets.has(player.socketId)
+    );
+
+    while (this.waiting.length >= 2) {
+      const first = this.waiting.shift();
+      const second = this.waiting.shift();
+      if (!first || !second) return;
+      this.createMatchedRoom(first, second);
+    }
   }
-  setReady(socket,payload={},ack) {
-    const ref=this.socketToPlayer.get(socket.id), room=ref&&this.rooms.get(ref.roomId), p=room&&room.players.get(ref.token);
-    if(!p) return ackSafe(ack,{ok:false,error:"部屋に参加していません"});
-    p.ready=Boolean(payload.ready); ackSafe(ack,{ok:true}); this.emitState(room);
-    if(room.players.size===2 && [...room.players.values()].every(x=>x.ready)) this.start(room);
+
+  createMatchedRoom(first, second) {
+    let id;
+    do { id = roomCode(); } while (this.rooms.has(id));
+
+    const room = {
+      id,
+      status: "matched",
+      players: new Map([[first.token, first], [second.token, second]]),
+      puzzle: null,
+      startAt: null,
+      winnerToken: null,
+      previousPuzzleId: null,
+      createdAt: Date.now(),
+    };
+
+    this.rooms.set(id, room);
+
+    for (const player of room.players.values()) {
+      this.socketToPlayer.set(player.socketId, { roomId: id, token: player.token });
+      const playerSocket = this.io.sockets.sockets.get(player.socketId);
+      if (playerSocket) playerSocket.join(id);
+    }
+
+    for (const player of room.players.values()) {
+      const opponent = [...room.players.values()].find(
+        (candidate) => candidate.token !== player.token
+      );
+      this.io.to(player.socketId).emit("matchmaking:matched", {
+        roomId: id,
+        playerToken: player.token,
+        opponentName: opponent?.name || "対戦相手",
+        state: this.publicState(room, player.token),
+      });
+    }
+
+    this.startCountdown(room);
   }
-  start(room) {
-    room.puzzle=this.puzzleLoader.random(room.previousPuzzleId);room.previousPuzzleId=room.puzzle.id;room.status="countdown";room.startAt=Date.now()+3000;room.winnerToken=null;
-    for(const p of room.players.values()){p.board=cloneBoard(room.puzzle.board);p.usedWords=new Set();p.remaining=40;p.moveCount=0;p.finishedAt=null;p.elapsedMs=null;p.ready=false;p.rematch=false;}
-    for(const p of room.players.values()) this.io.to(p.socketId).emit("match:countdown",{roomId:room.id,startAt:room.startAt,puzzle:{id:room.puzzle.id,board:cloneBoard(room.puzzle.board),targetWildcards:room.puzzle.targetWildcards}});
-    setTimeout(()=>{if(room.status!=="countdown")return;room.status="playing";this.io.to(room.id).emit("match:started",{startAt:room.startAt});this.emitState(room);},Math.max(0,room.startAt-Date.now()));
+
+  choosePuzzle() {
+    try {
+      const generated = this.runtimeGenerator.generateVerifiedPuzzle();
+      console.log(
+        `[runtime-generator] generated ${generated.id}, ` +
+        `steps=${generated.expectedPlan.length}, F=${generated.targetWildcards}`
+      );
+      return generated;
+    } catch (error) {
+      console.error("[runtime-generator] failed, using JSON fallback:", error.message);
+      const fallback = this.puzzleLoader.random();
+      return {
+        ...fallback,
+        source: fallback.source || "hard_puzzle_boards.json-fallback",
+      };
+    }
   }
-  submitMove(socket,payload={},ack) {
-    const ref=this.socketToPlayer.get(socket.id), room=ref&&this.rooms.get(ref.roomId), p=room&&room.players.get(ref.token);
-    if(!room||!p) return ackSafe(ack,{ok:false,error:"部屋に参加していません"});
-    if(room.status!=="playing"||Date.now()<room.startAt) return ackSafe(ack,{ok:false,error:"まだ開始していません"});
-    if(p.finishedAt) return ackSafe(ack,{ok:false,error:"すでにクリアしています"});
-    const result=validateAndApply({board:p.board,word:String(payload.word||""),path:payload.path,usedWords:p.usedWords,isCountry:w=>this.puzzleLoader.isCountry(w)});
-    if(!result.ok) return ackSafe(ack,result);
-    p.moveCount++;p.remaining=result.remaining;ackSafe(ack,{ok:true,board:cloneBoard(p.board),remaining:p.remaining,moveCount:p.moveCount});
-    socket.to(room.id).emit("opponent:progress",{remaining:p.remaining,moveCount:p.moveCount,progress:(40-p.remaining)/40*100});
-    if(result.cleared) this.finish(room,p);
+
+  startCountdown(room) {
+    room.status = "generating";
+    room.winnerToken = null;
+    this.emitState(room);
+
+    room.puzzle = this.choosePuzzle();
+    room.previousPuzzleId = room.puzzle.id;
+    room.status = "countdown";
+    room.startAt = Date.now() + 3000;
+
+    for (const player of room.players.values()) {
+      player.board = cloneBoard(room.puzzle.board);
+      player.usedWords = new Set();
+      player.remaining = 40;
+      player.moveCount = 0;
+      player.finishedAt = null;
+      player.elapsedMs = null;
+      player.rematch = false;
+
+      this.io.to(player.socketId).emit("match:countdown", {
+        roomId: room.id,
+        startAt: room.startAt,
+        puzzle: {
+          id: room.puzzle.id,
+          board: visibleBoard(player.board),
+          visibleStartRow: PLAYABLE_START_ROW,
+          visibleRows: 5,
+          cols: COLS,
+          targetWildcards: room.puzzle.targetWildcards,
+        },
+      });
+    }
+
+    this.emitState(room);
+
+    setTimeout(() => {
+      if (room.status !== "countdown") return;
+      room.status = "playing";
+      this.io.to(room.id).emit("match:started", { startAt: room.startAt });
+      this.emitState(room);
+    }, Math.max(0, room.startAt - Date.now()));
   }
-  finish(room,p) {
-    p.finishedAt=Date.now();p.elapsedMs=p.finishedAt-room.startAt;
-    if(!room.winnerToken){room.winnerToken=p.token;room.status="finished";this.io.to(room.id).emit("match:finished",{winnerToken:p.token,winnerName:p.name,elapsedMs:p.elapsedMs,players:[...room.players.values()].map(x=>({token:x.token,name:x.name,elapsedMs:x.elapsedMs,moveCount:x.moveCount,remaining:x.remaining}))});this.save(room);}
+
+  resumeRoom(socket, payload = {}, ack) {
+    const room = this.rooms.get(String(payload.roomId || "").toUpperCase());
+    const player = room?.players.get(String(payload.playerToken || ""));
+
+    if (!room || !player) {
+      return ackSafe(ack, { ok: false, error: "復帰情報が無効です" });
+    }
+
+    player.socketId = socket.id;
+    player.connected = true;
+    this.socketToPlayer.set(socket.id, { roomId: room.id, token: player.token });
+    socket.join(room.id);
+
+    ackSafe(ack, {
+      ok: true,
+      state: this.publicState(room, player.token),
+      board: visibleBoard(player.board),
+      startAt: room.startAt,
+      visibleStartRow: PLAYABLE_START_ROW,
+    });
     this.emitState(room);
   }
-  requestRematch(socket,_payload={},ack) {
-    const ref=this.socketToPlayer.get(socket.id),room=ref&&this.rooms.get(ref.roomId),p=room&&room.players.get(ref.token);
-    if(!p||room.status!=="finished")return ackSafe(ack,{ok:false,error:"再戦できません"});p.rematch=true;ackSafe(ack,{ok:true});
-    if([...room.players.values()].every(x=>x.rematch)){room.status="waiting";for(const x of room.players.values()){x.ready=false;x.rematch=false;}this.emitState(room);}
+
+  submitMove(socket, payload = {}, ack) {
+    const reference = this.socketToPlayer.get(socket.id);
+    const room = reference && this.rooms.get(reference.roomId);
+    const player = room && room.players.get(reference.token);
+
+    if (!room || !player) {
+      return ackSafe(ack, { ok: false, error: "対戦に参加していません" });
+    }
+    if (room.status !== "playing" || Date.now() < room.startAt) {
+      return ackSafe(ack, { ok: false, error: "まだ開始していません" });
+    }
+    if (player.finishedAt) {
+      return ackSafe(ack, { ok: false, error: "すでにクリアしています" });
+    }
+
+    const result = validateAndApply({
+      board: player.board,
+      path: payload.path,
+      fText: String(payload.fText || ""),
+      usedWords: player.usedWords,
+      isCountry: (word) => this.puzzleLoader.isCountry(word),
+    });
+
+    if (!result.ok) return ackSafe(ack, result);
+
+    player.moveCount += 1;
+    player.remaining = result.remaining;
+
+    ackSafe(ack, {
+      ok: true,
+      word: result.word,
+      board: visibleBoard(player.board),
+      remaining: player.remaining,
+      moveCount: player.moveCount,
+      visibleStartRow: PLAYABLE_START_ROW,
+    });
+
+    socket.to(room.id).emit("opponent:progress", {
+      remaining: player.remaining,
+      moveCount: player.moveCount,
+      progress: ((40 - player.remaining) / 40) * 100,
+    });
+
+    if (result.cleared) this.finish(room, player);
   }
-  leaveRoom(socket,_payload={},ack){this.removeSocket(socket.id,true);ackSafe(ack,{ok:true});}
-  disconnect(socket){this.removeSocket(socket.id,false);}
-  removeSocket(socketId,permanent){const ref=this.socketToPlayer.get(socketId);if(!ref)return;this.socketToPlayer.delete(socketId);const room=this.rooms.get(ref.roomId),p=room&&room.players.get(ref.token);if(!p)return;p.connected=false;p.socketId=null;if(permanent)room.players.delete(p.token);if(!room.players.size)this.rooms.delete(room.id);else this.emitState(room);}
-  save(room){fs.mkdirSync(this.matchDir,{recursive:true});const out={format:"keshimasu-duel-result-v1",roomId:room.id,puzzleId:room.puzzle.id,startedAt:new Date(room.startAt).toISOString(),finishedAt:new Date().toISOString(),winnerToken:room.winnerToken,players:[...room.players.values()].map(p=>({token:p.token,name:p.name,elapsedMs:p.elapsedMs,moveCount:p.moveCount,remaining:p.remaining}))};fs.writeFileSync(path.join(this.matchDir,`${Date.now()}-${room.id}.json`),JSON.stringify(out,null,2),"utf8");}
+
+  finish(room, player) {
+    player.finishedAt = Date.now();
+    player.elapsedMs = player.finishedAt - room.startAt;
+    if (room.winnerToken) return;
+
+    room.winnerToken = player.token;
+    room.status = "finished";
+
+    this.io.to(room.id).emit("match:finished", {
+      winnerToken: player.token,
+      winnerName: player.name,
+      elapsedMs: player.elapsedMs,
+      players: [...room.players.values()].map((entry) => ({
+        token: entry.token,
+        name: entry.name,
+        elapsedMs: entry.elapsedMs,
+        moveCount: entry.moveCount,
+        remaining: entry.remaining,
+      })),
+    });
+
+    this.save(room);
+    this.emitState(room);
+  }
+
+  requestRematch(socket, ack) {
+    const reference = this.socketToPlayer.get(socket.id);
+    const room = reference && this.rooms.get(reference.roomId);
+    const player = room && room.players.get(reference.token);
+
+    if (!player || room.status !== "finished") {
+      return ackSafe(ack, { ok: false, error: "再戦できません" });
+    }
+
+    player.rematch = true;
+    ackSafe(ack, { ok: true });
+    socket.emit("match:rematch-waiting");
+
+    if ([...room.players.values()].every((entry) => entry.rematch && entry.connected)) {
+      this.startCountdown(room);
+    }
+  }
+
+  leaveRoom(socket, ack) {
+    this.removeSocket(socket.id, true);
+    ackSafe(ack, { ok: true });
+  }
+
+  disconnect(socket) {
+    this.removeWaitingSocket(socket.id);
+    this.removeSocket(socket.id, false);
+  }
+
+  removeSocket(socketId, permanent) {
+    const reference = this.socketToPlayer.get(socketId);
+    if (!reference) return;
+
+    this.socketToPlayer.delete(socketId);
+    const room = this.rooms.get(reference.roomId);
+    const player = room?.players.get(reference.token);
+    if (!room || !player) return;
+
+    player.connected = false;
+    player.socketId = null;
+    if (permanent) room.players.delete(player.token);
+
+    if (room.players.size === 0) this.rooms.delete(room.id);
+    else this.emitState(room);
+  }
+
+  save(room) {
+    try {
+      fs.mkdirSync(this.matchDir, { recursive: true });
+      const output = {
+        format: "keshimasu-duel-result-v4-runtime-generated",
+        roomId: room.id,
+        puzzleId: room.puzzle.id,
+        puzzleSource: room.puzzle.source,
+        generatedAt: room.puzzle.generatedAt || null,
+        targetWildcards: room.puzzle.targetWildcards,
+        startedAt: new Date(room.startAt).toISOString(),
+        finishedAt: new Date().toISOString(),
+        winnerToken: room.winnerToken,
+        players: [...room.players.values()].map((entry) => ({
+          token: entry.token,
+          name: entry.name,
+          elapsedMs: entry.elapsedMs,
+          moveCount: entry.moveCount,
+          remaining: entry.remaining,
+        })),
+      };
+
+      fs.writeFileSync(
+        path.join(this.matchDir, `${Date.now()}-${room.id}.json`),
+        JSON.stringify(output, null, 2),
+        "utf8"
+      );
+    } catch (error) {
+      console.warn("[match save] failed:", error.message);
+    }
+  }
 }
-module.exports={MatchManager};
+
+module.exports = { MatchManager };
