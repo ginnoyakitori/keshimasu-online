@@ -1,0 +1,24 @@
+services:
+  - type: web
+    name: kokumei-keshimasu
+    runtime: node
+    plan: free
+
+    buildCommand: npm ci
+    startCommand: npm start
+
+    healthCheckPath: /api/health
+
+    envVars:
+      - key: NODE_ENV
+        value: production
+
+      - key: PUZZLE_DIR
+        value: ./data/ga_reverse
+
+      - key: COUNTRY_FILE
+        value: ./data/words/countries.json
+
+      - key: MATCH_DIR
+        value: ./data/matches
+`

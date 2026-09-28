@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, viewport-fit=cover"
+  >
+  <meta
+    name="theme-color"
+    content="#202020"
+  >
+  <meta
+    name="description"
+    content="2人で同じ国名ケシマスの問題を同時に解き、クリアタイムを競うオンライン対戦ゲームです。"
+  >
+  <title>国名ケシマス対戦</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <!-- ロビー画面 -->
+    <section
+      id="lobby"
+      class="card"
+      aria-labelledby="gameTitle"
+    >
+      <h1 id="gameTitle">
+        国名ケシマス
+      </h1>
+      <p>
+        同じ問題を2人で同時に解き、<br>
+        先にすべての文字を消したプレイヤーの勝利です。
+      </p>
+      <label for="name">
+        プレイヤー名
+        <input
+          id="name"
+          type="text"
+          maxlength="20"
+          value="プレイヤー"
+          autocomplete="nickname"
+          enterkeyhint="done"
+        >
+      </label>
+      <div class="actions">
+        <button
+          id="matchButton"
+          type="button"
+        >
+          対戦する
+        </button>
+      </div>
+      <button
+        id="cancelMatch"
+        type="button"
+        class="hidden"
+      >
+        マッチングをやめる
+      </button>
+      <div
+        id="matchingIndicator"
+        class="matching-indicator hidden"
+        aria-hidden="true"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <p
+        id="message"
+        role="status"
+        aria-live="polite"
+      ></p>
+      <div class="rule-card">
+        <h2>
+          あそびかた
+        </h2>
+        <ol>
+          <li>
+            縦または横に、一直線で2〜5文字を選択します。
+          </li>
+          <li>
+            選択した文字が国名なら「決定」を押します。
+          </li>
+          <li>
+            Fが含まれていない場合、文字入力は不要です。
+          </li>
+          <li>
+            Fが含まれている場合、Fに入る文字だけを入力します。
+          </li>
+          <li>
+            マッチング成立後、3秒のカウントダウンで同時に開始します。
+          </li>
+        </ol>
+      </div>
+    </section>
+    <!-- 対戦画面 -->
+    <section
+      id="game"
+      class="hidden"
+      aria-labelledby="battleTitle"
+    >
+      <h2
+        id="battleTitle"
+        class="visually-hidden"
+      >
+        国名ケシマス対戦画面
+      </h2>
+      <!-- プレイヤーとタイマー -->
+      <div class="battle-topbar">
+        <div class="player-chip">
+          <span class="chip-label">
+            YOU
+          </span>
+          <strong id="yourName">
+            あなた
+          </strong>
+        </div>
+        <div class="timer-card">
+          <span>
+            TIME
+          </span>
+          <strong id="timer">
+            0.000
+          </strong>
+        </div>
+        <div class="player-chip">
+          <span class="chip-label">
+            RIVAL
+          </span>
+          <strong id="opponentName">
+            対戦相手
+          </strong>
+        </div>
+      </div>
+      <!-- 相手の進捗 -->
+      <div class="progress-row">
+        <div class="progress-copy">
+          相手の残り
+          <strong id="opponentRemaining">
+            40
+          </strong>
+          マス
+        </div>
+        <div
+          class="progress-track"
+          role="progressbar"
+          aria-label="対戦相手の進捗"
+          aria-valuemin="0"
+          aria-valuemax="40"
+          aria-valuenow="0"
+        >
+          <div
+            id="opponentProgress"
+            class="progress-fill"
+          ></div>
+        </div>
+      </div>
+      <!-- 3秒カウントダウン -->
+      <div
+        id="countdown"
+        role="status"
+        aria-live="assertive"
+        aria-atomic="true"
+      ></div>
+      <!--
+        サーバー内部では8行×5列を保持します。
+        ブラウザには下側の5行×5列だけを送信します。
+        上3行の文字は下へ落ちるまで表示されません。
+      -->
+      <div
+        id="board"
+        role="grid"
+        aria-label="国名ケシマスの表示盤面"
+      ></div>
+      <!-- 選択中の文字 -->
+      <div class="selection-strip">
+        <span>
+          選択中
+        </span>
+        <strong
+          id="selectedText"
+          aria-live="polite"
+        >
+          未選択
+        </strong>
+      </div>
+      <!-- Fが選択に含まれる場合だけ表示 -->
+      <div
+        id="fInputArea"
+        class="f-input-area hidden"
+      >
+        <label for="fText">
+          Fに入る文字
+          <span id="fInputHelp"></span>
+        </label>
+        <input
+          id="fText"
+          type="text"
+          placeholder="Fに入る文字を入力"
+          maxlength="5"
+          autocomplete="off"
+          autocapitalize="off"
+          spellcheck="false"
+          enterkeyhint="done"
+        >
+      </div>
+      <!-- 決定と選択解除 -->
+      <div class="answer-card">
+        <button
+          id="submitMove"
+          type="button"
+          disabled
+        >
+          決定
+        </button>
+        <button
+          id="clearSelection"
+          type="button"
+        >
+          選択解除
+        </button>
+      </div>
+      <!-- 正解またはエラーメッセージ -->
+      <p
+        id="gameMessage"
+        role="status"
+        aria-live="polite"
+        aria-atomic="true"
+      ></p>
+      <!-- 対戦結果 -->
+      <div
+        id="result"
+        class="result-overlay hidden"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="resultTitle"
+      >
+        <div class="result-dialog">
+          <p class="result-kicker">
+            BATTLE RESULT
+          </p>
+          <h2 id="resultTitle">
+            対戦終了
+          </h2>
+          <button
+            id="rematch"
+            type="button"
+          >
+            同じ相手と再戦
+          </button>
+          <button
+            id="newMatch"
+            type="button"
+          >
+            新しい相手と対戦
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+  <!-- Socket.IOクライアント -->
+  <script src="/socket.io/socket.io.js"></script>
+  <!-- ゲーム処理 -->
+  <script src="client.js"></script>
+</body>
+</html>
