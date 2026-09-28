@@ -1,12 +1,16 @@
 {
-  "name": "keshimasu-duel",
-  "version": "1.0.0",
+  "name": "keshimasu-online",
+  "version": "2.0.0",
   "private": true,
-  "description": "2-player browser race for generated country Keshimasu puzzles",
+  "description": "国名ケシマス オンライン2人対戦",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "dev": "node --watch server.js"
+    "dev": "node --watch server.js",
+    "check": "node --check server.js && node --check public/client.js && node --check src/multiplayer/answer-validator.js && node --check src/multiplayer/match-manager.js && node --check src/multiplayer/puzzle-loader.js && node --check src/multiplayer/room-code.js"
+  },
+  "engines": {
+    "node": ">=20"
   },
   "dependencies": {
     "express": "^5.1.0",
