@@ -836,10 +836,6 @@ button:disabled {
 }
 
 #submitMove,
-#clearSelection {
-  width: 100%;
-  min-height: 50px;
-}
 
 #submitMove {
   border: 2px solid var(--yellow);
@@ -883,9 +879,7 @@ button:disabled {
   cursor: default;
 }
 
-#clearSelection {
-  margin-top: 0;
-}
+
 
 
 /* --------------------------------------------------
@@ -1092,9 +1086,7 @@ button:disabled {
   }
 
   #submitMove,
-  #clearSelection {
-    padding-inline: 8px;
-  }
+  
 }
 
 
