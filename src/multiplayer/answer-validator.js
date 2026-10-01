@@ -17,7 +17,43 @@ function toCharacters(value) {
   return [...String(value ?? "")];
 }
 
+/*
+ * ひらがなをカタカナへ変換します。
+ *
+ * NFKCで全角・半角や結合文字をできる範囲で統一し、
+ * ひらがなの「あ〜ゖ」をカタカナへ変換します。
+ *
+ * 例:
+ * あめりか → アメリカ
+ * どいつ   → ドイツ
+ * ゔ       → ヴ
+ */
+function hiraganaToKatakana(value) {
+  const normalized =
+    String(value ?? "")
+      .normalize("NFKC");
 
+  return [...normalized]
+    .map((character) => {
+      const code =
+        character.codePointAt(0);
+
+      /*
+       * ぁ〜ゖをァ〜ヶへ変換します。
+       */
+      if (
+        code >= 0x3041 &&
+        code <= 0x3096
+      ) {
+        return String.fromCodePoint(
+          code + 0x60
+        );
+      }
+
+      return character;
+    })
+    .join("");
+}
 function normalizeWildcard(value) {
   const text = String(value ?? "");
 
@@ -218,11 +254,19 @@ function buildCompletedWord({
         WILDCARDS.has(character)
     ).length;
 
-  const replacementCharacters =
-    toCharacters(
-      String(fText ?? "").trim()
-    );
+  /*
+ * Fへの入力は、ひらがなでも受け付けます。
+ * 判定前にカタカナへ統一します。
+ */
+const normalizedFText =
+  hiraganaToKatakana(
+    String(fText ?? "").trim()
+  );
 
+const replacementCharacters =
+  toCharacters(
+    normalizedFText
+  );
   if (
     wildcardCount === 0 &&
     replacementCharacters.length > 0
@@ -440,4 +484,5 @@ module.exports = {
   remainingCells,
   applyGravity,
   sortPathInReadingOrder,
+  hiraganaToKatakana,
 };
