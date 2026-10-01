@@ -254,9 +254,12 @@ function resetLobbyUi() {
     false;
 
   $("submitMove").disabled =
-    true;
+  true;
 
-  setGameMessage("");
+$("resetBoard").disabled =
+  true;
+
+setGameMessage("");
 }
 
 
@@ -509,6 +512,8 @@ function updateAnswerControls() {
     status !== "playing" ||
     selected.length < 2 ||
     selected.length > 5;
+    $("resetBoard").disabled =
+  status !== "playing";
 }
 
 
@@ -1332,7 +1337,74 @@ $("clearSelection").onclick =
 
     renderBoard();
   };
+/* ==================================================
+   盤面リセット
+================================================== */
 
+$("resetBoard").onclick =
+  async () => {
+    if (status !== "playing") {
+      setGameMessage(
+        "対戦中のみ盤面をリセットできます"
+      );
+
+      return;
+    }
+
+    const confirmed =
+      window.confirm(
+        "盤面を対戦開始時の状態へ戻します。\n経過時間は戻りません。"
+      );
+
+    if (!confirmed) {
+      return;
+    }
+
+    $("resetBoard").disabled =
+      true;
+
+    $("submitMove").disabled =
+      true;
+
+    const result =
+      await emitAck(
+        "match:reset",
+        {}
+      );
+
+    if (!result.ok) {
+      setGameMessage(
+        result.error ||
+        "盤面をリセットできませんでした"
+      );
+
+      updateAnswerControls();
+      return;
+    }
+
+    board =
+      result.board.map(
+        (row) =>
+          row.slice()
+      );
+
+    selected = [];
+
+    $("fText").value = "";
+
+    $("fInputHelp")
+      .textContent = "";
+
+    $("fInputArea")
+      .classList
+      .add("hidden");
+
+    setGameMessage(
+      "盤面を最初の状態へ戻しました"
+    );
+
+    renderBoard();
+  };
 
 /* ==================================================
    決定

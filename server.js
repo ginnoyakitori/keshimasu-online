@@ -463,7 +463,31 @@ io.on(
       }
     );
 
+    /*
+ * プレイヤーの盤面を
+ * 対戦開始時の状態へ戻します。
+ */
+socket.on(
+  "match:reset",
+  (_payload = {}, ack) => {
+    try {
+      matchManager.resetBoard(
+        socket,
+        ack
+      );
+    } catch (error) {
+      console.error(
+        "[match:reset]",
+        error
+      );
 
+      sendSocketError(
+        ack,
+        "盤面のリセットに失敗しました"
+      );
+    }
+  }
+);
     /* ----------------------------------------------
        同じ相手と再戦
     ---------------------------------------------- */
