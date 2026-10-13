@@ -1086,7 +1086,9 @@ button:disabled {
   }
 
   #submitMove,
-  
+  #clearSelection {
+    padding-inline: 8px;
+  }
 }
 
 
