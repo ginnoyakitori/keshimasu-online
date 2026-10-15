@@ -1,13 +1,15 @@
 {
   "name": "keshimasu-online",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "private": true,
-  "description": "国名ケシマス オンライン2人対戦",
+  "description": "国名ケシマス オンライン2人対戦（3分スコアアタック）",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
     "dev": "node --watch server.js",
-    "check": "node --check server.js && node --check public/client.js && node --check src/multiplayer/answer-validator.js && node --check src/multiplayer/match-manager.js && node --check src/multiplayer/puzzle-loader.js && node --check src/multiplayer/room-code.js"
+    "generate": "node tools/generate-pools.js",
+    "verify": "node tools/verify-pools.js",
+    "check": "node --check server.js && node --check public/client.js && node --check src/multiplayer/answer-validator.js && node --check src/multiplayer/match-manager.js && node --check src/multiplayer/puzzle-loader.js && node --check src/multiplayer/puzzle-generator.js && node --check src/multiplayer/levels.js && node --check src/multiplayer/room-code.js && node --check tools/generate-pools.js && node --check tools/verify-pools.js"
   },
   "engines": {
     "node": ">=20"

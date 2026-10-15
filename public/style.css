@@ -635,11 +635,12 @@ button:disabled {
 
   display: grid;
   grid-template-columns:
-    repeat(5, minmax(0, 1fr));
+    repeat(var(--cols, 5), minmax(0, 1fr));
 
   gap: 0;
 
-  width: 100%;
+  width: calc(100% * var(--cols, 5) / 5);
+  margin-inline: auto;
 
   border: 4px solid var(--yellow);
 
@@ -700,14 +701,14 @@ button:disabled {
 
 /* 各行の右端 */
 
-.cell:nth-child(5n) {
+.cell.last-col {
   border-right: 0;
 }
 
 
 /* 最下段 */
 
-.cell:nth-last-child(-n + 5) {
+.cell.last-row {
   border-bottom: 0;
 }
 
@@ -1151,5 +1152,495 @@ button:disabled {
 
     transition-duration:
       0.01ms !important;
+  }
+}
+
+/* ==================================================
+   スコアバトル用の追加スタイル
+================================================== */
+
+select {
+  width: 100%;
+  min-height: 48px;
+  margin-top: 6px;
+  padding: 0 12px;
+
+  border: 2px solid #5a5a5a;
+  border-radius: 9px;
+
+  color: #ffffff;
+  background: #2b2b2b;
+
+  font: inherit;
+  font-size: 17px;
+}
+
+select:focus {
+  outline: none;
+  border-color: var(--yellow);
+}
+
+select:disabled {
+  opacity: 0.6;
+}
+
+.hud {
+  position: relative;
+  z-index: 1;
+
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr 1.2fr;
+  gap: 8px;
+
+  margin-bottom: 10px;
+}
+
+.hud-item {
+  padding: 7px 6px;
+
+  border: 1px solid #565656;
+  border-radius: 7px;
+
+  text-align: center;
+  background: #2f2f2f;
+}
+
+.hud-item span {
+  display: block;
+
+  color: var(--yellow);
+
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+}
+
+.hud-item strong {
+  display: block;
+
+  color: #ffffff;
+
+  font-size: 20px;
+  font-variant-numeric: tabular-nums;
+}
+
+.hud-item.rival strong {
+  color: #d8d8d8;
+}
+
+.hud-item.bump strong {
+  animation: score-bump 0.35s ease;
+}
+
+@keyframes score-bump {
+  50% {
+    color: var(--yellow);
+    transform: scale(1.25);
+  }
+}
+
+.timer-card.danger strong {
+  color: #ff6b5e;
+}
+
+.result-scores {
+  margin: 0 0 14px;
+  padding: 0;
+
+  list-style: none;
+}
+
+.result-scores li {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+
+  margin-bottom: 8px;
+  padding: 10px 12px;
+
+  border: 1px solid #565656;
+  border-radius: 8px;
+
+  color: #ffffff;
+  background: #2f2f2f;
+}
+
+.result-scores li.you {
+  border-color: var(--yellow);
+}
+
+.result-scores .score {
+  color: var(--yellow);
+
+  font-weight: 900;
+  font-variant-numeric: tabular-nums;
+}
+
+.result-note {
+  min-height: 1.2em;
+  margin: 0 0 14px;
+
+  color: var(--text-muted);
+
+  font-size: 13px;
+}
+
+.level-banner {
+  color: var(--yellow);
+  font-weight: 900;
+}
+
+/* ==================================================
+   ドラッグ選択・演出・パレット
+================================================== */
+
+.board-wrap {
+  position: relative;
+}
+
+#board {
+  overflow: hidden;
+
+  /* なぞって選ぶので、盤面の上ではスクロールや文字選択をしない */
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+}
+
+.fx-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+
+  overflow: hidden;
+  pointer-events: none;
+}
+
+/* 選んだ順番を数字で表示（色だけに頼らない） */
+.cell.selected::after {
+  position: absolute;
+  top: 2px;
+  right: 4px;
+
+  content: attr(data-order);
+
+  color: rgba(0, 0, 0, 0.55);
+
+  font-size: 11px;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.cell.pressing:not(.selected) {
+  background: #5d5a3a;
+}
+
+/* ワードが成立しているとき */
+.cell.selected.valid {
+  color: #ffffff;
+  background: #2fb35a;
+
+  box-shadow:
+    inset 0 0 0 3px #8cf0a8,
+    0 0 16px rgba(80, 230, 120, 0.7);
+}
+
+.cell.selected.valid::after {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.cell.selected.used {
+  background: #d8a24a;
+}
+
+#submitMove.ready {
+  animation: ready-pulse 1s ease-in-out infinite;
+}
+
+@keyframes ready-pulse {
+  50% {
+    box-shadow: 0 0 0 5px rgba(120, 240, 150, 0.45);
+  }
+}
+
+/* 消した文字が上にはじけて消える（盤面の上に重ねる） */
+.ghost-cell {
+  position: absolute;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 6px;
+
+  color: var(--text-dark, #202020);
+  background: var(--yellow);
+
+  font-weight: 900;
+
+  animation: ghost-pop 0.32s ease-out forwards;
+  animation-delay: var(--delay, 0ms);
+}
+
+@keyframes ghost-pop {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  40% {
+    opacity: 1;
+    background: #ffffff;
+    transform: scale(1.18);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(0.2) rotate(8deg);
+  }
+}
+
+/* 消したあとに落ちてくる文字 */
+.cell.falling {
+  animation: cell-fall var(--fall-dur, 200ms) cubic-bezier(0.35, 0, 0.9, 0.6);
+}
+
+@keyframes cell-fall {
+  from {
+    transform: translateY(calc(var(--fall, 1) * -100%));
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+/* 不正解のとき */
+.cell.shake {
+  background: #c94b3f;
+  color: #ffffff;
+
+  animation: cell-shake 0.4s ease;
+}
+
+@keyframes cell-shake {
+  20% { transform: translateX(-5px); }
+  40% { transform: translateX(5px); }
+  60% { transform: translateX(-4px); }
+  80% { transform: translateX(3px); }
+}
+
+/* 次のレベルの盤面が現れる */
+#board.level-in {
+  animation: board-in 0.35s ease-out;
+}
+
+@keyframes board-in {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.level-banner-pop {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 6;
+
+  padding: 8px 20px;
+
+  border: 3px solid var(--yellow);
+  border-radius: 12px;
+
+  color: var(--yellow);
+  background: rgba(20, 20, 20, 0.88);
+
+  font-size: 22px;
+  font-weight: 900;
+  text-align: center;
+  white-space: nowrap;
+
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+
+  animation: banner-pop 1s ease-out forwards;
+}
+
+.level-banner-pop small {
+  display: block;
+
+  color: #ffffff;
+
+  font-size: 13px;
+}
+
+@keyframes banner-pop {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.6);
+  }
+
+  18% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.08);
+  }
+
+  30% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  80% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Fに入る文字を選ぶパレット */
+.palette-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+
+  display: grid;
+  place-items: center;
+
+  padding: 12px;
+
+  background: rgba(0, 0, 0, 0.72);
+}
+
+.palette-dialog {
+  width: min(100%, 360px);
+  max-height: calc(100dvh - 24px);
+  overflow-y: auto;
+
+  padding: 14px;
+
+  border: 2px solid var(--yellow);
+  border-radius: 14px;
+
+  background: #262626;
+}
+
+.palette-dialog h3 {
+  margin: 0 0 8px;
+
+  color: var(--yellow);
+
+  font-size: 16px;
+}
+
+.wildcard-word {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+
+  margin-bottom: 10px;
+}
+
+.wildcard-word span {
+  display: grid;
+  place-items: center;
+
+  width: 34px;
+  height: 34px;
+
+  border-radius: 6px;
+
+  color: var(--text-dark, #202020);
+  background: #f2efe4;
+
+  font-weight: 900;
+}
+
+.wildcard-word .wildcard-target {
+  color: #ffffff;
+  background: #2f6fd8;
+}
+
+.palette-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 5px;
+
+  margin-bottom: 10px;
+}
+
+.palette-key {
+  min-height: 42px;
+  padding: 0;
+
+  border: 1px solid #6a6a6a;
+  border-radius: 7px;
+
+  color: #ffffff;
+  background: #3a3a3a;
+
+  font: inherit;
+  font-size: 19px;
+  font-weight: 800;
+}
+
+.palette-key:active {
+  color: var(--text-dark, #202020);
+  background: var(--yellow);
+}
+
+.palette-spacer {
+  display: block;
+}
+
+/* 音のオン・オフ */
+#soundToggle {
+  position: fixed;
+  top: calc(env(safe-area-inset-top, 0px) + 8px);
+  right: 8px;
+  z-index: 250;
+
+  width: 40px;
+  height: 40px;
+  padding: 0;
+
+  border: 1px solid #666666;
+  border-radius: 50%;
+
+  background: rgba(30, 30, 30, 0.85);
+
+  font-size: 18px;
+  line-height: 1;
+}
+
+.confetti-canvas {
+  position: fixed;
+  inset: 0;
+  z-index: 400;
+
+  width: 100%;
+  height: 100%;
+
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cell.falling,
+  .cell.shake,
+  #board.level-in,
+  .ghost-cell,
+  #submitMove.ready {
+    animation: none;
+  }
+
+  .level-banner-pop {
+    animation: none;
+    opacity: 1;
   }
 }

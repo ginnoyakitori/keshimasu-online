@@ -3,437 +3,249 @@
 const fs = require("node:fs");
 const path = require("node:path");
 
+const {
+  LEVELS,
+  MODES,
+  MIN_WORD_LENGTH,
+  MAX_WORD_LENGTH,
+  levelConfig,
+} = require("./levels");
 
-const ROWS = 8;
-const COLS = 5;
-const EMPTY = "・";
+const EMPTY = "";
 
 
 function cloneBoard(board) {
-  return board.map(
-    (row) => row.slice()
-  );
+  return board.map((row) => row.slice());
 }
-
-
-function normalizeCell(value) {
-  const text =
-    String(value ?? "").trim();
-
-  if (
-    text === "" ||
-    text === EMPTY
-  ) {
-    return EMPTY;
-  }
-
-  if (
-    text === "F" ||
-    text === "Ｆ"
-  ) {
-    return "F";
-  }
-
-  return text;
-}
-
-
-function normalizeBoard(board) {
-  if (
-    !Array.isArray(board) ||
-    board.length !== ROWS
-  ) {
-    return null;
-  }
-
-  const normalized = [];
-
-  for (const row of board) {
-    if (
-      !Array.isArray(row) ||
-      row.length !== COLS
-    ) {
-      return null;
-    }
-
-    const normalizedRow =
-      row.map(normalizeCell);
-
-    normalized.push(
-      normalizedRow
-    );
-  }
-
-  return normalized;
-}
-
-
-function countFilledCells(board) {
-  let count = 0;
-
-  for (const row of board) {
-    for (const cell of row) {
-      if (cell !== EMPTY) {
-        count += 1;
-      }
-    }
-  }
-
-  return count;
-}
-
-
-function countWildcards(board) {
-  let count = 0;
-
-  for (const row of board) {
-    for (const cell of row) {
-      if (cell === "F") {
-        count += 1;
-      }
-    }
-  }
-
-  return count;
-}
-
 
 function readJson(filePath) {
-  const text = fs.readFileSync(
-    filePath,
-    "utf8"
-  );
-
-  return JSON.parse(
-    text.replace(/^\uFEFF/, "")
-  );
+  return JSON.parse(fs.readFileSync(filePath, "utf8").replace(/^\uFEFF/, ""));
 }
 
-
 function readWordList(filePath) {
-  if (!fs.existsSync(filePath)) {
-    throw new Error(
-      `Country file not found: ${filePath}`
-    );
-  }
-
   const data = readJson(filePath);
 
   if (Array.isArray(data)) {
     return data.map(String);
   }
 
-  for (const key of [
-    "words",
-    "countries",
-    "data",
-  ]) {
+  for (const key of ["words", "countries", "capitals", "data"]) {
     if (Array.isArray(data[key])) {
       return data[key].map(String);
     }
   }
 
-  throw new Error(
-    `Unsupported country file format: ${filePath}`
-  );
+  throw new Error(`Unsupported word file format: ${filePath}`);
 }
 
+/*
+ * プール内の1問を検査します。
+ * 形が正しくないものは使いません。
+ */
+function normalizePuzzle(source, level) {
+  const cfg = levelConfig(level);
 
-function normalizePuzzle(
-  source,
-  index
-) {
+  if (!source || typeof source !== "object" || !Array.isArray(source.board)) {
+    return null;
+  }
+
+  const { board } = source;
+
   if (
-    !source ||
-    typeof source !== "object"
+    board.length !== cfg.rows ||
+    !board.every((row) => Array.isArray(row) && row.length === cfg.cols)
   ) {
     return null;
   }
 
-  const board =
-    normalizeBoard(source.board);
+  const normalized = board.map((row) => row.map((cell) => String(cell ?? "")));
 
-  if (!board) {
+  if (normalized.some((row) => row.some((cell) => cell === EMPTY))) {
     return null;
   }
-
-  if (
-    countFilledCells(board) !==
-    ROWS * COLS
-  ) {
-    return null;
-  }
-
-  const rawId =
-    source.id ?? index + 1;
 
   return {
-    id: `json-${String(rawId)}`,
-
-    source:
-      "hard_puzzle_boards.json",
-
-    board,
-
-    targetWildcards:
-      countWildcards(board),
-
-    hardnessScore: Number(
-      source.hardnessScore ?? 0
-    ),
-
-    hardnessLabel: String(
-      source.hardnessLabel ??
-      "unknown"
-    ),
-
-    difficulty: Number(
-      source.difficulty ?? 0
-    ),
+    id: String(source.id),
+    level: cfg.level,
+    cols: cfg.cols,
+    rows: cfg.rows,
+    visibleRows: cfg.visibleRows,
+    board: normalized,
+    targetWildcards: normalized.flat().filter((cell) => cell === "F").length,
+    steps: Number(source.steps) || 0,
   };
 }
 
 
 class PuzzleLoader {
-  constructor({
-    puzzleFile,
-    countryFile,
-  }) {
-    if (
-      typeof puzzleFile !== "string" ||
-      puzzleFile.trim() === ""
-    ) {
-      throw new TypeError(
-        "PuzzleLoader requires puzzleFile"
-      );
+  constructor({ wordsDir, poolsDir }) {
+    if (typeof wordsDir !== "string" || wordsDir.trim() === "") {
+      throw new TypeError("PuzzleLoader requires wordsDir");
     }
 
-    if (
-      typeof countryFile !== "string" ||
-      countryFile.trim() === ""
-    ) {
-      throw new TypeError(
-        "PuzzleLoader requires countryFile"
-      );
+    if (typeof poolsDir !== "string" || poolsDir.trim() === "") {
+      throw new TypeError("PuzzleLoader requires poolsDir");
     }
 
-    this.puzzleFile =
-      path.resolve(puzzleFile);
+    this.wordsDir = path.resolve(wordsDir);
+    this.poolsDir = path.resolve(poolsDir);
 
-    this.countryFile =
-      path.resolve(countryFile);
+    // mode → Set(単語)
+    this.words = new Map();
 
-    this.puzzles = [];
-    this.countries = new Set();
+    // mode → level → 問題の配列
+    this.pools = new Map();
   }
-
 
   load() {
-    this.loadCountries();
-    this.loadPuzzles();
+    for (const [mode, info] of Object.entries(MODES)) {
+      try {
+        this.loadMode(mode, info);
+      } catch (error) {
+        console.warn(`[PuzzleLoader] mode "${mode}" is disabled: ${error.message}`);
+        this.words.delete(mode);
+        this.pools.delete(mode);
+      }
+    }
 
-    if (this.puzzles.length === 0) {
+    if (this.pools.size === 0) {
       throw new Error(
-        "No playable puzzles were loaded from: " +
-        this.puzzleFile
+        "No playable mode was loaded. Run `npm run generate` first. " +
+          `words=${this.wordsDir} pools=${this.poolsDir}`
+      );
+    }
+
+    for (const mode of this.pools.keys()) {
+      console.log(
+        `[PuzzleLoader] ${mode}: words=${this.words.get(mode).size} ` +
+          `puzzles=${this.countPuzzles(mode)}`
       );
     }
   }
 
+  loadMode(mode, info) {
+    const wordFile = path.join(this.wordsDir, info.wordFile);
 
-  loadCountries() {
-    const words =
-      readWordList(
-        this.countryFile
-      );
-
-    this.countries =
-      new Set(
-        words
-          .map(
-            (word) =>
-              String(word).trim()
-          )
-          .filter(
-            (word) => {
-              const length =
-                [...word].length;
-
-              return (
-                length >= 2 &&
-                length <= 5
-              );
-            }
-          )
-      );
-  }
-
-
-  loadPuzzles() {
-    if (
-      !fs.existsSync(
-        this.puzzleFile
-      )
-    ) {
-      throw new Error(
-        `Puzzle JSON not found: ${this.puzzleFile}`
-      );
+    if (!fs.existsSync(wordFile)) {
+      throw new Error(`word file not found: ${wordFile}`);
     }
 
-    const extension =
-      path.extname(
-        this.puzzleFile
-      ).toLowerCase();
+    // 画面から選べるのは2〜5マスなので、その長さの単語だけを使う
+    const words = new Set(
+      readWordList(wordFile)
+        .map((word) => word.trim())
+        .filter((word) => {
+          const length = [...word].length;
 
-    if (extension !== ".json") {
-      throw new Error(
-        "Puzzle file must be JSON: " +
-        this.puzzleFile
-      );
+          return length >= MIN_WORD_LENGTH && length <= MAX_WORD_LENGTH;
+        })
+    );
+
+    const poolFile = path.join(this.poolsDir, `${mode}.json`);
+
+    if (!fs.existsSync(poolFile)) {
+      throw new Error(`pool file not found: ${poolFile}`);
     }
 
-    const data =
-      readJson(
-        this.puzzleFile
-      );
+    const rawLevels = readJson(poolFile).levels || {};
+    const levels = new Map();
+    let invalid = 0;
 
-    if (!Array.isArray(data)) {
-      throw new Error(
-        "Puzzle JSON root must be an array"
-      );
-    }
+    for (const cfg of LEVELS) {
+      const loaded = [];
+      const seen = new Set();
 
-    const loaded = [];
-    const usedIds = new Set();
+      for (const source of rawLevels[String(cfg.level)] || []) {
+        const puzzle = normalizePuzzle(source, cfg.level);
 
-    let invalidCount = 0;
-    let duplicateCount = 0;
+        if (!puzzle || seen.has(puzzle.id)) {
+          invalid += 1;
+          continue;
+        }
 
-    for (
-      let index = 0;
-      index < data.length;
-      index += 1
-    ) {
-      const puzzle =
-        normalizePuzzle(
-          data[index],
-          index
-        );
-
-      if (!puzzle) {
-        invalidCount += 1;
-        continue;
+        seen.add(puzzle.id);
+        loaded.push(puzzle);
       }
 
-      if (usedIds.has(puzzle.id)) {
-        duplicateCount += 1;
-        continue;
+      if (loaded.length === 0) {
+        throw new Error(`no puzzles for level ${cfg.level}`);
       }
 
-      usedIds.add(puzzle.id);
-      loaded.push(puzzle);
+      levels.set(cfg.level, loaded);
     }
 
-    this.puzzles = loaded;
+    if (invalid > 0) {
+      console.warn(`[PuzzleLoader] ${mode}: ${invalid} invalid puzzles skipped`);
+    }
 
-    console.log(
-      "[PuzzleLoader] JSON records:",
-      data.length
-    );
-
-    console.log(
-      "[PuzzleLoader] Loaded puzzles:",
-      loaded.length
-    );
-
-    console.log(
-      "[PuzzleLoader] Invalid:",
-      invalidCount
-    );
-
-    console.log(
-      "[PuzzleLoader] Duplicates:",
-      duplicateCount
-    );
+    this.words.set(mode, words);
+    this.pools.set(mode, levels);
   }
 
+  countPuzzles(mode) {
+    let total = 0;
+
+    for (const puzzles of this.pools.get(mode)?.values() || []) {
+      total += puzzles.length;
+    }
+
+    return total;
+  }
 
   get count() {
-    return this.puzzles.length;
-  }
+    let total = 0;
 
+    for (const mode of this.pools.keys()) {
+      total += this.countPuzzles(mode);
+    }
+
+    return total;
+  }
 
   get countryCount() {
-    return this.countries.size;
+    return this.words.get("country")?.size ?? 0;
   }
 
-
-  isCountry(word) {
-    return this.countries.has(
-      String(word ?? "").trim()
-    );
+  hasMode(mode) {
+    return this.pools.has(mode);
   }
 
+  availableModes() {
+    return [...this.pools.keys()].map((id) => ({
+      id,
+      label: MODES[id].label,
+    }));
+  }
 
-  getById(puzzleId) {
-    const id =
-      String(puzzleId ?? "");
+  // 画面で「消せます」の表示に使う、選べる長さの単語一覧
+  wordList(mode) {
+    return [...(this.words.get(mode) || [])];
+  }
 
-    const puzzle =
-      this.puzzles.find(
-        (candidate) =>
-          candidate.id === id
-      );
+  isWord(mode, word) {
+    return this.words.get(mode)?.has(String(word ?? "").trim()) ?? false;
+  }
 
-    if (!puzzle) {
-      return null;
+  /*
+   * 指定したモードとレベルから1問選びます。
+   * excludeIds にある問題は、候補が残っている限り避けます。
+   * レベルが最大を超えたときは、最大レベルの問題を使います。
+   */
+  pick(mode, level, excludeIds = new Set()) {
+    const levels = this.pools.get(mode);
+
+    if (!levels) {
+      throw new Error(`Unknown mode: ${mode}`);
     }
 
-    return {
-      ...puzzle,
-      board:
-        cloneBoard(puzzle.board),
-    };
-  }
+    const pool = levels.get(levelConfig(level).level);
+    const fresh = pool.filter((puzzle) => !excludeIds.has(puzzle.id));
+    const candidates = fresh.length > 0 ? fresh : pool;
+    const puzzle = candidates[Math.floor(Math.random() * candidates.length)];
 
-
-  random(excludeId = null) {
-    let candidates =
-      this.puzzles;
-
-    if (
-      excludeId &&
-      this.puzzles.length > 1
-    ) {
-      const filtered =
-        this.puzzles.filter(
-          (puzzle) =>
-            puzzle.id !== excludeId
-        );
-
-      if (filtered.length > 0) {
-        candidates = filtered;
-      }
-    }
-
-    const randomIndex =
-      Math.floor(
-        Math.random() *
-        candidates.length
-      );
-
-    const puzzle =
-      candidates[randomIndex];
-
-    return {
-      ...puzzle,
-
-      board:
-        cloneBoard(puzzle.board),
-    };
+    return { ...puzzle, board: cloneBoard(puzzle.board) };
   }
 }
-
 
 module.exports = {
   PuzzleLoader,

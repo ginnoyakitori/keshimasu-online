@@ -12,9 +12,9 @@
   >
   <meta
     name="description"
-    content="2人で同じ国名ケシマスの問題を同時に解き、クリアタイムを競うオンライン対戦ゲームです。"
+    content="2人で同じ問題を同時に解き、3分間のスコアを競うケシマスのオンライン対戦ゲームです。"
   >
-  <title>国名ケシマス対戦</title>
+  <title>ケシマス対戦</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -29,8 +29,8 @@
         国名ケシマス
       </h1>
       <p>
-        同じ問題を2人で同時に解き、<br>
-        先にすべての文字を消したプレイヤーの勝利です。
+        同じ問題を2人で同時に解く3分間のスコアバトル。<br>
+        全部消すと次のレベルへ進み、点数が高い方の勝ちです。
       </p>
       <label for="name">
         プレイヤー名
@@ -42,6 +42,14 @@
           autocomplete="nickname"
           enterkeyhint="done"
         >
+      </label>
+      <label for="mode">
+        モード
+        <select id="mode">
+          <option value="country">国名</option>
+          <option value="capital">首都名</option>
+          <option value="pokemon">ポケモン</option>
+        </select>
       </label>
       <div class="actions">
         <button
@@ -78,19 +86,25 @@
         </h2>
         <ol>
           <li>
-            縦または横に、一直線で2〜5文字を選択します。
+            モードを選んで「対戦する」。同じモードの相手と組まれます。
           </li>
           <li>
-            選択した文字が国名なら「決定」を押します。
+            制限時間は3分。2人とも同じ問題を、レベル1から順に解きます。
           </li>
           <li>
-            Fが含まれていない場合、文字入力は不要です。
+            指でなぞる（ドラッグ）か、1文字ずつタップして、縦または横に一直線で2〜5文字を選びます。最後に選んだ文字をもう一度タップすると取り消せます。
           </li>
           <li>
-            Fが含まれている場合、Fに入る文字だけを入力します。
+            ワードが成立すると、選んだ文字が緑になります。「消去する」を押すと消えて、上の文字が落ちてきます。
           </li>
           <li>
-            マッチング成立後、3秒のカウントダウンで同時に開始します。
+            盤面を全部消すとすぐ次のレベルへ。レベルが上がるほど盤面が大きく、点数も高くなります。
+          </li>
+          <li>
+            Fは好きな文字の代わりになります。Fを含むときは「消去する」を押すとカタカナの一覧が出るので、Fに入る文字を選びます。
+          </li>
+          <li>
+            時間切れで点数が高い方の勝ち。スキップはありません。
           </li>
         </ol>
       </div>
@@ -119,10 +133,10 @@
         </div>
         <div class="timer-card">
           <span>
-            TIME
+            残り時間
           </span>
           <strong id="timer">
-            0.000
+            3:00
           </strong>
         </div>
         <div class="player-chip">
@@ -134,13 +148,27 @@
           </strong>
         </div>
       </div>
+      <!-- レベルと得点 -->
+      <div class="hud">
+        <div class="hud-item">
+          <span>LEVEL</span>
+          <strong id="levelNumber">1</strong>
+        </div>
+        <div class="hud-item">
+          <span>YOUR SCORE</span>
+          <strong id="yourScore">0</strong>
+        </div>
+        <div class="hud-item rival">
+          <span>RIVAL SCORE</span>
+          <strong id="opponentScore">0</strong>
+        </div>
+      </div>
       <!-- 相手の進捗 -->
       <div class="progress-row">
         <div class="progress-copy">
-          相手の残り
-          <strong id="opponentRemaining">
-            40
-          </strong>
+          相手: Lv<strong id="opponentLevel">1</strong>
+          ・残り
+          <strong id="opponentRemaining">9</strong>
           マス
         </div>
         <div
@@ -148,7 +176,7 @@
           role="progressbar"
           aria-label="対戦相手の進捗"
           aria-valuemin="0"
-          aria-valuemax="40"
+          aria-valuemax="100"
           aria-valuenow="0"
         >
           <div
@@ -165,15 +193,30 @@
         aria-atomic="true"
       ></div>
       <!--
-        サーバー内部では8行×5列を保持します。
-        ブラウザには下側の5行×5列だけを送信します。
-        上3行の文字は下へ落ちるまで表示されません。
+        盤面の大きさはレベルごとに変わります（3×3 〜 5×8）。
+        5行を超える盤面は、下側の5行だけを表示し、
+        上の行の文字は下へ落ちるまで見えません。
       -->
       <div
-        id="board"
-        role="grid"
-        aria-label="国名ケシマスの表示盤面"
-      ></div>
+        id="boardWrap"
+        class="board-wrap"
+      >
+        <div
+          id="board"
+          role="group"
+          aria-label="ケシマスの盤面"
+        ></div>
+        <div
+          id="fxLayer"
+          class="fx-layer"
+          aria-hidden="true"
+        ></div>
+        <div
+          id="levelBanner"
+          class="level-banner-pop hidden"
+          aria-hidden="true"
+        ></div>
+      </div>
       <!-- 選択中の文字 -->
       <div class="selection-strip">
         <span>
@@ -186,26 +229,6 @@
           未選択
         </strong>
       </div>
-      <!-- Fが選択に含まれる場合だけ表示 -->
-      <div
-        id="fInputArea"
-        class="f-input-area hidden"
-      >
-        <label for="fText">
-          Fに入る文字
-          <span id="fInputHelp"></span>
-        </label>
-        <input
-          id="fText"
-          type="text"
-          placeholder="Fに入る文字を入力"
-          maxlength="5"
-          autocomplete="off"
-          autocapitalize="off"
-          spellcheck="false"
-          enterkeyhint="done"
-        >
-      </div>
       <!-- 決定と選択解除 -->
 <div class="answer-card">
   <button
@@ -213,7 +236,7 @@
     type="button"
     disabled
   >
-    決定
+    消去する
   </button>
 
   <button
@@ -232,6 +255,35 @@
         aria-live="polite"
         aria-atomic="true"
       ></p>
+      <!-- Fに入る文字を選ぶパレット -->
+      <div
+        id="paletteModal"
+        class="palette-overlay hidden"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="paletteTitle"
+      >
+        <div class="palette-dialog">
+          <h3 id="paletteTitle">
+            Fを何にしますか？
+          </h3>
+          <div
+            id="paletteWord"
+            class="wildcard-word"
+          ></div>
+          <div
+            id="paletteGrid"
+            class="palette-grid"
+          ></div>
+          <button
+            id="paletteCancel"
+            type="button"
+            class="reset-button"
+          >
+            キャンセル
+          </button>
+        </div>
+      </div>
       <!-- 対戦結果 -->
       <div
         id="result"
@@ -247,11 +299,19 @@
           <h2 id="resultTitle">
             対戦終了
           </h2>
+          <ul
+            id="resultScores"
+            class="result-scores"
+          ></ul>
+          <p
+            id="resultNote"
+            class="result-note"
+          ></p>
           <button
             id="rematch"
             type="button"
           >
-            同じ相手と再戦
+            同じ相手と再戦（同じモード）
           </button>
           <button
             id="newMatch"
