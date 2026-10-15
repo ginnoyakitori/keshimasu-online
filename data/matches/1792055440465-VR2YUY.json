@@ -1,0 +1,41 @@
+{
+  "format": "keshimasu-duel-result-v7-score-attack",
+  "roomId": "VR2YUY",
+  "mode": "country",
+  "puzzleIds": [
+    "country-L1-2a9b38b9cf",
+    "country-L2-46d88072c3",
+    "country-L3-a0e1c8ef02",
+    "country-L4-9e93164bf5",
+    "country-L5-5ab69088b3",
+    "country-L6-52a6934f1b",
+    "country-L7-20cf27539d",
+    "country-L8-ca67793514",
+    "country-L9-777a825e90",
+    "country-L10-faf8d174f1",
+    "country-L11-c264e3f7b8",
+    "country-L12-5e21c2d808"
+  ],
+  "startedAt": "2026-10-15T09:07:40.466Z",
+  "finishedAt": "2026-10-15T09:10:40.465Z",
+  "winnerToken": "zd9si6-HaLi73TDeyeftKMk29tdf3uGs",
+  "draw": false,
+  "players": [
+    {
+      "token": "zd9si6-HaLi73TDeyeftKMk29tdf3uGs",
+      "name": "プレイヤー",
+      "score": 268,
+      "level": 3,
+      "clearedCount": 2,
+      "moveCount": 12
+    },
+    {
+      "token": "ItOTQFOx41n3BXBrRL2IXX0-fOO-eJ3u",
+      "name": "プレイヤー",
+      "score": 0,
+      "level": 1,
+      "clearedCount": 0,
+      "moveCount": 0
+    }
+  ]
+}

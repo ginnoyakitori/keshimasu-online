@@ -740,8 +740,16 @@ button:disabled {
 }
 
 
+/* 空きマスも格子として残す（文字だけが消えて、マス目は残る） */
 .cell.empty {
-  visibility: hidden;
+  visibility: visible;
+
+  color: transparent;
+  background: #292929;
+
+  text-shadow: none;
+  cursor: default;
+  pointer-events: none;
 }
 
 

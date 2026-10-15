@@ -73,6 +73,7 @@ function normalizePuzzle(source, level) {
     board: normalized,
     targetWildcards: normalized.flat().filter((cell) => cell === "F").length,
     steps: Number(source.steps) || 0,
+    difficulty: Number(source.difficulty) || 0,
   };
 }
 

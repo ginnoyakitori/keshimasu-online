@@ -86,6 +86,21 @@ const LEVELS = Object.freeze([
     rejectVerticalOnly: true, clearPoints: 1800 },
 ]);
 
+/*
+ * 難易度の重み（tools/balance.js が使います）
+ *
+ *   難易度 = 手数 × step + ワイルドカード数 × wildcard + 当てずっぽう度（ビット）× bit
+ *
+ * 当てずっぽう度は、想定解をたどる各局面で
+ *   log2(指せる手の数 / 全消しにつながる手の数)
+ * を足したものです。罠の手が多く、正しい手が少ない盤面ほど大きくなります。
+ */
+const DIFFICULTY_WEIGHTS = Object.freeze({
+  step: 1,
+  wildcard: 1.5,
+  bit: 2.5,
+});
+
 function levelConfig(level) {
   const index = Math.min(
     Math.max(1, Math.floor(Number(level) || 1)),
@@ -111,4 +126,5 @@ module.exports = {
   LEVELS,
   levelConfig,
   clearPoints,
+  DIFFICULTY_WEIGHTS,
 };
